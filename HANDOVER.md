@@ -358,3 +358,39 @@ Next: stage 8 (shrine). Template `~/Games/roguelikes-index/shrine/forays.html`
   Game Development has an expired TLS certificate; links kept.
 
 Next: stage 9 (graveyard + leaderboard).
+
+### Stage 9 — graveyard + leaderboard (done)
+- **Beacon hook (game decides):** `Player.pas`, `{$IFDEF WEB}`: `GameOver` in its
+  real-death branch (no life insurance to wake up with; the "knocked out, awake
+  at hospital" path is not a finished run and sends nothing), before the RIP key
+  wait; `WinGame` at its top, before the ending's key waits (score includes the
+  +1000 coffeebreak / +2000 story bonus that `WinGame` adds). Covers all win
+  paths (quest reward 6, `WIN` script command, Meteor on DLV 1, Eris killed in
+  coffeebreak). Query built in Pascal: `web_beacon` in `port/webbe.pas`
+  (URL-encodes, → import `be_beacon`); the page (`web/lambdarogue.js`) only
+  passes it to `RvipWM.report` (fetch fallback). Native stub prints `BEACON …`.
+- **Fields:** `g=lambdarogue`, `ev` (death|win), `name` (`ThePlayer.strName`),
+  `killer` (death: `RvipKiller(reason)` = text after the last " by " of the
+  `GameOver` reason, articles/"... " stripped: "Killed by an antbee" → antbee,
+  "Killed by an earthquake invoked by a X" → X; no "by" → the reason itself,
+  e.g. "Died from starvation"), `depth` (`DungeonLevel`), `score`
+  (`ThePlayer.longScore`, the score the game shows at the end), `turns`
+  (`longTotalTurns`), `lvl` (`ThePlayer.intLvl`).
+- **No `ev=quit`:** the game has no give-up; "Save and Quit" (game menu 3)
+  keeps the run resumable (as Forays: save & quit sends nothing). `ME.SUICIDE`
+  is a script/cheat command only.
+- **Killer art:** `lambdarogue()` in `roguelikes-index/killers/make.py`: monster
+  `Letter` from `data/monsters.txt` → cell `ord − 32` of
+  `tileset-2-small-m-soldier.png` (20x40), centred on 40x40, 32 px; 62 PNGs
+  (roguelikes-index `d0a162f`), live under `/roguelikes/killers/lambdarogue/`.
+- **Tests:** local build (browser pane, random `z > 1-9` keys) → death
+  `g=lambdarogue&ev=death&name=die1&killer=antbee&depth=2&score=202&turns=527&lvl=2&id=…&at=…`
+  in the outbox. **Live** (https://ruzzoli.de, deployed from `0a125ea`): random keys →
+  `ev=death&name=die2&killer=Lonely%20Librarian&depth=3&score=205&turns=198&lvl=2&id=…&at=…`,
+  answer **204**, `rvip-outbox` empty; IndexedDB `lambdarogue` deleted on localhost:8731 and
+  ruzzoli.de (from a plain page). Win path not played
+  (weeks); it is the same call placed before every key wait.
+- Open: a won coffeebreak character is still saved (upstream: `SaveGame` after
+  the loop while HP > 0); loading it runs `WinGame` again (Eris is still in
+  `longKilled`) → a second win report with a new id. `check.sh` native build
+  does not link on the Mac (ppca64 link error); it worked in the cloud.
