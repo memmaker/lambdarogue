@@ -241,6 +241,11 @@ function web_pending: boolean;             { a key/mouse event is waiting }
 procedure web_type(const s: string);       { queue keys the game reads before the player's (RVIP item preselect) }
 procedure web_untype;                      { drop what web_type queued and nobody read }
 procedure web_fill(x, y, w, h: longint; rgb: longword; alpha: longint);  { filled rectangle on the screen }
+procedure web_lists(const inv, vis: ansistring);  { Inventory / Visible windows (lines "colour<TAB>text") }
+procedure web_prompt(const s: string);     { the live message row: prompt line over the map }
+function web_want_save: boolean;           { the page asks for an autosave }
+procedure web_sync;                        { files changed: the page mirrors them to IndexedDB }
+procedure web_hero(x, y: longint);         { player's screen pixel: the map camera centres on it }
 
 implementation
 
@@ -257,6 +262,11 @@ function be_music_playing: longint; external 'lr' name 'be_music_playing';
 procedure be_title(s: pchar); external 'lr' name 'be_title';
 procedure be_screen(w, h: longint); external 'lr' name 'be_screen';
 procedure be_msg(s: pchar; fold: longint); external 'lr' name 'be_msg';
+procedure be_lists(inv, vis: pchar); external 'lr' name 'be_lists';
+procedure be_prompt(s: pchar); external 'lr' name 'be_prompt';
+function be_want_save: longint; external 'lr' name 'be_want_save';
+procedure be_sync; external 'lr' name 'be_sync';
+procedure be_hero(x, y: longint); external 'lr' name 'be_hero';
 function be_pending: longint; external 'lr' name 'be_pending';
 {$ELSE}
 { headless native backend (web/check.sh): random keys, nothing drawn }
@@ -316,6 +326,11 @@ function be_music_playing: longint; begin be_music_playing := 0 end;
 procedure be_title(s: pchar); begin end;
 procedure be_screen(w, h: longint); begin end;
 procedure be_msg(s: pchar; fold: longint); begin end;
+procedure be_lists(inv, vis: pchar); begin end;
+procedure be_prompt(s: pchar); begin end;
+function be_want_save: longint; begin be_want_save := ord(random(500) = 0) end;
+procedure be_sync; begin end;
+procedure be_hero(x, y: longint); begin end;
 function be_pending: longint; begin be_pending := 0 end;
 {$ENDIF}
 
@@ -358,6 +373,43 @@ begin
     z := s;
     be_msg(pchar(z), 0);
   end;
+  web_prompt(z);
+end;
+
+var lastinv, lastvis: ansistring;
+procedure web_lists(const inv, vis: ansistring);
+begin
+  if (inv = lastinv) and (vis = lastvis) then exit;
+  lastinv := inv; lastvis := vis;
+  be_lists(pchar(inv), pchar(vis));
+end;
+
+var lastprompt: ansistring = '';
+procedure web_prompt(const s: string);
+var z: ansistring;
+begin
+  z := s;
+  if z = lastprompt then exit;
+  lastprompt := z;
+  be_prompt(pchar(z));
+end;
+
+function web_want_save: boolean;
+begin
+  web_want_save := be_want_save <> 0;
+end;
+
+procedure web_sync;
+begin
+  be_sync;
+end;
+
+var herox: longint = -1; heroy: longint = -1;
+procedure web_hero(x, y: longint);
+begin
+  if (x = herox) and (y = heroy) then exit;
+  herox := x; heroy := y;
+  be_hero(x, y);
 end;
 
 function web_pending: boolean;

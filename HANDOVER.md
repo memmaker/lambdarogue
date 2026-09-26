@@ -225,3 +225,49 @@ takes from sibling folders is bundled under `rvip/`:
 - Notes: letters J V X Y o q t in the sheet are ornamental glyphs, not
   sprites; no monster or item uses them (monster letters are all sprites).
 - Next: stage 5 (web page with `rvip/web/rvip-wm.js` windows).
+
+### Stage 5 — Web page (done in the cloud; not deployed)
+- Page: `web/index.html` (BOSS layout: top bar Help · Windows ▾ · Sound ·
+  Music · Export/Import save · New game), `web/lambdarogue.js` (windows,
+  lists, IndexedDB, autosave, help, overlay), engine `web/lr.js` (wasm,
+  blits, keys, mouse, Asyncify), shared `rvip-wm.js` / `rvip-sound.js`
+  copied from `rvip/web/` by `web/build.sh` (not forked).
+- Windows (rvip-wm.js): **Map** (the game's 800x600 screen canvas; whole-
+  number zoom ≥ 1, A−/A+ on its title bar; when the screen is bigger than
+  the window it scrolls with the player: the game sends the hero's screen
+  pixel `be_hero` from `RvipLists`, the page calls `RvipWM.center`),
+  **Log messages** (`be_msg` from `MessageLog.ShowTransMessage`, repeats
+  folded by the game), **Inventory** (inventory + equipment sections, sent
+  by the game `be_lists` at every command prompt, colours = the game's own
+  item name colours: white, yellow rare, purple unique/set, green magic),
+  **Visible** (monsters + items in line of sight, `RvipWM.visible`).
+  Default on: all four (multi: map left, inventory/visible right, log at
+  the bottom); one-window mode = map only. Layout, fonts, zoom and sound
+  toggles are saved in IndexedDB (`web-layout.json`).
+- Prompt line: `web_prompt` from `Input.GetKeyInput` / `GetTextInput` and
+  every new message → `RvipWM.prompt.text`; `be_poll(atcmd)` →
+  `RvipWM.prompt.wait` (`web_at_cmd` set by `RvipAuto` at the KEYLOOP).
+- Persistence: IndexedDB database `lambdarogue`, store `files`: `saves/*`,
+  `lambdarogue.cfg`, `web-layout.json`; loaded into the WASI tree before
+  start, mirrored every 15 s, on `be_sync` (after autosave), tab hidden,
+  pagehide. Autosave: the page raises `be_want_save` every 2 min / tab
+  hidden; `RvipAuto` (idle at the command prompt) calls the game's own
+  `SaveGame` (note: with a life insurance the latest save is the restore
+  point; that was also true for any manual save+quit). Export downloads the
+  `.lambdarogue` files, Import adds one, New game deletes all saves.
+  Quit/end → "Play again" overlay; crashes (also unhandled rejections) show
+  a message. `beforeunload` warns while the game runs.
+- Tested with Playwright + Chromium from `web/dist` served by
+  `python3 -m http.server` (`web/browser-check.mjs`, new `{reload}` and
+  `{eval:…}` steps): `web/shots/stage5-page.png` (all windows filled),
+  `stage5-reload.png` (character "test" saved with Esc → 3, page reloaded,
+  save still listed), `stage5-end.png` (title → 5 quit → overlay; one-
+  window mode leaves only the map). No console errors.
+- **Not done here**: the page is not live. `web/deploy.sh` is written
+  (guard: clean + pushed tree, then rsync to
+  `/var/www/ruzzoli.de/roguelikes/lambdarogue/`) but never run in the
+  cloud (no ruzzoli.de key). The Mac runs `sh web/build.sh && sh
+  web/deploy.sh` and checks `https://ruzzoli.de/roguelikes/lambdarogue/`.
+  Help button needs `help.html` (stage 6 `web/make-help.py`). Beacon
+  (step 12), shrine link target and OG tags are later stages.
+- Next: stage 6 (docs + sound).

@@ -32,7 +32,7 @@ fs['saves/'] = ''
 json.dump(fs, open('web/dist/fs.json', 'w'))
 PY
 cp -r graphics sound music "$OUT/"
-cp web/index.html web/lr.js "$OUT/" 2>/dev/null || true
+cp web/index.html web/lr.js web/lambdarogue.js "$OUT/"
 cp rvip/web/rvip-wm.js rvip/web/rvip-sound.js "$OUT/"
 cp -r web/vendor "$OUT/vendor"
 rm -rf web/build

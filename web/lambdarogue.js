@@ -1,0 +1,251 @@
+/*
+ * LambdaRogue page: windows (rvip-wm.js), message log, inventory and
+ * visible lists sent by the game (port/rvip.pas RvipLists), prompt line,
+ * saves mirrored to IndexedDB, autosave, help, export/import.
+ * The engine (wasm, blits, keys) is web/lr.js.
+ */
+import { start, keyEvent, LR, status } from './lr.js';
+import { File, Directory } from './vendor/wasi/index.js';
+
+const $ = id => document.getElementById(id);
+const hero = { x: 400, y: 300 };
+let wm = null, savedLayout = null, zoomAdj = 0, fonts = {}, lastSave = 0, wantSave = false;
+
+/* ---------- files: memory FS <-> IndexedDB (saves/, lambdarogue.cfg, web-layout.json) ---------- */
+const DB = 'lambdarogue', STORE = 'files';
+function idb() {
+	return new Promise((res, rej) => {
+		const r = indexedDB.open(DB, 1);
+		r.onupgradeneeded = () => r.result.createObjectStore(STORE);
+		r.onsuccess = () => res(r.result);
+		r.onerror = () => rej(r.error);
+	});
+}
+async function idbAll() {
+	const db = await idb();
+	return new Promise((res, rej) => {
+		const out = new Map(), req = db.transaction(STORE).objectStore(STORE).openCursor();
+		req.onsuccess = () => { const c = req.result; if (!c) return res(out); out.set(c.key, c.value); c.continue(); };
+		req.onerror = () => rej(req.error);
+	});
+}
+async function idbWrite(sets, dels) {
+	const db = await idb();
+	return new Promise((res, rej) => {
+		const tx = db.transaction(STORE, 'readwrite'), st = tx.objectStore(STORE);
+		for (const [k, v] of sets) st.put(v, k);
+		for (const k of dels) st.delete(k);
+		tx.oncomplete = () => res(); tx.onerror = () => rej(tx.error);
+	});
+}
+const written = new Map();
+const same = (a, b) => a && a.length === b.length && a.every((v, i) => v === b[i]);
+function savesDir() { return LR.root && LR.root.contents.get('saves'); }
+function files() {
+	const out = new Map(), s = savesDir();
+	if (s) for (const [n, f] of s.contents) if (f instanceof File && n !== 'delete.me') out.set('saves/' + n, f.data);
+	const cfg = LR.root && LR.root.contents.get('lambdarogue.cfg');
+	if (cfg) out.set('lambdarogue.cfg', cfg.data);
+	if (wm) out.set('web-layout.json', new TextEncoder().encode(JSON.stringify({ wm: wm.state(), fonts, zoomAdj, sound: sound.on, music: sound.musicOn })));
+	return out;
+}
+let persisting = null;
+function persist() {
+	if (persisting) return persisting.then(persist);
+	const sets = [], dels = [], now = files();
+	for (const [k, v] of now) if (!same(written.get(k), v)) { const c = v.slice(); sets.push([k, c]); written.set(k, c); }
+	for (const k of written.keys()) if (k.startsWith('saves/') && !now.has(k)) { dels.push(k); written.delete(k); }
+	if (!sets.length && !dels.length) return Promise.resolve();
+	persisting = idbWrite(sets, dels).catch(err => {
+		status('Saving to browser storage (IndexedDB) failed: ' + err + '. Use "Export save" to keep a copy.', true);
+	}).then(() => { persisting = null; });
+	return persisting;
+}
+async function prepare(root) {
+	try {
+		for (const [k, v] of await idbAll()) {
+			written.set(k, v);
+			if (k === 'web-layout.json') { try { savedLayout = JSON.parse(new TextDecoder().decode(v)); } catch (e) { } continue; }
+			if (k === 'lambdarogue.cfg') { root.contents.set(k, new File(v.slice())); continue; }
+			if (k.startsWith('saves/')) {
+				if (!root.contents.has('saves')) root.contents.set('saves', new Directory([]));
+				root.contents.get('saves').contents.set(k.slice(6), new File(v.slice()));
+			}
+		}
+	} catch (err) {
+		status('Could not read saved games from IndexedDB (' + err + '). Saving may not work in this browser mode.', true);
+	}
+	if (!root.contents.has('saves')) root.contents.set('saves', new Directory([]));
+	if (savedLayout) { fonts = savedLayout.fonts || {}; zoomAdj = savedLayout.zoomAdj || 0; sound.set(savedLayout.sound, savedLayout.music); }
+	setupWM();
+}
+function saveNames() { const s = savesDir(); return s ? [...s.contents.keys()].filter(n => /\.lambdarogue$/.test(n)) : []; }
+function download(name, data) {
+	const a = document.createElement('a');
+	a.href = URL.createObjectURL(new Blob([data], { type: 'application/octet-stream' }));
+	a.download = name; document.body.appendChild(a); a.click();
+	setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+}
+function exportSave() {
+	const n = saveNames();
+	if (!n.length) { status('There is no saved character yet.', true); setTimeout(() => status(''), 2000); return; }
+	n.forEach((name, i) => setTimeout(() => download(name, savesDir().contents.get(name).data), i * 400));
+}
+function importSave(file) {
+	const r = new FileReader();
+	r.onload = async () => {
+		const name = /\.lambdarogue$/.test(file.name) ? file.name : file.name + '.lambdarogue';
+		if (!confirm('Add "' + name + '" to the saved characters in this browser and restart?')) return;
+		LR.running = false;
+		savesDir().contents.set(name, new File(new Uint8Array(r.result)));
+		await persist(); location.reload();
+	};
+	r.readAsArrayBuffer(file);
+}
+async function newGame() {
+	if (!confirm('Delete every saved character in this browser and start over?')) return;
+	LR.running = false;
+	for (const n of saveNames()) savesDir().contents.delete(n);
+	await persist(); location.reload();
+}
+
+/* ---------- windows ---------- */
+const WINS = [{ id: 'map', title: 'Map' }, { id: 'log', title: 'Log messages' }, { id: 'inv', title: 'Inventory' }, { id: 'vis', title: 'Visible' }];
+const MULTI = { d: 'v', r: 0.83, a: { d: 'h', r: 0.74, a: 'map', b: { d: 'v', r: 0.55, a: 'inv', b: 'vis' } }, b: 'log' };
+function fitMap() {
+	const b = $('map'), c = LR.screen || $('screen');
+	if (!b.clientWidth) return;
+	/* whole-number zoom only (nearest-neighbour, never below 1:1); A-/A+ on the
+	   title bar adjust it. A screen bigger than its window scrolls with the
+	   player (RvipWM.center on the hero pixel the game sends, be_hero). */
+	const s = Math.min(b.clientWidth / c.width, b.clientHeight / c.height);
+	const z = Math.max(1, Math.floor(s) + zoomAdj), w = c.width * z, h = c.height * z;
+	c.style.width = w + 'px'; c.style.height = h + 'px';
+	if (w > b.clientWidth || h > b.clientHeight) {
+		b.style.alignItems = b.style.justifyContent = 'flex-start';
+		RvipWM.center(c, hero.x * z, hero.y * z, w, h, b.clientWidth, b.clientHeight);
+	} else { b.style.alignItems = b.style.justifyContent = ''; c.style.marginLeft = c.style.marginTop = ''; }
+}
+function applyFonts() { for (const id of ['log', 'inv', 'vis']) $(id).style.fontSize = (fonts[id] || 13) + 'px'; }
+function setupWM() {
+	wm = RvipWM({
+		area: $('game'), menu: $('btn-layout'), wins: WINS, multi: MULTI, single: 'map',
+		state: savedLayout && savedLayout.wm || null,
+		save: () => persist(),
+		layout: () => fitMap(),
+		font: (id, d) => {
+			if (id === 'map') zoomAdj = Math.max(-4, Math.min(4, zoomAdj + d));
+			else fonts[id] = Math.max(9, Math.min(24, (fonts[id] || 13) + d));
+			applyFonts(); fitMap(); persist();
+		},
+		onReset: () => { fonts = {}; zoomAdj = 0; applyFonts(); fitMap(); persist(); },
+	});
+	applyFonts();
+	wm.apply();
+}
+
+/* ---------- lists from the game ---------- */
+function showInv(s) {
+	const b = $('inv'); b.textContent = '';
+	for (const l of s.split('\n')) {
+		if (!l) continue;
+		const d = document.createElement('div');
+		if (l[0] === '=') { d.className = 'h'; d.textContent = l.slice(1); }
+		else { const [col, t] = l.split('\t'); d.textContent = t; d.style.color = col; }
+		b.appendChild(d);
+	}
+}
+
+/* ---------- sound (stage 6 wires the files; off by default) ---------- */
+const sound = {
+	on: false, musicOn: false, music: null, musicName: null,
+	set(s, m) { this.on = !!s; this.musicOn = !!m; this.buttons(); },
+	buttons() { $('btn-sound').classList.toggle('on', this.on); $('btn-music').classList.toggle('on', this.musicOn); },
+	sfx(path, vol) {
+		if (!this.on) return;
+		const a = new Audio(path); a.volume = Math.max(0, Math.min(1, vol / 128)); a.play().catch(() => {});
+	},
+	/* the game's Mix_PlayMusic / Mix_HaltMusic (path null); path undefined = the toggle */
+	play(path, loops, vol) {
+		if (path !== undefined) { this.musicName = path; this.loops = loops; this.musicVol = vol; }
+		if (this.music) { this.music.pause(); this.music = null; }
+		if (!this.musicName || !this.musicOn) return;
+		const a = new Audio(this.musicName); a.loop = this.loops === -1;
+		a.volume = Math.max(0, Math.min(1, (this.musicVol || 64) / 128));
+		a.play().catch(() => {}); this.music = a;
+	},
+	playing() { return this.music && !this.music.paused && !this.music.ended ? 1 : 0; },
+};
+
+/* ---------- help ---------- */
+let helpLoaded = false;
+function toggleHelp() {
+	const h = $('help');
+	h.hidden = !h.hidden;
+	if (!h.hidden && !helpLoaded) {
+		helpLoaded = true;
+		fetch('help.html').then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+			.then(t => { $('help-body').innerHTML = t; })
+			.catch(err => { helpLoaded = false; $('help-body').textContent = 'Could not load the guide (' + err + '). Press ? in the game for its own help.'; });
+	}
+	if (!h.hidden) $('help-body').focus();
+}
+
+/* ---------- startup ---------- */
+function onKey(e) {
+	if (!$('help').hidden) { if (e.key === 'Escape') { toggleHelp(); e.preventDefault(); } return; }
+	if (!LR.running) return;
+	wantSave = true;
+	keyEvent(e);
+}
+function crashed(err) {
+	LR.running = false;
+	console.error('[lambdarogue] crash:', err);
+	status('The game crashed (' + (err && err.message || err) + '). Reload the page to continue from the last autosave.', true);
+}
+async function ended() {
+	LR.running = false;
+	await persist();
+	$('overlay-msg').textContent = saveNames().length ? 'Your characters are saved in this browser. Play again to continue.' : 'The game is over.';
+	$('overlay').hidden = false;
+}
+LR.onMsg = (t, fold) => RvipWM.log($('log'), t, fold);
+LR.onPoll = atCmd => RvipWM.prompt.wait(atCmd);
+LR.onScreen = () => fitMap();
+LR.onSfx = (p, v) => sound.sfx(p, v);
+LR.onMusic = (p, loops, v) => sound.play(p, loops, v);
+LR.musicPlaying = () => sound.playing();
+const imports = {
+	be_lists: (i, v) => { showInv(cstr(i)); RvipWM.visible($('vis'), cstr(v)); },
+	be_prompt: p => RvipWM.prompt.text(cstr(p)),
+	/* autosave: every 2 minutes and when the tab is hidden, at most every 2 s */
+	be_want_save: () => {
+		const now = performance.now();
+		if (!wantSave || (now - lastSave < 120000 && !document.hidden)) return 0;
+		wantSave = false; lastSave = now; return 1;
+	},
+	be_sync: () => { persist(); },
+	be_hero: (x, y) => { hero.x = x; hero.y = y; fitMap(); },
+};
+function cstr(p) { const b = new Uint8Array(LR.mem.buffer, p); let e = 0; while (b[e]) e++; return new TextDecoder('latin1').decode(b.slice(0, e)); }
+
+document.addEventListener('visibilitychange', () => { if (document.hidden) { lastSave = 0; persist(); } });
+addEventListener('pagehide', () => persist());
+addEventListener('beforeunload', e => { if (LR.running) { persist(); e.preventDefault(); e.returnValue = ''; } });
+addEventListener('resize', () => wm && wm.apply());
+addEventListener('unhandledrejection', e => crashed(e.reason));
+addEventListener('error', e => crashed(e.error || e.message));
+setInterval(() => { if (LR.running) persist(); }, 15000);
+document.addEventListener('keydown', onKey);
+$('btn-export').onclick = exportSave;
+$('btn-import').onclick = () => $('import-file').click();
+$('import-file').onchange = function () { if (this.files[0]) importSave(this.files[0]); this.value = ''; };
+$('btn-new').onclick = newGame;
+$('btn-help').onclick = toggleHelp;
+$('help-close').onclick = toggleHelp;
+$('btn-restart').onclick = () => location.reload();
+$('btn-sound').onclick = () => { sound.on = !sound.on; sound.buttons(); persist(); };
+$('btn-music').onclick = () => { sound.musicOn = !sound.musicOn; sound.buttons(); sound.play(); persist(); };
+document.querySelectorAll('button').forEach(b => b.addEventListener('mousedown', e => e.preventDefault()));
+window.LR = LR;
+start({ prepare, imports, onExit: ended, onCrash: crashed }).catch(crashed);

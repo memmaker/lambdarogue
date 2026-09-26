@@ -122,6 +122,7 @@ export async function start(opts = {}) {
 	const [files, wasm] = await Promise.all([fetch('fs.json').then(r => r.json()), fetch('lr.wasm').then(r => r.arrayBuffer())]);
 	if (opts.files) opts.files(files);
 	LR.root = buildFS(files);
+	if (opts.prepare) await opts.prepare(LR.root);
 	const cstr = p => { const b = new Uint8Array(LR.mem.buffer, p); let e = 0; while (b[e]) e++; return new TextDecoder('latin1').decode(b.slice(0, e)); };
 	const lr = {
 		be_frame: frame,
@@ -136,6 +137,7 @@ export async function start(opts = {}) {
 		be_title: p => { document.title = cstr(p); },
 		be_msg: (p, fold) => LR.onMsg && LR.onMsg(cstr(p), fold),
 		be_pending: () => LR.events.filter(e => e[0] !== 4).length,
+		be_lists() {}, be_prompt() {}, be_want_save: () => 0, be_sync() {}, be_hero() {},
 		be_screen: (w, h) => { LR.screen.width = w; LR.screen.height = h; LR.onScreen && LR.onScreen(w, h); },
 		...(opts.imports || {}),
 	};
@@ -164,8 +166,9 @@ export async function start(opts = {}) {
 			ex._start();
 		}
 	} catch (e) {
-		if (!(e instanceof WASIProcExit)) { status('The game crashed: ' + e + ' — reload the page.', true); throw e; }
+		if (!(e instanceof WASIProcExit)) { LR.running = false; if (opts.onCrash) opts.onCrash(e); else status('The game crashed: ' + e + ' — reload the page.', true); throw e; }
 	}
 	LR.running = false;
 	if (opts.onExit) opts.onExit();
 }
+export { buildFS, status };

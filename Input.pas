@@ -886,6 +886,7 @@ var
   blOK: boolean;
   chNumPad: string;
 begin
+  web_prompt(message);  // RVIP: prompt line over the map
   BottomBar;
   ShowMessage(message + ' _', False);
 
@@ -992,6 +993,7 @@ var
   chNumPad: string;
 begin
 
+  web_prompt(message);  // RVIP: prompt line over the map
   if (message <> ' ') or (pressanykey = True) then
   begin
     if pressanykey = False then

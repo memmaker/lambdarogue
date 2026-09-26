@@ -24,7 +24,7 @@ function RvipMenu: longint;
 
 implementation
 
-uses WebBE, SysUtils, Constants, RandomArea, Player, Quests, MessageLog, RvipUI, DrawDungeon;
+uses WebBE, SysUtils, Constants, RandomArea, Player, Items, Quests, MessageLog, BaseOutput, RvipUI, DrawDungeon, FileIO;
 
 const
   MODE_NONE = 0; MODE_EXPLORE = 1; MODE_DOWN = 2; MODE_UP = 3;
@@ -174,13 +174,87 @@ begin
   end;
 end;
 
+{ ---- page windows (RVIP step 5): Inventory (+ equipment) and Visible, sent
+  at every command prompt. Colours are the game's own item name colours
+  (Items.SetItemNameColor: white, yellow = rare, purple = unique / set,
+  green = magic) as CSS. }
+function ItemColour(const name: string): string;
+begin
+  SetItemNameColor(name);
+  case GlobalFontColor of
+    FONTCOLOR_GREEN: ItemColour := '#7fd66b';
+    FONTCOLOR_PURPLE: ItemColour := '#c890f0';
+    FONTCOLOR_YELLOW: ItemColour := '#f0d060';
+  else ItemColour := '#e8e8e8';
+  end;
+  GlobalFontColor := FONTCOLOR_WHITE;
+end;
+
+procedure RvipLists;
+const
+  SLOT: array [1..7] of string = ('Weapon', 'Armour', 'Hat', 'Shoes', 'Ring (left)', 'Ring (right)', 'Shield / extra');
+var
+  inv, vis: ansistring;
+  i, t, x, y, m: longint;
+  function Eq(i: longint): longint;
+  begin
+    case i of
+      1: Eq := ThePlayer.intWeapon; 2: Eq := ThePlayer.intArmour; 3: Eq := ThePlayer.intHat;
+      4: Eq := ThePlayer.intFeet; 5: Eq := ThePlayer.intRingLeft; 6: Eq := ThePlayer.intRingRight;
+    else Eq := ThePlayer.intExtra;
+    end;
+  end;
+begin
+  inv := '=Inventory (' + IntToStr(ThePlayer.longGold) + ' credits)' + #10;
+  for i := 1 to 16 do
+  begin
+    t := Inventory[i].intType;
+    if t > 0 then
+      inv := inv + ItemColour(Thing[t].strRealName) + #9 + Format('%2d ', [i]) + Thing[t].strName +
+        ' x' + IntToStr(Inventory[i].longNumber) + #10;
+  end;
+  inv := inv + '=Equipment' + #10;
+  for i := 1 to 7 do
+  begin
+    t := Eq(i);
+    if t > 0 then
+      inv := inv + ItemColour(Thing[t].strName) + #9 + SLOT[i] + ': ' + Thing[t].strName + #10;
+  end;
+  vis := '';
+  for m := 1 to 550 do
+    with Monster[m] do
+      if (intHP > 0) and (intX >= 1) and (intY >= 1) and (intX <= DngMaxWidth) and (intY <= DngMaxHeight) and
+        (intInvis = 0) and DngLvl[intX, intY].blLOS and DngLvl[intX, intY].blKnown then
+        vis := vis + 'M' + chLetter + strName + #10;
+  for x := 1 to DngMaxWidth do
+    for y := 1 to DngMaxHeight do
+      if (DngLvl[x, y].intItem > 0) and DngLvl[x, y].blLOS and DngLvl[x, y].blKnown then
+      begin
+        t := DngLvl[x, y].intItem;
+        vis := vis + 'I*' + Thing[t].strName + #9 + ItemColour(Thing[t].strRealName) + #10;
+      end;
+  web_lists(inv, vis);
+  { the player's screen pixel (DrawDungeon draws the hero at intBX, intBY + 1 in 20x40 cells) }
+  web_hero(ThePlayer.intBX * 20 + 10, (ThePlayer.intBY + 1) * 40 + 20);
+end;
+
 function RvipAuto: longint;
 var d: integer;
     ev: TSDL_Event;
 begin
   web_at_cmd := true;
   RvipAuto := 0;
-  if mode = MODE_NONE then exit;
+  if mode = MODE_NONE then
+  begin
+    RvipLists;
+    { quiet autosave when the page asks (every 2 min / tab hidden) }
+    if web_want_save and (ThePlayer.intHP > 0) and not ThePlayer.blDead then
+    begin
+      SaveGame(ThePlayer.strName, DungeonLevel);
+      web_sync;
+    end;
+    exit;
+  end;
   { disturbances }
   if web_pending then
   begin

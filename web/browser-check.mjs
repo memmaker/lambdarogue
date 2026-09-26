@@ -17,6 +17,7 @@ try {
 	const errors = [];
 	page.on('pageerror', e => errors.push(String(e)));
 	page.on('console', m => { if (m.type() === 'error' && !/favicon|404/.test(m.text())) errors.push(m.text()); });
+	page.on('dialog', d => d.accept());
 	await page.goto(`http://127.0.0.1:${port}/`);
 	await page.waitForFunction(() => window.LR && LR.polls > 0, null, { timeout: 60000 });
 	await page.waitForTimeout(1500);
@@ -24,7 +25,10 @@ try {
 	for (let i = 0; i < spec.length; i++) {
 		if (spec[i] === '{') {
 			const j = spec.indexOf('}', i), k = spec.slice(i + 1, j); i = j;
-			if (k.startsWith('wait:')) await page.waitForTimeout(+k.slice(5)); else await page.keyboard.press(k);
+			if (k.startsWith('wait:')) await page.waitForTimeout(+k.slice(5));
+			else if (k === 'reload') { await page.reload(); await page.waitForFunction(() => window.LR && LR.polls > 0, null, { timeout: 60000 }); await page.waitForTimeout(1500); }
+			else if (k.startsWith('eval:')) console.log('eval', k.slice(5), '=>', JSON.stringify(await page.evaluate(k.slice(5))));
+			else await page.keyboard.press(k);
 		} else await page.keyboard.press(spec[i] === '\r' ? 'Enter' : spec[i] === '\x1b' ? 'Escape' : spec[i]);
 		await page.waitForTimeout(250);
 	}
