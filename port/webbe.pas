@@ -246,6 +246,7 @@ procedure web_prompt(const s: string);     { the live message row: prompt line o
 function web_want_save: boolean;           { the page asks for an autosave }
 procedure web_sync;                        { files changed: the page mirrors them to IndexedDB }
 procedure web_hero(x, y: longint);         { player's screen pixel: the map camera centres on it }
+procedure web_beacon(const ev, name, killer: string; depth, score, turns, lvl: longint);  { finished run -> RvipWM.report (step 12) }
 
 implementation
 
@@ -269,6 +270,7 @@ procedure be_sync; external 'lr' name 'be_sync';
 procedure be_hero(x, y: longint); external 'lr' name 'be_hero';
 procedure be_music_vol(v: longint); external 'lr' name 'be_music_vol';
 function be_pending: longint; external 'lr' name 'be_pending';
+procedure be_beacon(q: pchar); external 'lr' name 'be_beacon';
 {$ELSE}
 { headless native backend (web/check.sh): random keys, nothing drawn }
 var
@@ -334,6 +336,7 @@ procedure be_sync; begin end;
 procedure be_hero(x, y: longint); begin end;
 procedure be_music_vol(v: longint); begin end;
 function be_pending: longint; begin be_pending := 0 end;
+procedure be_beacon(q: pchar); begin writeln(stderr, 'BEACON ', q) end;
 {$ENDIF}
 
 { one blit: surface ids, source rect (w/h -1 = whole surface), target point, alpha }
@@ -412,6 +415,24 @@ begin
   if (x = herox) and (y = heroy) then exit;
   herox := x; heroy := y;
   be_hero(x, y);
+end;
+
+function urlenc(const s: string): ansistring;
+var i: longint;
+begin
+  urlenc := '';
+  for i := 1 to length(s) do
+    if s[i] in ['A'..'Z', 'a'..'z', '0'..'9', '-', '_', '.', '~'] then urlenc := urlenc + s[i]
+    else urlenc := urlenc + '%' + IntToHex(ord(s[i]), 2);
+end;
+
+procedure web_beacon(const ev, name, killer: string; depth, score, turns, lvl: longint);
+var q: ansistring;
+begin
+  q := 'g=lambdarogue&ev=' + ev + '&name=' + urlenc(name);
+  if killer <> '' then q := q + '&killer=' + urlenc(killer);
+  q := q + '&depth=' + IntToStr(depth) + '&score=' + IntToStr(score) + '&turns=' + IntToStr(turns) + '&lvl=' + IntToStr(lvl);
+  be_beacon(pchar(q));
 end;
 
 function web_pending: boolean;

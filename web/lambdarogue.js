@@ -230,6 +230,11 @@ const imports = {
 	be_sync: () => { persist(); },
 	be_music_vol: v => sound.volume(v),
 	be_hero: (x, y) => { hero.x = x; hero.y = y; fitMap(); },
+	/* finished run (step 12): the game builds the query (Player.pas GameOver/WinGame), the page only sends it */
+	be_beacon: p => {
+		const q = cstr(p);
+		try { if (window.RvipWM && RvipWM.report) RvipWM.report(q); else fetch('/roguelikes/beacon?' + q, { keepalive: true, mode: 'no-cors' }).catch(function () {}); } catch (e) {}
+	},
 };
 function cstr(p) { const b = new Uint8Array(LR.mem.buffer, p); let e = 0; while (b[e]) e++; return new TextDecoder('latin1').decode(b.slice(0, e)); }
 

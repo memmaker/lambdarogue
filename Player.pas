@@ -313,10 +313,39 @@ begin
   ReturnRandomMonster := i;
 end;
 
+{$IFDEF WEB}
+// RVIP step 12: the killer as the game names it, from GameOver's reason
+// ("Killed by a kobold" -> "kobold"; no "by": the reason itself)
+function RvipKiller(reason: string): string;
+var
+  i: integer;
+begin
+  if (reason <> '') and (reason[length(reason)] = '.') then
+    delete(reason, length(reason), 1);
+  i := RPos(' by ', reason);
+  if i > 0 then
+  begin
+    reason := copy(reason, i + 4, length(reason));
+    if AnsiStartsStr('... ', reason) then delete(reason, 1, 4);
+    if AnsiStartsStr('a ', reason) then delete(reason, 1, 2)
+    else if AnsiStartsStr('an ', reason) then delete(reason, 1, 3)
+    else if AnsiStartsStr('the ', reason) then delete(reason, 1, 4);
+  end;
+  RvipKiller := reason;
+end;
+{$ENDIF}
+
 procedure WinGame;
 var
   dummy: string;
 begin
+{$IFDEF WEB}
+  // RVIP step 12: report the win first (the ending waits for keys); score incl. the bonus added below
+  if ThePlayer.blCoffeebreak then
+    web_beacon('win', ThePlayer.strName, '', DungeonLevel, ThePlayer.longScore + 1000, longTotalTurns, ThePlayer.intLvl)
+  else
+    web_beacon('win', ThePlayer.strName, '', DungeonLevel, ThePlayer.longScore + 2000, longTotalTurns, ThePlayer.intLvl);
+{$ENDIF}
 
   if ThePlayer.blCoffeebreak = false then
   begin
@@ -398,6 +427,10 @@ begin
     if (ThePlayer.longLifeIns = 0) or
       (fileexists(CONST_DATADIR + 'saves/' + ThePlayer.strName + '.lambdarogue') = False) then
     begin
+      {$IFDEF WEB}
+      // RVIP step 12: a real death (no life insurance to wake up with)
+      web_beacon('death', ThePlayer.strName, RvipKiller(reason), DungeonLevel, ThePlayer.longScore, longTotalTurns, ThePlayer.intLvl);
+      {$ENDIF}
       if fileexists(CONST_DATADIR + 'saves/' + ThePlayer.strName + '.lambdarogue') then
         DeleteFile(CONST_DATADIR + 'saves/' + ThePlayer.strName + '.lambdarogue');
       SaveBones;
