@@ -24,7 +24,7 @@ unit LineOfSight;
 interface
 
 uses
-  Constants, RandomArea, Crt, SysUtils, CollectData;
+  Constants, RandomArea, WebBE, SysUtils, CollectData;
 
 procedure SetVisible;
 

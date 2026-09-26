@@ -33,7 +33,7 @@ program fprl;
 {$ENDIF}
 
 uses
-  Constants, SDL, SDL_Image, SDL_Mixer, Crt, Video, VidUtil, Keyboard, SysUtils, StrUtils,
+  Constants, WebBE, VidUtil, SysUtils, StrUtils,
   Player, Items, Quests, Chants, RandomArea, LineOfSight, Dungeon, Plot, Input,
   FileIO, CollectData, BaseOutput, UserInterface, DrawDungeon, MessageLog, GFX,
   PuzzleMap, ExternMusic, ExternSFX, InventoryScreen, Effects, logger;
@@ -4436,6 +4436,7 @@ var
             blUseExternPlayerTwo := false;
         end;
 
+        {$IFNDEF WEB}  // RVIP: no console mode in the browser
         'a':
         begin
           GetKeyInput('LambdaRogue will now save and close. Restart it afterwards.', True);
@@ -4451,6 +4452,7 @@ var
             writeln('LambdaRogue will run in console mode when restarted.');
           halt;
         end;
+        {$ENDIF}
 
         'b':
         begin
@@ -11337,7 +11339,7 @@ end;
 // MAIN LOOP
 
 
-{$R *.res}
+{$IFNDEF WEB}{$R *.res}{$ENDIF}
 
 begin
 

@@ -23,7 +23,7 @@ unit UserInterface;
 interface
 
 uses
-  SDL, Crt, Video, SysUtils, Constants, RandomArea, Player, BaseOutput, MessageLog, Items, Quests, Chants;
+  WebBE, SysUtils, Constants, RandomArea, Player, BaseOutput, MessageLog, Items, Quests, Chants;
 
 procedure TopFrame;
 procedure BottomBar;

@@ -24,7 +24,7 @@ unit ExternMusic;
 interface
 
 uses
-  Constants, Process, Crt, SDL, SDL_MIXER;
+  Constants, WebBE;
 
 function MusicPlaying: boolean;
 procedure PlayMusic(SoundFile: string);

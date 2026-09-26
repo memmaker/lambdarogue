@@ -23,7 +23,7 @@ unit Constants;
 interface
 
 uses
-  Crt, Classes, SysUtils;
+  WebBE, Classes, SysUtils;
 
 const
 

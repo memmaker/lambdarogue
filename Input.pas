@@ -24,7 +24,7 @@ unit Input;
 interface
 
 uses
-  SDL, Crt, Keyboard, Video,
+  WebBE,
   SysUtils, Constants, RandomArea, Player, Items, Chants, BaseOutput, UserInterface, DrawDungeon;
 
 var

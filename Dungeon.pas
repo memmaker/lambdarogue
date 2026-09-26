@@ -24,7 +24,7 @@ unit Dungeon;
 interface
 
 uses
-  Constants, Crt, SysUtils, GFX, Player, Items, Quests, RandomArea;
+  Constants, WebBE, SysUtils, GFX, Player, Items, Quests, RandomArea;
 
 var
   CONST_PERCENTMONSTERS, CONST_MIN_ITEMS: integer;

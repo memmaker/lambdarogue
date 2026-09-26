@@ -24,7 +24,7 @@ unit FileIO;
 interface
 
 uses
-  Constants, ExternMusic, ExternSFX, Crt, Keyboard, Video, Input, Dungeon, MessageLog,
+  Constants, ExternMusic, ExternSFX, WebBE, Input, Dungeon, MessageLog,
   SysUtils, RandomArea, CollectData, Player, Chants, Items, Quests, BaseOutput;
 
 procedure SaveConfig;

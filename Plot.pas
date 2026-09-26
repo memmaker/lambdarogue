@@ -24,7 +24,7 @@ unit Plot;
 interface
 
 uses
-  Constants, SDL, Crt, SysUtils, StrUtils, RandomArea, Player, BaseOutput, GFX, UserInterface, DrawDungeon, Input;
+  Constants, WebBE, SysUtils, StrUtils, RandomArea, Player, BaseOutput, GFX, UserInterface, DrawDungeon, Input;
 
 procedure OutputPlot(strPlotfile: string);
 procedure ShowDialog (name, a, b, c, d, e: string; wait: boolean);

@@ -24,7 +24,7 @@ unit ExternSFX;
 interface
 
 uses
-  Constants, ExternMusic, Process, crt, SDL, SDL_MIXER;
+  Constants, ExternMusic, WebBE;
 
 function SFXPlaying: boolean;
 procedure PlaySFX(SoundFile: string);

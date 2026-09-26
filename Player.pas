@@ -26,7 +26,7 @@ unit Player;
 interface
 
 uses
-  SysUtils, StrUtils, RandomArea, BaseOutput, GFX, MessageLog, SDL, Video;
+  SysUtils, StrUtils, RandomArea, BaseOutput, GFX, MessageLog, WebBE;
 
 type
   CharaClass = record

@@ -62,4 +62,55 @@ takes from sibling folders is bundled under `rvip/`:
 
 ## RVIP progress
 
-(nothing yet — start with stage 1)
+### Stage 1 — Get + build (done)
+- Folder: repo root (flat Pascal sources). Case: **O** (graphical SDL game),
+  built the A-BOSS way (FPC trunk → `wasm32-wasip1`, no Emscripten) with
+  Prospector's idea (the game hands the page a blit list; the page only blits).
+- **Web backend: `port/webbe.pas`** (unit `WebBE`), the only replacement for
+  JEDI-SDL (`sdl.pas`, `sdl_image.pas`, `sdl_mixer.pas`, …, left in the tree
+  unused) and FPC's `Crt`/`Video`/`Keyboard`/`Process`. Every
+  `SDL_BlitSurface` → one record `{src, sx, sy, sw, sh, dst, dx, dy, alpha}`
+  (surface ids: 1 = screen, ≥2 = `IMG_Load`ed sheets); `SDL_UpdateRect`,
+  `SDL_PollEvent`, `delay` flush it with `be_frame(ptr, n)`. Imports (module
+  `lr`): `be_frame be_image be_free be_poll be_evarg be_sleep be_sfx be_music
+  be_music_playing be_title be_screen`; asyncified: `be_poll be_sleep
+  be_image`. Keys arrive as SDL 1.2 keysym + unicode (keypad = digits, as SDL
+  with NumLock on). Mouse: be_poll types 2/3/4 + `SDL_GetMouseState`.
+  `web_at_cmd` (Pascal var) is passed to `be_poll` for the prompt line (not
+  set yet: stage 2/5 must set it at the command prompt, `fprl.pas` KEYLOOP
+  ~line 11808).
+- Game code changes: `uses` lists (SDL/SDL_Image/SDL_Mixer/Crt/Video/Keyboard/
+  Process → `WebBE`), `{$IFNDEF WEB}` around the options entry "a use
+  graphical output" (console mode can't work in a browser) and around
+  `{$R *.res}`. Sources are CRLF: edit with perl/binary Python.
+- Build: `sh web/build.sh` → `web/dist` (lr.wasm 2.2 MB, fs.json = `data/`
+  + `web/lambdarogue.cfg` + empty `graphics/**` names for `fileexists`, plus
+  graphics/sound/music served as files). Flags: `-Twasip1 -O2 -dWEB -Mobjfpc`
+  (mode as `buildmac.sh`), units rtl, rtl-objpas, rtl-extra, fcl-base;
+  `-XP/usr/bin/` (wasm-ld 18); `/usr/bin/wasm-opt -O2 --asyncify
+  --pass-arg=asyncify-imports@lr.be_poll,lr.be_sleep,lr.be_image` + feature
+  flags one by one. Toolchain: `web/toolchain.sh` (FPC trunk c71f0a97c8
+  in `~/fpc/fpc-wasm`).
+- Page (stage-1 minimum): `web/index.html` + `web/lr.js` (800x600 canvas,
+  WASI shim `web/vendor/wasi` from BOSS, keys, mouse, asyncify loop).
+- Tests: `node web/test.mjs "2c1\r"` (quickstart, coffeebreak, soldier →
+  dungeon) prints the screen text rebuilt from font blits + map tile codes;
+  `node web/browser-check.mjs <shot> "<keys>"` (Playwright + Chromium,
+  `CHROMIUM=/opt/pw-browsers/chromium`) → `web/shots/stage1-title.png`,
+  `web/shots/stage1-dungeon.png` (title and first dungeon level with tiles,
+  no console errors).
+- "ASan" run: `sh web/check.sh "1 2 3 4 5" 20000` = native FPC 3.2.2 build
+  with `-Cr -Co -Ci -Ct -gl`, headless backend (scripted start `LR_KEYS`,
+  then 20000 random keys per seed): **no range/overflow/IO error** in 5 seeds
+  (a save was written, so the runs reached the dungeon). Objects in /tmp.
+- **Tiles (decided now):** LambdaRogue's own sheets `graphics/tiles/
+  tileset-2-small-<sex>-<profession>.png` (20x40 cells from chr 32; the big
+  40x80 set is the in-game option). `python3 web/tiles-coverage.py`: **100%**
+  (175/175 drawable codes: every `chr(N)` in the code + monster/item letters,
+  all 9 small sheets). One set, no fallback.
+- Quirks: `CreatePuzzleLandscape` writes `data/levels/random/*.txt` at every
+  start (in-memory FS, fine). The quickstart name prompt accepts an empty
+  name. Messages use the 7x12 small font from `graphics/extra.png` (test.mjs
+  rebuilds it only roughly).
+- Next: stage 2 (explore + stairs). Main loop: `fprl.pas` KEYLOOP (`case k
+  of`, ~line 11860); movement/`KeyEnter` ('a' = take stairs when on them).

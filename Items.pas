@@ -24,7 +24,7 @@ unit Items;
 interface
 
 uses
-  Constants, BaseOutput, Video, RandomArea, Player, Chants, SysUtils;
+  Constants, BaseOutput, WebBE, RandomArea, Player, Chants, SysUtils;
 
 const
   MaxItem   = 1000;

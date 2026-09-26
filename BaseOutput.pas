@@ -23,7 +23,7 @@ unit BaseOutput;
 interface
 
 uses
-  SDL, SDL_Image, Crt, Video, VidUtil, Keyboard, SysUtils, Constants, Math, RandomArea;
+  WebBE, VidUtil, SysUtils, Constants, Math, RandomArea;
 
 const
   FONTCOLOR_WHITE = 1;

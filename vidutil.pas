@@ -3,7 +3,7 @@ unit vidutil;
 Interface
 
 uses
-  video;
+  WebBE;
 
 Procedure TextOut(X,Y : Word;Const S : String; Color: Integer);
 

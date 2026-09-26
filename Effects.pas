@@ -24,9 +24,9 @@ unit Effects;
 interface
 
 uses
-  Constants, ExternMusic, ExternSFX, GFX, Crt, Keyboard, Video, Input,
+  Constants, ExternMusic, ExternSFX, GFX, WebBE, Input,
   Dungeon, Plot, LineOfSight,
-  SysUtils, SDL, RandomArea, Player, Items,
+  SysUtils, RandomArea, Player, Items,
   BaseOutput, MessageLog, DrawDungeon, UserInterface;
 
 var

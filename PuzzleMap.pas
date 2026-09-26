@@ -24,7 +24,7 @@ unit PuzzleMap;
 interface
 
 uses
-  Constants, Crt, SysUtils, StrUtils, Quests, Player;
+  Constants, WebBE, SysUtils, StrUtils, Quests, Player;
 
 var
   Landstring: array[1..150] of string;

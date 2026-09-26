@@ -23,7 +23,7 @@ unit GFX;
 interface
 
 uses
-  SDL, Crt, Video, BaseOutput, SysUtils, RandomArea, Constants, ExternSFX;
+  WebBE, BaseOutput, SysUtils, RandomArea, Constants, ExternSFX;
 
 var
   MessageLogFile: Textfile;

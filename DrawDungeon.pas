@@ -23,7 +23,7 @@ unit DrawDungeon;
 interface
 
 uses
-  SDL, Crt, Video, SysUtils, BaseOutput, Constants, RandomArea, LineOfSight;
+  WebBE, SysUtils, BaseOutput, Constants, RandomArea, LineOfSight;
 
 
 procedure ShowDungeon(sx: integer; sy: integer; w: integer; h: integer; mode: integer);

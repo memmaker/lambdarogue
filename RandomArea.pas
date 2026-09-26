@@ -24,7 +24,7 @@ unit RandomArea;
 interface
 
 uses
-  SDL, Crt, SysUtils;
+  WebBE, SysUtils;
 
 type
   DngTile = record

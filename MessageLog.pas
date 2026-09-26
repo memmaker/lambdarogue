@@ -23,7 +23,7 @@ unit MessageLog;
 interface
 
 uses
-  SDL, Crt, Video, SysUtils, RandomArea, BaseOutput;
+  WebBE, SysUtils, RandomArea, BaseOutput;
 
 var
     strMessageLog: array [1..20] of string; // contains the last 20 messages

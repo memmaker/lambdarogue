@@ -24,8 +24,8 @@ unit InventoryScreen;
 interface
 
 uses
-  ExternSFX, Crt, Keyboard, Video, Input, Plot, Effects, Constants,
-  SysUtils, SDL, RandomArea, CollectData, Player, Chants, Items,
+  ExternSFX, WebBE, Input, Plot, Effects, Constants,
+  SysUtils, RandomArea, CollectData, Player, Chants, Items,
   BaseOutput, GFX, UserInterface, MessageLog, DrawDungeon;
 
 var
