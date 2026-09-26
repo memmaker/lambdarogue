@@ -1,27 +1,25 @@
 #!/usr/bin/env python3
 """Writes the in-page game guide for the web build (stdout -> dist/help.html)
-and, with --page FILE, the standalone Docs page (docs/web/lambdarogue-docs.html).
+and, with --page FILE, the standalone page (docs/web/lambdarogue-docs.html).
 
-On the Mac the game part comes from ~/Desktop/Games/Roguelikes/Docs
-(build-docs.py + guides.py) like BOSS's make-help.py; that folder was not
-available in the cloud run, so the entry lives in web/docs_entry.py (to be
-merged into the Docs by hand) and is used when the Docs lack it."""
+The game content comes from the desktop key guides in
+~/Desktop/Games/Roguelikes/Docs (build-docs.py + guides.py, entry
+lambdarogue.html), as for the other games; only the saving and "playing in
+the browser" parts are written here."""
 import html, importlib.util, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DOCS = os.path.expanduser('~/Desktop/Games/Roguelikes/Docs')
-sys.path.insert(0, HERE)
-import docs_entry as E   # noqa: E402
+PAGE = 'lambdarogue.html'
+sys.path.insert(0, DOCS)
+spec = importlib.util.spec_from_file_location('build_docs', os.path.join(DOCS, 'build-docs.py'))
+docs = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(docs)
+from guides import GUIDES   # noqa: E402
 
-game, guide = E.GAME, dict(E.GUIDE)
-if os.path.exists(os.path.join(DOCS, 'build-docs.py')):
-    sys.path.insert(0, DOCS)
-    spec = importlib.util.spec_from_file_location('build_docs', os.path.join(DOCS, 'build-docs.py'))
-    docs = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(docs)
-    from guides import GUIDES   # noqa: E402
-    game = next((g for g in docs.GAMES if g['file'] == E.PAGE), game)
-    guide = dict(GUIDES.get(E.PAGE, guide))
+game = next(g for g in docs.GAMES if g['file'] == PAGE)
+guide = dict(GUIDES[PAGE])
+info = dict(game['info'])
 esc = html.escape
 
 
@@ -65,7 +63,7 @@ def body():
     parts.append('<p>' + esc(game['tagline']) + '</p><ul class="toc">' +
                  ''.join(f'<li><a href="#h-{a}">{esc(t)}</a></li>' for a, t in toc) + '</ul>')
     g = dict(guide)
-    parts.append(section('about', 'About the game', g.pop('How LambdaRogue differs', game['info']['About the game'])))
+    parts.append(section('about', 'About the game', g.pop('How LambdaRogue differs', info['About the game'])))
     ess = ''.join(f'<div class="box"><h3>{esc(cat)}</h3>{dl(items)}</div>' for cat, items in game['essentials'])
     all_keys = game['all']() if callable(game['all']) else game['all']
     full = ''.join(f'<div>{kbd(k)}<span>{esc(d)}</span></div>' for k, d in all_keys)
@@ -75,7 +73,7 @@ def body():
                          '<details><summary>Complete key list (' + str(len(all_keys)) + ' commands)</summary>'
                          '<div class="all">' + full + '</div></details>'))
     parts.append(section('saving', 'Saving your game', SAVING))
-    parts.append(section('tips', 'Tips', game['info']['Tips']))
+    parts.append(section('tips', 'Tips', info['Tips']))
     parts.append(section('guide', "New player's guide", ''.join(f'<h3>{esc(t)}</h3>{b}' for t, b in g.items())))
     parts.append(section('web', 'Playing in the browser', WEB))
     parts.append('<h2 id="h-version">About this version</h2><ul>'

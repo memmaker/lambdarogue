@@ -3,3 +3,4 @@ web/build/
 web/node_modules
 *.o
 *.ppu
+__pycache__/
