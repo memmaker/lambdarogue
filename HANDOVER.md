@@ -285,3 +285,50 @@ snapshot of RVIP.md, the shared page code, the BOSS/Prospector templates,
 - Next: stage 7 (publish: memmaker repo exists already —
   github.com/memmaker/lambdarogue; README with upstream link and compare
   view, tree entry, deploy from the Mac).
+
+### Stage 7 — Publish (done, Mac)
+- **Mac check** (browser pane, own tab, `web/dist` served locally): title →
+  quickstart, all four windows, tiles, `z` explore, `>` walk + descend,
+  Enter menu → Items → inventory → item menu → eat (Aspirin x20 → x19),
+  quit/autosave (`document.hidden` faked) → reload → Continue lists the
+  character and restores it, Help, Sound/Music off at start. No console errors.
+  **Fixed** (`42abb12` in the cloud history, `5e2e6d1` here): an empty
+  character name saved `saves/.lambdarogue`, which FPC's Unix `FindFirst`
+  skips as hidden, so the save vanished → the web build refuses empty names
+  (both name prompts in `fprl.pas`, `{$IFDEF WEB}`); floor hints said
+  "[ENTER] or [a]" → "[a]" (`UserInterface.pas`, `StringReplace` under WEB).
+- **Toolchain (Mac)**: `web/build.sh` defaults to `~/Games/fpc-wasm` (FPC trunk
+  3.3.1 @ 20e80cb5, the BOSS build; no rebuild needed), Homebrew emscripten
+  6.0.10's `wasm-ld`, Homebrew `wasm-opt` 133. Build ~35 s.
+- **Docs**: entry `lambdarogue.html` in `~/Desktop/Games/Roguelikes/Docs`
+  (`build-docs.py` GAMES, `guides.py` GUIDES + SAVING); `web/make-help.py`
+  reads it like Forays (the cloud's `web/docs_entry.py` is gone) and also
+  writes `docs/web/lambdarogue-docs.html` with `--page`.
+- **Repos**: this folder = public **memmaker/lambdarogue** (remote
+  `memmaker`, branch `main`), history without `rvip/`; the cloud history is
+  private **memmaker/lambdarogue-cloud** (`~/Games/lambdarogue-cloud`).
+  Upstream commit `798c8e6`; README with the compare view.
+- **Live**: https://ruzzoli.de/roguelikes/lambdarogue/ (`sh web/build.sh && sh
+  web/deploy.sh`). Card on https://ruzzoli.de/roguelikes/ (`lambdarogue.png`:
+  18 monster sprites from `tileset-2-big-m-soldier.png`, 40×80, on its stone
+  floor, 384×160), tree: standalone original between DoomRL and Brogue
+  (`li.insp`, 2006 · Mario Donick; year from the handover/`docs`, web check
+  left for stage 8). og block in `web/index.html` by hand (image
+  `roguelikes/lambdarogue.png`). The page title links to
+  `../shrine/lambdarogue.html`, which stage 8 creates.
+
+Next: stage 8 (shrine). Template `~/Games/roguelikes-index/shrine/forays.html`
+(commit `0055d41`). Material:
+- Manual/help: no manual file in the source drop; the in-game help screens
+  (`?`, `fprl.pas` `HelpScreen*`, `HelpScreenKeys`), the tips list, the web
+  guide (`dist/help.html`, Docs `lambdarogue.html`,
+  `docs/web/lambdarogue-docs.html`).
+- Licence: GNU GPL v2 (`docs/copying.txt`); soundtrack under its own CC
+  licences (`music/LambdaRogue Soundtrack Credits.txt`); image and sound
+  credits in `docs/image credits.txt`, `sound/sound credits.txt`.
+- Changelog: `docs/ChangeLog.txt` (1.6.4 and earlier).
+- Walkthrough: none in the source; check the web (Google Code wiki, RogueBasin,
+  the author's site), else report as missing.
+- Links to add: Info button on the card, ✦ in the tree entry, game-title link
+  on the shrine page to `../lambdarogue/`; shrine page gets its own og block
+  (image `roguelikes/lambdarogue.png`).
