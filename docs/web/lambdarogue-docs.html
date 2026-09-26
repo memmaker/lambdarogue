@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LambdaRogue — keys and guide</title><style>:root { --bg: #0b0b0d; --panel: #16161a; --line: #2b2b33; --text: #d8d8de; --dim: #8a8a96; --accent: #d9b24c;
+		--gut: #1d1d23; --gut-hover: #d9b24c; }
+	* { box-sizing: border-box; }
+	html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+		font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;  }
+	#bar { display: flex; align-items: center; gap: 6px; padding: 4px 8px; background: var(--panel);
+		border-bottom: 1px solid var(--line); height: 32px; white-space: nowrap;  }
+	#bar h1 { font-size: 14px; margin: 0 8px 0 0; color: var(--accent); letter-spacing: .04em; }
+	#bar h1 a { color: inherit; text-decoration: none; }
+	#bar .sep { width: 1px; height: 18px; background: var(--line); margin: 0 4px; flex: none; }
+	#bar .sp { flex: 1; }
+	#bar .hint { color: var(--dim);  text-overflow: ellipsis; }
+	button { background: #22222a; color: var(--text); border: 1px solid var(--line); border-radius: 4px;
+		padding: 2px 10px; font: inherit; cursor: pointer; }
+	button:hover { border-color: var(--accent); }
+	button.on { background: var(--accent); color: #000; border-color: var(--accent); }
+	#status { position: fixed; left: 50%; top: 40px; transform: translateX(-50%); z-index: 5;
+		background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 14px; max-width: 90vw; }
+	#status.error { border-color: #b44; color: #f99; }
+	#game { position: absolute; left: 0; right: 0; top: 32px; bottom: 0;  background: var(--gut, #1d1d23); }
+	.win { position: absolute; background: #000; border: 1px solid var(--line); display: flex; flex-direction: column;  }
+	.win > .t { flex: none; display: flex; align-items: center; font-size: 11px; height: 20px; padding: 0 2px 0 6px;
+		background: var(--panel); color: var(--dim); border-bottom: 1px solid var(--line); }
+	.win > .t .name { flex: 1; }
+	.win > .body { flex: 1; min-height: 0;  position: relative; }
+	#map { display: flex; align-items: center; justify-content: center; }
+	#screen { display: block; flex: none; image-rendering: pixelated; }
+	.list { overflow-y: auto !important; padding: 4px 8px; font: 13px/1.45 ui-monospace, Menlo, monospace; white-space: pre-wrap; }
+	.list .h { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
+	#log div + div { border-top: 1px solid #1b1b20; }
+	#overlay, #help { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: flex;
+		align-items: center; justify-content: center; z-index: 10; }
+	#overlay[hidden], #help[hidden], #status[hidden], #game[hidden] { display: none; }
+	.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px 24px; max-width: 560px; }
+	.card h2 { margin: 0 0 10px; font-size: 16px; color: var(--accent); }
+	kbd { display: inline-block; min-width: 1.7em; padding: 0 6px; text-align: center; font: 600 12px/1.6 ui-monospace, Menlo, monospace;
+		background: #22222a; border: 1px solid #3a3a46; border-bottom-width: 2px; border-radius: 4px; color: var(--text); }
+	/* Help: the game guide */
+	#help .panel { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+		width: min(980px, calc(100vw - 32px)); height: calc(100vh - 64px); display: flex; flex-direction: column; }
+	#help .head { display: flex; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+	#help .head h2 { margin: 0; font-size: 16px; color: var(--accent); flex: 1; }
+	#help-body { overflow: auto; padding: 4px 24px 32px; outline: none; font-size: 14px; line-height: 1.6; }
+	#help-body h2 { font-size: 19px; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); color: var(--text); }
+	#help-body h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 18px 0 8px; }
+	#help-body p, #help-body ul, #help-body ol { max-width: 76ch; margin: 0 0 12px; }
+	#help-body li { margin: 3px 0; }
+	#help-body .toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 0; padding: 0; list-style: none; }
+	#help-body .toc a { display: block; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; }
+	#help-body .toc a:hover { border-color: var(--accent); }
+	#help-body .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+	#help-body .box { background: #1c1c22; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+	#help-body .key { background: #221d10; border-color: #4a3d18; }
+	#help-body dl { margin: 0; display: grid; grid-template-columns: minmax(5.5em, max-content) 1fr; gap: 6px 12px; align-items: baseline; }
+	#help-body dd { margin: 0; }
+	#help-body .all { columns: 3 240px; column-gap: 24px; }
+	#help-body .all div { break-inside: avoid; display: flex; gap: 10px; padding: 3px 0; border-bottom: 1px dashed var(--line); }
+	#help-body .all kbd { flex: none; }
+	#help-body details summary { cursor: pointer; color: var(--accent); margin: 8px 0; }
+	#help-body code { font: 12px ui-monospace, Menlo, monospace; background: #22222a; padding: 0 4px; border-radius: 3px; }
+	#help-body .or { color: var(--dim); font-size: 12px; margin: 0 3px; }
+
+#help-body{max-width:980px;margin:0 auto}</style></head><body><div id="help-body"><h1 style="color:var(--accent)">LambdaRogue</h1><p>LambdaRogue: The Book of Stars (1.6.4, 2012) — a graphical roguelike RPG by Mario Donick.</p><ul class="toc"><li><a href="#h-about">About the game</a></li><li><a href="#h-keys">Keyboard controls</a></li><li><a href="#h-saving">Saving your game</a></li><li><a href="#h-tips">Tips</a></li><li><a href="#h-guide">New player&#x27;s guide</a></li><li><a href="#h-web">Playing in the browser</a></li><li><a href="#h-version">About this version</a></li></ul>
+<h2 id="h-about">About the game</h2><p><strong>LambdaRogue: The Book of Stars</strong> (2006–2012) by Mario Donick is a graphical roguelike RPG written in Free Pascal with SDL. You are sent by Ahna, the priestess of the Temple of Enoa, to find the lost Book of Stars in the dungeons beneath the temple. Story mode has quests, NPCs, profession ranks and diplomas; Coffeebreak mode is a plain dive: reach dungeon level 20 and kill Eris, the evil deity.</p><p>It is its own game, not a variant of Rogue, Hack or Angband: Greek gods you pray to, songs of magic learned from books, a resource workshop, life insurance at the hospital and hand-drawn tiles and portraits. Licence: GNU GPL v2 (<code>docs/copying.txt</code>).</p>
+<h2 id="h-keys">Keyboard controls</h2><div class="box key"><h3>The keys to remember</h3><dl><dt><kbd>?</kbd></dt><dd>In-game help</dd><dt><kbd>z</kbd></dt><dd>Auto-explore: walk to the nearest unexplored spot</dd><dt><kbd>Enter</kbd></dt><dd>Menu of all commands</dd><dt><kbd>i</kbd></dt><dd>Inventory with a cursor: Enter = everything you can do with the item</dd><dt><kbd>&gt;</kbd></dt><dd>Go down (walks to the nearest known staircase)</dd><dt><kbd>Esc</kbd></dt><dd>Game menu: options, keys, save and quit</dd></dl></div><h3>Essential keys</h3><div class="grid"><div class="box"><h3>Moving</h3><dl><dt><kbd>arrows</kbd><span class="or">/</span><kbd>numpad</kbd></dt><dd>Move and attack (NumLock on)</dd><dt><kbd>h j k l y u b n</kbd></dt><dd>Move (vi keys)</dd><dt><kbd>z</kbd></dt><dd>Auto-explore (any key stops)</dd><dt><kbd>&lt; &gt;</kbd></dt><dd>Walk to the known staircase and take it</dd><dt><kbd>a</kbd></dt><dd>General action: stairs, chest, altar, well, crypt</dd></dl></div><div class="box"><h3>Items</h3><dl><dt><kbd>i</kbd></dt><dd>Inventory (cursor, Enter = item menu)</dd><dt><kbd>g</kbd></dt><dd>Pick up item</dd><dt><kbd>T</kbd></dt><dd>Throw an item</dd><dt><kbd>f</kbd></dt><dd>Fire long-range weapon</dd></dl></div><div class="box"><h3>Magic and gods</h3><dl><dt><kbd>m</kbd></dt><dd>Songbook (spells)</dd><dt><kbd>c</kbd></dt><dd>Chant last spell again</dd><dt><kbd>p</kbd></dt><dd>Pray to your god</dd><dt><kbd>F1–F12</kbd></dt><dd>Quick keys (items, spells)</dd></dl></div><div class="box"><h3>Game</h3><dl><dt><kbd>Enter</kbd></dt><dd>Menu of all commands</dd><dt><kbd>?</kbd></dt><dd>Help</dd><dt><kbd>Esc</kbd><span class="or">/</span><kbd>Q</kbd></dt><dd>Game menu: options, keys, save and quit</dd></dl></div></div><details><summary>Complete key list (30 commands)</summary><div class="all"><div><kbd>Enter</kbd><span>menu of all commands</span></div><div><kbd>arrows</kbd><span class="or">/</span><kbd>numpad</kbd><span class="or">/</span><kbd>hjklyubn</kbd><span>move, attack</span></div><div><kbd>z</kbd><span>auto-explore</span></div><div><kbd>&gt;</kbd><span>walk to known stairs down, take them</span></div><div><kbd>&lt;</kbd><span>walk to known stairs up, take them</span></div><div><kbd>a</kbd><span>general action (stairs, chest, altar, well, crypt)</span></div><div><kbd>g</kbd><span>pick up item</span></div><div><kbd>i</kbd><span>show inventory</span></div><div><kbd>m</kbd><span>show songbook (spells)</span></div><div><kbd>c</kbd><span>chant last spell again</span></div><div><kbd>t</kbd><span>talk to NPC or trader</span></div><div><kbd>f</kbd><span>fire long-range weapon</span></div><div><kbd>d</kbd><span>dig / disarm trap</span></div><div><kbd>p</kbd><span>pray to your god</span></div><div><kbd>s</kbd><span>show status screen</span></div><div><kbd>L</kbd><span>show questlog</span></div><div><kbd>.</kbd><span>rest one turn</span></div><div><kbd>r</kbd><span>rest a number of turns</span></div><div><kbd>I</kbd><span>identify tile</span></div><div><kbd>Q</kbd><span class="or">/</span><kbd>Esc</kbd><span>game menu</span></div><div><kbd>S</kbd><span>search / steal</span></div><div><kbd>C</kbd><span>show and reset quick keys</span></div><div><kbd>D</kbd><span>close door</span></div><div><kbd>M</kbd><span>show big minimap</span></div><div><kbd>T</kbd><span>throw an item</span></div><div><kbd>-</kbd><span>switch tactics</span></div><div><kbd>x</kbd><span>use talent</span></div><div><kbd>X</kbd><span>divine rage</span></div><div><kbd>F1–F12</kbd><span>quick keys</span></div><div><kbd>?</kbd><span>help</span></div></div></details>
+<h2 id="h-saving">Saving your game</h2><ul>
+<li><strong>Saving is automatic.</strong> Your character is stored in this browser (IndexedDB): the page asks the game to save every two minutes and when you switch tabs, and the game saves when you quit (<kbd>Esc</kbd> → <kbd>3</kbd> Save and Quit).</li>
+<li>Reloading the page brings you back to the title screen; <kbd>1</kbd> Create / Continue lists your saved characters.</li>
+<li>Without a life insurance, death deletes the character's save, as in the original. With one, you wake up at the hospital from the last save.</li>
+<li><em>Export save</em> downloads your <code>.lambdarogue</code> files; <em>Import save</em> adds one (also a save from the desktop version 1.6.x). <em>New game</em> deletes all saved characters in this browser.</li>
+<li>Options (tiles, volume, keys) are kept in <code>lambdarogue.cfg</code> in the same storage. Private windows and "clear site data" delete everything: export first.</li>
+</ul>
+<h2 id="h-tips">Tips</h2><ul><li>Sell old stuff frequently, to gain money for better items.</li><li>Dipping items into a well may lead to interesting results.</li><li>Try sacrificing items at altars.</li><li>Keep your rage level as high as possible to use special abilities.</li><li>Collect and sell resources at resource workshops for money.</li><li>If you are trapped in an antbee web, just wait some turns.</li><li>Think tactically: use the dungeon layout to your advantage.</li><li>Train your skills at an academy or using a book shelf.</li><li>Dig your way through rock in caves to find rare items.</li><li>To regain psychic power, sit down on a stool for a while.</li><li>If you feel trapped, search (<kbd>S</kbd>) for hidden doors.</li><li>If you are chased, run away and shut the doors behind you (<kbd>D</kbd>).</li><li>If peaceful caveworms block your way, wait some turns.</li><li>Buy a life insurance at a hospital: dying then only knocks you out.</li><li>You can throw and shoot one tile farther than you can see.</li><li>Dropping one item onto another may combine them.</li><li>Defensive tactics (<kbd>-</kbd>) halve the damage you take and deal.</li><li>To use weapon special effects, your weapon skill must be at least the weapon's WP.</li><li>Grease your weapon with a potion to add its effect.</li></ul>
+<h2 id="h-guide">New player&#x27;s guide</h2><h3>Your first game</h3><ol><li>Title screen: <kbd>2</kbd> Quickstart, then <kbd>c</kbd> Coffeebreak for a plain dive (or <kbd>s</kbd> Story), pick a preset (<kbd>3</kbd> enchanter is the easiest), type a name, <kbd>Enter</kbd>.</li><li>Press <kbd>i</kbd> and look at your items: the cursor and <kbd>Enter</kbd> show what you can do with each.</li><li>Press <kbd>z</kbd> to explore; it stops when an enemy shows up. Walk into enemies to fight them.</li><li>Hurt? Eat or drink healing items from the inventory, or rest with <kbd>r</kbd> when nothing is around.</li><li>Press <kbd>&gt;</kbd> to walk to the known down staircase and descend.</li></ol><h3>Staying alive</h3><ul><li>Fight in corridors and doorways so only one enemy reaches you.</li><li>Switch to defensive tactics (<kbd>-</kbd>) against strong monsters.</li><li>Pray (<kbd>p</kbd>) when things go wrong; your god may help.</li><li>Buy a life insurance at the hospital in the temple: dying then knocks you out instead of ending the game.</li></ul><h3>Magic</h3><p>Spells are songs: study (<kbd>s</kbd> in the inventory) a songbook item to learn one, chant with <kbd>m</kbd>, repeat with <kbd>c</kbd>; the quick keys <kbd>F1</kbd>–<kbd>F12</kbd> hold spells and items (<kbd>C</kbd> shows and resets them). Chanting costs psychic power (PP); sitting on a stool restores it.</p>
+<h2 id="h-web">Playing in the browser</h2><ul>
+<li>The Map window is the game's own 800×600 screen, scaled up by whole numbers only (sharp pixels). <em>A−</em>/<em>A+</em> on a window's title bar change its zoom or text size; <em>Windows ▾</em> switches between one window and several (map, log, inventory, visible monsters and items) and resets the layout.</li>
+<li>The mouse works as in the original: hover over the status area or the quickbar for details, click the quickbar, right-click to move it.</li>
+<li><strong>Sound</strong> and <strong>Music</strong> in the top bar are off at the start; the game's own volume options are in <kbd>Esc</kbd> → <kbd>1</kbd>.</li>
+<li>Console (text) mode of the desktop version is not available in the browser.</li>
+<li>If the game ever crashes, a message appears at the top; reload the page to continue from the last autosave.</li>
+</ul>
+<h2 id="h-version">About this version</h2><ul><li>Based on <strong>LambdaRogue 1.6.4</strong> by Mario Donick (2012-11-17), source archive <code>LambdaRouge_1.6.4_src.zip</code> from the Google Code archive (<a href="https://code.google.com/archive/p/lambdarogue/downloads">code.google.com/archive/p/lambdarogue</a>).</li><li>Our changes (web backend replacing SDL, auto-explore, stair walking, command menu, inventory cursor and item menus, windows, web build): <a href="https://github.com/memmaker/lambdarogue">github.com/memmaker/lambdarogue</a> (first commit = the untouched source).</li><li>Credits: game, graphics and text by Mario Donick; character photos, sounds and the Creative Commons soundtrack as listed in <code>docs/image credits.txt</code>, <code>sound/sound credits.txt</code> and <code>music/LambdaRogue Soundtrack Credits.txt</code>. Licence GNU GPL v2.</li></ul></div></body></html>

@@ -162,11 +162,13 @@ const sound = {
 	set(s, m) { this.on = !!s; this.musicOn = !!m; this.buttons(); },
 	buttons() { $('btn-sound').classList.toggle('on', this.on); $('btn-music').classList.toggle('on', this.musicOn); },
 	sfx(path, vol) {
+		LR.lastSfx = path;
 		if (!this.on) return;
 		const a = new Audio(path); a.volume = Math.max(0, Math.min(1, vol / 128)); a.play().catch(() => {});
 	},
 	/* the game's Mix_PlayMusic / Mix_HaltMusic (path null); path undefined = the toggle */
 	play(path, loops, vol) {
+		if (path) LR.lastMusic = path;
 		if (path !== undefined) { this.musicName = path; this.loops = loops; this.musicVol = vol; }
 		if (this.music) { this.music.pause(); this.music = null; }
 		if (!this.musicName || !this.musicOn) return;
@@ -174,6 +176,7 @@ const sound = {
 		a.volume = Math.max(0, Math.min(1, (this.musicVol || 64) / 128));
 		a.play().catch(() => {}); this.music = a;
 	},
+	volume(v) { this.musicVol = v; if (this.music) this.music.volume = Math.max(0, Math.min(1, v / 128)); },
 	playing() { return this.music && !this.music.paused && !this.music.ended ? 1 : 0; },
 };
 
@@ -225,6 +228,7 @@ const imports = {
 		wantSave = false; lastSave = now; return 1;
 	},
 	be_sync: () => { persist(); },
+	be_music_vol: v => sound.volume(v),
 	be_hero: (x, y) => { hero.x = x; hero.y = y; fitMap(); },
 };
 function cstr(p) { const b = new Uint8Array(LR.mem.buffer, p); let e = 0; while (b[e]) e++; return new TextDecoder('latin1').decode(b.slice(0, e)); }
@@ -247,5 +251,5 @@ $('btn-restart').onclick = () => location.reload();
 $('btn-sound').onclick = () => { sound.on = !sound.on; sound.buttons(); persist(); };
 $('btn-music').onclick = () => { sound.musicOn = !sound.musicOn; sound.buttons(); sound.play(); persist(); };
 document.querySelectorAll('button').forEach(b => b.addEventListener('mousedown', e => e.preventDefault()));
-window.LR = LR;
+window.LR = LR; LR.sound = sound;
 start({ prepare, imports, onExit: ended, onCrash: crashed }).catch(crashed);

@@ -35,5 +35,6 @@ cp -r graphics sound music "$OUT/"
 cp web/index.html web/lr.js web/lambdarogue.js "$OUT/"
 cp rvip/web/rvip-wm.js rvip/web/rvip-sound.js "$OUT/"
 cp -r web/vendor "$OUT/vendor"
+python3 web/make-help.py > "$OUT/help.html"
 rm -rf web/build
 ls -la "$OUT"

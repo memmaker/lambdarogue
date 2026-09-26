@@ -271,3 +271,33 @@ takes from sibling folders is bundled under `rvip/`:
   Help button needs `help.html` (stage 6 `web/make-help.py`). Beacon
   (step 12), shrine link target and OG tags are later stages.
 - Next: stage 6 (docs + sound).
+
+### Stage 6 — Docs + sound (done in the cloud; Docs page to merge on the Mac)
+- **Sound**: the game's own SDL_mixer calls (`ExternSFX.PlaySFX`,
+  `ExternMusic.PlayMusic`) → `Mix_PlayChannel` / `Mix_PlayMusic` /
+  `Mix_HaltMusic` / `Mix_VolumeMusic` in `port/webbe.pas` → `be_sfx(path,
+  vol)`, `be_music(path, loops, vol)`, `be_music_vol(v)`,
+  `be_music_playing()`. The page (`web/lambdarogue.js` `sound`) plays the
+  game's `sound/*.ogg` and `music/*.ogg` with `Audio` elements. **Top-bar
+  toggles Sound and Music, both off by default**, saved in
+  `web-layout.json`. `web/lambdarogue.cfg` turns the game's music option on
+  (`PlayMusic = True`, `VolumeMusic 64`) so the game names its songs; the
+  in-game volume options still work. (`rvip-sound.js` is loaded but not
+  used: it only plays `.wav` sequences; the game's files are Ogg.)
+- Tested (Chromium): at start both toggles off, the game still sends
+  `music/3.ogg` and `sound/steps.ogg` (on the stairs); after clicking
+  Music + Sound a music `Audio` plays (`paused = false`).
+- **Docs**: `web/docs_entry.py` holds the Docs entry (tagline, About,
+  Tips = the game's own tip-of-the-day list, essentials, complete key list
+  from the game's help screen + z / < > / Enter, new-player guide,
+  "In the browser" part, credits, GPL v2). `web/make-help.py` renders it
+  into `web/dist/help.html` (Help button, run by `web/build.sh`; it prefers
+  `~/Desktop/Games/Roguelikes/Docs` when that exists) and with `--page`
+  into **`docs/web/lambdarogue-docs.html`** (standalone, BOSS help shape).
+  Shot: `web/shots/stage6-help.png`.
+- **Mac side**: add `GAME` / `GUIDE` from `web/docs_entry.py` to
+  `build-docs.py` `GAMES` and `guides.py` `GUIDES` (file
+  `lambdarogue.html`), run `python3 build-docs.py`, rebuild `help.html`.
+- Next: stage 7 (publish: memmaker repo exists already —
+  github.com/memmaker/lambdarogue; README with upstream link and compare
+  view, tree entry, deploy from the Mac).

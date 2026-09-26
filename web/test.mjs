@@ -69,7 +69,7 @@ const lr = {
 	be_screen(w, h) { screenW = w; screenH = h; },
 	be_msg(p, fold) { msgs.push(cstr(p)); if (!quiet || process.argv.includes('-m')) console.log('msg', cstr(p)); },
 	be_pending() { return 0; },
-	be_lists() {}, be_prompt() {}, be_want_save() { return 0; }, be_sync() {}, be_hero() {},  // scripted keys are typed ahead: never a disturbance
+	be_lists() {}, be_prompt() {}, be_want_save() { return 0; }, be_sync() {}, be_hero() {}, be_music_vol() {},  // scripted keys are typed ahead: never a disturbance
 };
 let ev = [0]; const msgs = [];
 const cstr = (p) => { const b = new Uint8Array(mem.buffer, p); let e = 0; while (b[e]) e++; return Buffer.from(b.slice(0, e)).toString('latin1'); };

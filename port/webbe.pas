@@ -267,6 +267,7 @@ procedure be_prompt(s: pchar); external 'lr' name 'be_prompt';
 function be_want_save: longint; external 'lr' name 'be_want_save';
 procedure be_sync; external 'lr' name 'be_sync';
 procedure be_hero(x, y: longint); external 'lr' name 'be_hero';
+procedure be_music_vol(v: longint); external 'lr' name 'be_music_vol';
 function be_pending: longint; external 'lr' name 'be_pending';
 {$ELSE}
 { headless native backend (web/check.sh): random keys, nothing drawn }
@@ -331,6 +332,7 @@ procedure be_prompt(s: pchar); begin end;
 function be_want_save: longint; begin be_want_save := ord(random(500) = 0) end;
 procedure be_sync; begin end;
 procedure be_hero(x, y: longint); begin end;
+procedure be_music_vol(v: longint); begin end;
 function be_pending: longint; begin be_pending := 0 end;
 {$ENDIF}
 
@@ -624,7 +626,11 @@ function Mix_HaltMusic: longint; begin be_music(nil, 0, 0); Mix_HaltMusic := 0 e
 function Mix_PlayingMusic: longint; begin Mix_PlayingMusic := be_music_playing end;
 function Mix_VolumeMusic(volume: longint): longint;
 begin
-  if volume >= 0 then musicvol := volume;
+  if volume >= 0 then
+  begin
+    musicvol := volume;
+    be_music_vol(volume);
+  end;
   Mix_VolumeMusic := musicvol;
 end;
 

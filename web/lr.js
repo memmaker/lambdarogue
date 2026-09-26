@@ -137,7 +137,7 @@ export async function start(opts = {}) {
 		be_title: p => { document.title = cstr(p); },
 		be_msg: (p, fold) => LR.onMsg && LR.onMsg(cstr(p), fold),
 		be_pending: () => LR.events.filter(e => e[0] !== 4).length,
-		be_lists() {}, be_prompt() {}, be_want_save: () => 0, be_sync() {}, be_hero() {},
+		be_lists() {}, be_prompt() {}, be_want_save: () => 0, be_sync() {}, be_hero() {}, be_music_vol() {},
 		be_screen: (w, h) => { LR.screen.width = w; LR.screen.height = h; LR.onScreen && LR.onScreen(w, h); },
 		...(opts.imports || {}),
 	};
