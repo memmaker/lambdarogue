@@ -5,14 +5,14 @@
 # Test: node web/test.mjs "keys"; check: sh web/check.sh; deploy: web/deploy.sh.
 set -e
 cd "$(dirname "$0")/.."
-FPCW=${FPCW:-$HOME/fpc/fpc-wasm/lib/fpc/3.3.1}
+FPCW=${FPCW:-$HOME/Games/fpc-wasm/lib/fpc/3.3.1}
 U=$FPCW/units/wasm32-wasip1
-LLVM=${LLVM:-/usr/bin}
+LLVM=${LLVM:-$(ls -d /opt/homebrew/Cellar/emscripten/*/libexec/llvm/bin | tail -1)}
 OUT=web/dist
 rm -rf "$OUT" web/build && mkdir -p "$OUT" web/build
 "$FPCW/ppcrosswasm32" -Twasip1 -O2 -dWEB -Mobjfpc -Fu"$U/rtl" -Fu"$U/rtl-objpas" -Fu"$U/rtl-extra" -Fu"$U/fcl-base" \
 	-Fuport -FUweb/build -FEweb/build -XP"$LLVM/" -oweb/build/lr.wasm fprl.pas | grep -E "Error|Fatal" && exit 1
-"${WASMOPT:-/usr/bin/wasm-opt}" -O2 --enable-reference-types --enable-bulk-memory --enable-sign-ext --enable-nontrapping-float-to-int \
+"${WASMOPT:-$(command -v wasm-opt)}" -O2 --enable-reference-types --enable-bulk-memory --enable-sign-ext --enable-nontrapping-float-to-int \
 	--enable-mutable-globals --enable-multivalue --asyncify \
 	--pass-arg=asyncify-imports@lr.be_poll,lr.be_sleep,lr.be_image \
 	web/build/lr.wasm -o "$OUT/lr.wasm"

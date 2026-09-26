@@ -1433,6 +1433,7 @@ begin
 
   end;
 
+  {$IFDEF WEB}msg1 := StringReplace(msg1, '[ENTER] or ', '', []);{$ENDIF} // Enter opens the command menu
   LastMessage := '-';
   ShortMessageLog;
 

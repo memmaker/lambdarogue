@@ -1,8 +1,10 @@
 #!/bin/sh
 # The toolchain that built LambdaRogue for the web in the RVIP cloud run
 # (Ubuntu 24.04, 2026-09-26). Every command as run; paths are the cloud VM's.
-# On the Mac: FPC trunk as in RVIP.md A-BOSS (~/Games/fpc-wasm), Emscripten's
-# wasm-ld via -XP, Homebrew binaryen; set FPCW / LLVM / WASMOPT for web/build.sh.
+# On the Mac (2026-09-26, what web/build.sh uses by default): FPC trunk 3.3.1
+# (20e80cb5) as in RVIP.md A-BOSS in ~/Games/fpc-wasm (built from ~/Games/fpc-src),
+# wasm-ld from Homebrew emscripten's LLVM (-XP), wasm-opt from Homebrew binaryen
+# (`brew install binaryen`, 133). Override with FPCW / LLVM / WASMOPT.
 set -e
 
 # 0. The image had two dead PPAs (403) that made every apt run fail:

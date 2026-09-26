@@ -205,7 +205,7 @@ var
         tmp := '-';
         repeat
           tmp := GetTextInput('Enter your name:', 12)
-        until (tmp <> 'ESC') and (tmp <> '-');
+        until (tmp <> 'ESC') and (tmp <> '-') {$IFDEF WEB}and (tmp <> ''){$ENDIF};
       end
       else
       begin
@@ -11607,7 +11607,7 @@ begin
         dummy := '-';
         repeat
           dummy := GetTextInput('Enter your name: ', 12);
-        until (dummy<>'ESC') and (dummy<>'-') and (fileexists(CONST_DATADIR + 'saves/' + dummy + '.lambdarogue') = false);
+        until (dummy<>'ESC') and (dummy<>'-') {$IFDEF WEB}and (dummy<>''){$ENDIF} and (fileexists(CONST_DATADIR + 'saves/' + dummy + '.lambdarogue') = false);
 
         ThePlayer.strName := dummy;
 
