@@ -13,7 +13,7 @@ let code = 0;
 try {
 	const exe = process.env.CHROMIUM || undefined;
 	const browser = await chromium.launch(exe ? { executablePath: exe } : {});
-	const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+	const page = await browser.newPage({ viewport: { width: +(process.env.VW || 1280), height: +(process.env.VH || 800) } });
 	const errors = [];
 	page.on('pageerror', e => errors.push(String(e)));
 	page.on('console', m => { if (m.type() === 'error' && !/favicon|404/.test(m.text())) errors.push(m.text()); });

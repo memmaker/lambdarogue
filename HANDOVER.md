@@ -198,3 +198,30 @@ takes from sibling folders is bundled under `rvip/`:
 - Next: stage 4 (tiles). Decided in stage 1: the game's own sheets, 100%
   coverage; stage 4 = check sprites at cell size and nearest-neighbour
   scaling in the page.
+
+### Stage 4 — Tiles (done)
+- **Tile set**: LambdaRogue's own (the only one; decided in stage 1,
+  `web/tiles-coverage.py`: 100% of 175 drawable codes on all 9 small
+  sheets). Source: `graphics/tiles/tileset-2-small-<m|f>-<soldier|archer|
+  enchanter|thief>.png` (20x40 cells, cell = chr − 32; the player sprite
+  differs per sex/profession), `tileset-2-small-old.png` (old look option),
+  `tileset-2-big-*` (40x80, option "small tiles = False"). Font sheets:
+  `tileset-1.png` (10x20, 4 colour rows), `graphics/extra.png` (7x12 small
+  font, icons, UI pieces).
+- **Loader**: `BaseOutput.pas` `InitGraphics` / `LoadImage_Tiles(prof, sex)`
+  → `IMG_Load` → `be_image(id, path)`; the page (`web/lr.js`) loads the PNG
+  by URL (asyncified wait) and keeps it as a surface; `BigCharXY` blits the
+  cell. Unknown grids are not drawn (black); "halfdark" shading = the
+  sheet's semi-transparent cells blitted on top (alpha blits).
+- **Pref**: `web/lambdarogue.cfg` (packed into `fs.json`): `UseSDL = True`,
+  `SmallTiles = True`, `1024x768 = False` (800x600 screen; the in-game
+  option switches to 1024x768, `be_screen` resizes the canvas).
+- **Scale**: the game draws 1:1 into an 800x600 canvas; the page zooms the
+  canvas by whole numbers with CSS `image-rendering: pixelated`
+  (`imageSmoothingEnabled = false` for blits): nearest-neighbour only.
+  Checked: `web/shots/stage4-tiles-2x.png` (every cell of the soldier sheet
+  at 2x: player, NPCs, monsters, rings, potions, terrain), 
+  `web/shots/stage4-zoom2-crop.png` (in-game at 2x, crisp).
+- Notes: letters J V X Y o q t in the sheet are ornamental glyphs, not
+  sprites; no monster or item uses them (monster letters are all sprites).
+- Next: stage 5 (web page with `rvip/web/rvip-wm.js` windows).

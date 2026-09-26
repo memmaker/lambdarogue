@@ -7,7 +7,7 @@
 <title>LambdaRogue</title>
 <style>
 	html, body { margin: 0; height: 100%; background: #000; color: #ddd; font: 13px system-ui, sans-serif; overflow: hidden; }
-	#screen { display: block; margin: 0 auto; image-rendering: pixelated; max-width: 100vw; max-height: 100vh; }
+	#screen { display: block; margin: 0 auto; image-rendering: pixelated; }
 	#status { position: fixed; left: 50%; top: 40px; transform: translateX(-50%); background: #16161a; padding: 8px 14px; border: 1px solid #333; }
 	#status[hidden] { display: none; }
 	#status.error { color: #f99; border-color: #b44; }
@@ -20,6 +20,14 @@
 import { start, keyEvent, LR } from './lr.js';
 window.LR = LR;
 addEventListener('keydown', keyEvent);
+/* whole-number zoom, nearest-neighbour (RVIP step 4) */
+function fit() {
+	const c = document.getElementById('screen'), s = Math.min(innerWidth / c.width, innerHeight / c.height);
+	const z = s >= 1 ? Math.floor(s) : s;
+	c.style.width = c.width * z + 'px'; c.style.height = c.height * z + 'px';
+}
+addEventListener('resize', fit); fit();
+LR.onScreen = fit;
 start();
 </script>
 </body>

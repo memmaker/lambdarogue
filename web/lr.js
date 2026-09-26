@@ -43,6 +43,7 @@ function frame(p, n) {
 		if (sw <= 0 || sh <= 0) continue;
 		if (img === out) { const t = document.createElement('canvas'); t.width = sw; t.height = sh; t.getContext('2d').drawImage(img, sx, sy, sw, sh, 0, 0, sw, sh); img = t; sx = sy = 0; }
 		const g = out.getContext('2d');
+		g.imageSmoothingEnabled = false;
 		g.globalAlpha = alpha >= 255 ? 1 : alpha / 255;
 		g.drawImage(img, sx, sy, sw, sh, dx, dy, sw, sh);
 		LR.blits++;
@@ -111,6 +112,7 @@ function buildFS(files) {
 /* ---------- run ---------- */
 export async function start(opts = {}) {
 	LR.screen = $('screen'); LR.ctx = LR.screen.getContext('2d');
+	LR.ctx.imageSmoothingEnabled = false;
 	LR.surf[1] = LR.screen;
 	LR.screen.addEventListener('mousemove', e => mouse(4, e));
 	LR.screen.addEventListener('mousedown', e => { e.preventDefault(); mouse(2, e); });
