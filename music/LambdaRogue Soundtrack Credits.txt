@@ -1,0 +1,78 @@
+LambdaRogue Soundtrack (1.4)
+----------------------------
+
+The soundtrack of LambdaRogue consists totally of songs licensed under
+Creative Commons, allowing me to redistribute them freely in noncommercial
+projects.
+
+Note that due to some limitations of the Windows version of mpg123, I had
+to strip all ID3-tags from the MP3 files. Therefore here are the full
+credits (including links to the websites where you can download the songs).
+
+
+Occurence	Song				Artist		Album
+-------------------------------------------------------------------------------------------
+
+Title		The Whisperbox		Nagual Art		A Landscape Built	by Whispers
+
+1		Enter Adoria (I + II)	Nagual Art		Adoria
+
+2		Leviath			Nagual Art		Adoria
+
+3		Theory of the Deep	Nagual Art		Adoria
+
+4		Klangfarben			BLUnderwood		The Lost Symmetry	of the Blastosphere
+
+5		Firefly Hills		BLUnderwood		The Maze of Shadows
+
+6		Traumkristalle		Nagual Art		Adoria
+
+7		Nowhere			Alavaro M. Rocha	Aequo Animo Beta Version
+
+8		Whole of Nothingness	Alavaro M. Rocha	Aequo Animo Beta Version
+
+Death		Ashes to Ashes		BLUnderwood		Ashes To Ashes
+
+Win		Burble			BLUnderwood		Techno Prisoners
+
+
+
+Album Details
+-------------
+
+BLUnderwood - The Lost Symmetry of the Blastosphere
+- http://www.archive.org/details/BLUnderwood_Blasto
+Distributed under CC license Attribution-NonCommercial
+see http://creativecommons.org/licenses/by-nc/2.5/ for details
+
+
+BLUnderwood - Ashes To Ashes
+- http://www.archive.org/details/Blunderwood_ashesToAshes
+Distributed under CC license Attribution 2.0 England & Wales
+see http://creativecommons.org/licenses/by/2.0/uk/ for details
+
+
+BLUnderwood - The Maze of Shadows
+- http://www.archive.org/details/BLUnderwood_The_Maze_of_Shadows
+Distributed under CC license Attribution-NonCommercial
+see http://creativecommons.org/licenses/by-nc/2.5/ for details
+
+
+BLUnderwood - Techno Prisoners
+- http://www.archive.org/details/BLUnderwood_Techno_Prisoners
+Distributed under CC license Attribution 2.0 England & Wales
+see http://creativecommons.org/licenses/by/2.0/uk/ for details
+
+
+Nagual Art - A Landscape Built By Whispers
+- http://www.archive.org/details/plague011
+Distributed under CC license Attribution-NonCommercial-No Derivative Works 3.0
+see http://creativecommons.org/licenses/by-nc-nd/3.0/
+http://www.nagualart.de
+
+
+Nagual Art - Adoria
+- http://www.archive.org/details/plague016
+Distributed under CC license Attribution-NonCommercial-NoDerivs 2.0 Germany
+see http://creativecommons.org/licenses/by-nc-nd/2.0/de/
+http://www.nagualart.de

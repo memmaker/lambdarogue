@@ -1,0 +1,20 @@
+HOW QUESTS WORK AND HOW QUESTS ARE SOLVED
+
+You will soon notice some people (NPCs) in the game who offer you a reward
+if you help them with a certain task. One might, for example, ask you to
+hunt a certain amount of enemies or to find some special treasure. To get
+such a quest, you first have to talk to a NPC and see if he or she tells
+you about it. You may then decide to accept or to reject the quest. If you
+reject a quest, you can come back and accept it later.
+
+After you accepted a quest, you can review a short description of your
+task in your questlog (brought up from status screen or by pressing the
+"questlog"-key, [L] by default). There you'll also find all quests that
+have been accomplished sucessfully; these are marked with a :) smiley.
+
+To solve a quest, you have to perform the required task. If Ahna, for
+example, gives you the quest to find the item "Book of Stars", you have to
+search for that book. If you talk to Ahna again and have the required item
+in your inventory, she will take it and you will be rewarded. The scheme
+"Get Quest from client, solve it, then return to client" is valid for all
+kinds of quests and you should never forget the third step.

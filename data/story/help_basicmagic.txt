@@ -1,0 +1,21 @@
+THE BASICS OF USING MAGIC
+
+Magic is performed by chanting magical spells. These spells are also
+called "songs", and whenever you learn a new song, it is written down in
+your songbook which is shown by pressing the "songbook"-key, [m] by
+default.
+
+To learn or train a song, you must study crystals. Many crystals can be
+bought in libraries, some other crystals must be found or obtained other-
+wise. When you've studied a crystal, the associated song is accessable from
+your songbook. To chant a song (i.e. to cast a spell), you have to select it
+from your songbook. You will then try to chant the song.
+
+Your success depends on your current psychic power (PP) and on the skills
+"Chant" and, for attacking spells, "View". If your PP are below the mini-
+mum PP requirements of a certain spell, it won't be cast at all. If the
+spell is cast and your "Chant"-skill is low, it might fail often. In the
+case of failure, the consumed PP are wasted.
+
+For most songs, you have to be an Enchanter to use them. Only a few are
+open for other professions.

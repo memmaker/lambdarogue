@@ -1,0 +1,122 @@
+Part[1, 1]  := ',g========g';
+Part[1, 2]  := 'g=======ggg';
+Part[1, 3]  := 'gg========g';
+Part[1, 4]  := 'gg=======gg';
+Part[1, 5]  := 'g=======ggt';
+Part[1, 6]  := 'gg=======gg';
+Part[1, 7]  := 'tgg=======g';
+Part[1, 8]  := 'g=======ggg';
+Part[1, 9]  := 'gg=======gg';
+Part[1, 10] := 'g,g=======g';
+Part[1, 11] := 'gg========g';
+
+Part[2, 1]  := 'gg========g';
+Part[2, 2]  := 'g========gg';
+Part[2, 3]  := 'gg=======g,';
+Part[2, 4]  := ',========gg';
+Part[2, 5]  := ',g========g';
+Part[2, 6]  := 'g========t,';
+Part[2, 7]  := 'gg====ggg,,';
+Part[2, 8]  := 'bgg=====g,,';
+Part[2, 9]  := 'gg=====gggg';
+Part[2, 10] := ',gt=====tgg';
+Part[2, 11] := 'ggg=======g';
+
+Part[3, 1]  := 'gtg======gg';
+Part[3, 2]  := ',t======bgg';
+Part[3, 3]  := 'gg======ggt';
+Part[3, 4]  := 'gg=====,gg,';
+Part[3, 5]  := 'g======,,,,';
+Part[3, 6]  := '==========g';
+Part[3, 7]  := '===========';
+Part[3, 8]  := 'gg=========';
+Part[3, 9]  := 'gbbg======g';
+Part[3, 10] := ',,g=====gtg';
+Part[3, 11] := 'g,,g====ggg';
+
+Part[4, 1]  := 't,,======t,';
+Part[4, 2]  := 'tt=======tg';
+Part[4, 3]  := 'tt=======tb';
+Part[4, 4]  := 'gt======,tt';
+Part[4, 5]  := 'tt,======gg';
+Part[4, 6]  := ',tt=====tgt';
+Part[4, 7]  := 'tg=======tt';
+Part[4, 8]  := 'gt======t,g';
+Part[4, 9]  := 'gg=======g,';
+Part[4, 10] := 'tgt=======g';
+Part[4, 11] := 'gg=======gt';
+
+Part[5, 1]  := 'tg,g====tgt';
+Part[5, 2]  := 'tt,gg====tg';
+Part[5, 3]  := 'ttg,gg===tg';
+Part[5, 4]  := 'gtgg===gtgt';
+Part[5, 5]  := ',tg===g,bbg';
+Part[5, 6]  := ',ttg===gtgt';
+Part[5, 7]  := 'tg=gg===gtt';
+Part[5, 8]  := 'gt=g===gtgg';
+Part[5, 9]  := 'ggt=====tgg';
+Part[5, 10] := 'tggb======g';
+Part[5, 11] := 'gg=======gt';
+
+Part[6, 1]  := 'b,t,===,t,,';
+Part[6, 2]  := 'bb,,,,==,,,';
+Part[6, 3]  := 'gb,tt,==,,t';
+Part[6, 4]  := 'bgt,==,,,,g';
+Part[6, 5]  := 'tt,==,,,,,,';
+Part[6, 6]  := ',,,t==,,b,,';
+Part[6, 7]  := ',,===,,,,,g';
+Part[6, 8]  := ',,==,,t,,gg';
+Part[6, 9]  := ',t,==,,t,,g';
+Part[6, 10] := ',,,==,,,,,,';
+Part[6, 11] := 't,====,,,,g';
+
+Part[7, 1]  := 't,,,==g,,,,';
+Part[7, 2]  := ',,b==g,,,,,';
+Part[7, 3]  := ',,t==tg,,g,';
+Part[7, 4]  := 'g,gg==,,ggg';
+Part[7, 5]  := ',,,==,,t,,g';
+Part[7, 6]  := 'g,===b,,,,g';
+Part[7, 7]  := 'g,==,,g,,,,';
+Part[7, 8]  := ',,,===,tg,g';
+Part[7, 9]  := ',,===,,,gg,';
+Part[7, 10] := ',====,b,,t,';
+Part[7, 11] := 'g====,,ggg,';
+
+Part[8, 1]  := 'bgg===gtggg';
+Part[8, 2]  := 'gggb==gtbg,';
+Part[8, 3]  := 'tgbg=gtbtg,';
+Part[8, 4]  := 'tggt=tgbbtg';
+Part[8, 5]  := 'g,gg,=ttbbg';
+Part[8, 6]  := 'gbg,g=,gg,g';
+Part[8, 7]  := ',gbg=g,bggt';
+Part[8, 8]  := ',gg=tgg,gbh';
+Part[8, 9]  := 'ggt=ggggggb';
+Part[8, 10] := 'gggg==ggbg,';
+Part[8, 11] := 'bgggg==thgg';
+
+Part[9, 1]  := 'b,,===,,g,g';
+Part[9, 2]  := 'gggb==gt,g,';
+Part[9, 3]  := ',g======tg,';
+Part[9, 4]  := 't,,,===,btg';
+Part[9, 5]  := 'g,,,,=tt,,,';
+Part[9, 6]  := 'gb,,g=,gg,g';
+Part[9, 7]  := ',g,,g==bggt';
+Part[9, 8]  := ',gg=,tg==bh';
+Part[9, 9]  := 'ggt=g,tg==b';
+Part[9, 10] := 'g,,t====bg,';
+Part[9, 11] := 'bg====,thgg';
+
+Part[10, 1]  := 't,,,==g,,,,';
+Part[10, 2]  := ',,b==g,,,,,';
+Part[10, 3]  := ',,t==tg####';
+Part[10, 4]  := 'g,gg==,#--#';
+Part[10, 5]  := ',,,==,,+--#';
+Part[10, 6]  := 'g,===b,####';
+Part[10, 7]  := 'g,==,,g,,,,';
+Part[10, 8]  := ',,,===,tg,g';
+Part[10, 9]  := ',,===,,,gg,';
+Part[10, 10] := ',====,b,,t,';
+Part[10, 11] := 'g====,,ggg,';
+
+TotalParts := 10;
+

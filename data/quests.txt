@@ -1,0 +1,3562 @@
+# LambdaRogue Quest File
+# - all lines beginning with # are comments
+
+
+#### Level 1 ####
+
+# BEGIN QUEST DLV 1 / NPC 1
+
+DungeonLvl:
+1
+
+NewQuest:
+1
+
+NPC-Name:
+Abbess Ahna
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+IntroPlot:
+9
+
+ExtroPlot:
+4
+
+ExtroBook:
+chapter-2
+
+Text1:
+Thank you, my friend, for helping me. Your quest might last long and it may
+
+Text2:
+be difficult, even dangerous, but in the end it will pay off. Before you go
+
+Text3:
+you should consider visiting some of our traders, in order to prepare.
+
+Text4:
+There are many dangers in the dungeons, and while you should avoid some of
+
+Text5:
+them, this will not be possible every time. So please take care!
+
+Description:
+Abbess Ahna asked you to find the Book of Stars
+
+TextProgress:
+How are you, my friend? You did not find the Book of Stars yet, did you?
+
+TextSolved:
+Unbelievable! You have found the Book of Stars. Now everything will change.
+
+TextFinalVisit:
+I am so grateful! You should talk to Brother Alvin about the space ship.
+
+Reward
+= Plot
+
+RewardNumber:
+2
+
+GetItem:
+Book of Stars
+
+ 
+# BEGIN QUEST DLV 1 / NPC 2
+
+DungeonLvl:
+1
+
+NewQuest:
+2
+
+NPC-Name:
+Sister Shara
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+Text1:
+As you know I'm interested in all kinds of clothes and armour. Both tell us
+
+Text2:
+much about the people of different times. Were they rich or poor? Were they
+
+Text3:
+at war or did they live in peace? This can be revealed by the clothes of the
+
+Text4:
+people. I'm esp. interested in the old Sanguine Cuirass of Ares. They say it
+
+Text5:
+is guarded by Canthra, the dancing demon. Please come to me if you find it!
+
+Description:
+Sister Shara is interested in the Sanguine Cuirass of Ares
+
+TextProgress:
+Nice to see you again. Remember, if you find some old clothes, come to me.
+
+TextSolved:
+This is interesting...inserted in the lining of the cuirass was a phial...
+
+Reward
+= Item
+
+RewardItem:
+Tears of War
+
+GetItem:
+Sanguine Cuirass of Ares
+
+ 
+# BEGIN QUEST DLV 1 / NPC 3
+
+DungeonLvl:
+1
+
+NewQuest:
+3
+
+IntroBook:
+interlude-conspiracy
+
+NPC-Name:
+Prior Marcus
+
+QuestType
+= Hunt
+
+Text1:
+Thanan, once our best scholar, now disapproves of our codex. He went south to
+
+Text2:
+the altar, to experiment with evocations. We don't know his intentions, but
+
+Text3:
+Thanan must be stopped as soon as possible. *sighs* Once, I heard him talking
+
+Text4:
+to Novice Ian, mentioning a "morning star" and "apostolate". I've got no idea
+
+Text5:
+what this was all about, but Abbess Ahna and myself are very worried.
+
+Description:
+Prior Marcus wants you to stop Thanan's evocation experiments
+
+TextProgress:
+Please act immediately. Thanan's experiments will do no good to the Temple.
+
+TextSolved:
+We found this note in Thanan's room...perhaps it explains a little more.
+
+TextFinalVisit:
+Have you read Thanan's note? You could follow its traces to find out more.
+
+Reward
+= Item
+
+RewardItem:
+Thanan's note
+
+HuntAmount:
+1
+
+TargetName:
+Brother Thanan
+
+ 
+# BEGIN QUEST DLV 1 / NPC 4
+
+DungeonLvl:
+1
+
+NewQuest:
+4
+
+NPC-Name:
+Brother Kandera
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+I am a bowyer, I create bows and crossbows. For a new concept to proof, I
+
+Text2:
+I need some holetoad skin. Of course, these animals are very beautiful and
+
+Text3:
+it's a shame to kill only one of them, but I believe that their skin may
+
+Text4:
+help to produce even better bows and crossbows than before -- easier to
+
+Text5:
+handle, but more precise. I will reward you if you hunt twelve of them.
+
+Description:
+Brother Kandera wants you to hunt 12 holetoads
+
+TextProgress:
+I am eagerly awaiting your return.
+
+TextSolved:
+Take this scroll as a reward. It's just a poem, but I like it very much.
+
+Reward
+= Train
+
+RewardNumber:
+1
+
+NeedProfession:
+4
+
+HuntAmount:
+12
+
+TargetName:
+holetoad
+
+
+# BEGIN QUEST DLV 1 / NPC 5
+
+DungeonLvl:
+1
+
+NewQuest:
+5
+
+NPC-Name:
+Brother Alvin
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+NeedQuest:
+1
+
+ExtroBook:
+chapter-3
+
+Text1:
+Oh, it is you! Ahna told me about your success. It's really nice to meet you
+
+Text2:
+in person! Well, I think you already know about the space ship, the "Valeri".
+
+Text3:
+It seems to be very old, but it may still be able to start and fly. We need,
+
+Text4:
+however, the correct fuel. The Book of Stars mentions a fluid called "Meteor"
+
+Text5:
+as the basis of that fuel. Please, my friend, try to find this fluid for us!
+
+Description:
+Brother Alvin needs "Meteor" to gain fuel for the space ship "Valeri"
+
+TextProgress:
+I know how to gain fuel for the "Valeri", but I need "Meteor for that.
+
+TextSolved:
+Great! Now take this cube with the fuel to the commander of the "Valeri"!
+
+Reward
+= Item
+
+RewardItem:
+Fuel Cube
+
+GetItem:
+Meteor
+
+# BEGIN QUEST DLV 1 / NPC 6
+
+DungeonLvl:
+1
+
+NewQuest:
+6
+
+NPC-Name:
+Novice Ian
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+IntroPlot:
+8
+
+Text1:
+To complete my alchemical experiment, I need several items. It's easy: I need
+
+Text2:
+1 phial of agility and 1 bottle of water. You can get water in the shop. My
+
+Text3:
+experiment also depends on 1 mushroom of each kind. Find mushrooms in the
+
+Text4:
+outskirts. Finally, I need a replacement for my knife which I lost recently
+
+Text5:
+in the caves. Would you be so kind and help me?
+
+Description:
+Ian needs 1 Btl. of Water, 2x1 mushroom, 1 Knife & 1 Ph. of Agility
+
+TextProgress:
+Come back to me when you have the items I asked for.
+
+TextSolved:
+Thank you so much. Now I can concentrate on the experiment again.
+
+Reward
+= Item
+
+RewardItem:
+Clear Potion
+
+GetItem:
+Water,Small mushroom,Big mushroom,Knife,Phial of Agility
+
+NeedProfession:
+2
+
+
+# BEGIN QUEST 1/7
+
+DungeonLvl:
+1
+
+NewQuest:
+7
+
+NPC-Name:
+Sister Arwyn
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+Text1:
+Last year my sister Ragnar moved with her daughter Lassa to the Lost Outpost.
+
+Text2:
+Lassa is a student in archeology and the Lost Outpost offers the best oppor-
+
+Text3:
+tunities for her studies. I warned them about the dangers, but they moved
+
+Text4:
+anyway. Now the inevitable has happened: Lassa has disappeared and Ragnar is
+
+Text5:
+worried. In a letter she asked for help, but I fear I can't do anything...
+
+Description:
+Arwyn is worried about the disappearance of her niece Lassa
+
+TextProgress:
+-
+
+TextSolved:
+-
+
+TextFinalVisit:
+*sigh* :( I really hope Lassa is alright.
+
+NeedQuest:
+8
+
+
+# BEGIN QUEST DLV 1 / NPC 8
+
+DungeonLvl:
+1
+
+NewQuest:
+8
+
+NPC-Name:
+the Postman
+
+QuestType
+= Transport
+
+CharLvl:
+1
+
+Text1:
+Ah...please wait, my friend. Before you go down to the catacombs, please
+
+Text2:
+consider to do me a favor. I'm the postman, coming directly from the Lost
+
+Text3:
+Outpost. I've got an important delivery for Arwyn Kana, but the monsters in
+
+Text4:
+the catacombs have hurt me badly. I think I won't make it in time to Mrs.
+
+Text5:
+Kana. Could you deliver the letter to her?
+
+Description:
+The postman asked you to deliver an important letter to Arwyn Kana
+
+TextProgress:
+Please, hurry. The message is very important.
+
+TextSolved:
+Thank you, my friend. I feel already better. Take this as compensation.
+
+Reward
+= Item
+
+RewardItem:
+Meat
+
+TargetID:
+7
+
+
+# BEGIN QUEST DLV 1 / NPC 9
+
+DungeonLvl:
+1
+
+NewQuest:
+9
+
+NeedQuest:
+3
+
+NPC-Name:
+Grandmaster Olsen
+
+QuestType
+= Hunt
+
+TargetName:
+Python
+
+HuntAmount:
+1
+
+Answer:
+Yes
+
+Text1:
+Pilus, you have come very far. You have gained lots of experience, and when-
+
+Text2:
+ever our order needed your help, you were ready. You are truely worthy to
+
+Text3:
+gain the highest of our honors: Promotion to Primus Pilus, respected as one
+
+Text4:
+of the best of our order. Pass the final test, a fight against Python it-
+
+Text5:
+self -- like men did hundreds of years ago, in the war against the Drekh'Nar.
+
+Description:
+GMs. Olsen will promote you to Primus Pilus once you pass his test
+
+TextProgress:
+Fight, Pilus, fight! Show us that you are worthy to become Primus Pilus.
+
+TextSolved:
+You passed the hardest test we can think of. You're an honor for our order.
+
+TextFinalVisit:
+Read the Scroll of Apoll, if you want to know more about Python.
+
+Reward
+= Diploma
+
+RewardNumber:
+5
+
+NeedDiploma:
+4
+
+NeedProfession:
+5
+
+
+#### Level 2 ####
+
+
+# BEGIN QUEST DLV 2 / NPC 1
+
+DungeonLvl:
+2
+
+NewQuest:
+1
+
+NPC-Name:
+Ct. Clavius
+
+IntroPlot:
+10
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+NeedProfession:
+5
+
+Text1:
+Gardner is hiding somewhere in these catacombs, trying to avoid her fate. I
+
+Text2:
+suggest that you do the job. Find her. Deal with her. You're still a soldier
+
+Text3:
+and able to do the job. Could be a chance for you to finally overcome your
+
+Text4:
+own guilty feelings. If you brought Gardner down, this would not only be
+
+Text5:
+the conclusion to an old case--it would also make you feel better, for sure.
+
+Description:
+Ct. Clavius offered you to judge R. Gardner, the murderer of Aneas
+
+TextProgress:
+Tell me when you have been successful.
+
+TextSolved:
+So you did it...hopefully we all will find peace now.
+
+TextFinalVisit:
+I heard that the Temple of Enoa has a problem with one of their members.
+
+Reward
+= Gold
+
+RewardNumber:
+400
+
+HuntAmount:
+1
+
+TargetName:
+Ronda Gardner
+
+
+# BEGIN QUEST 2/2
+
+DungeonLvl:
+2
+
+NewQuest:
+2
+
+NPC-Name:
+Augustus
+
+QuestType
+= DestroyHive
+
+TargetHive:
+2
+
+Text1:
+One of the things which hardens travelling to the outskirts is the monster's
+
+Text2:
+hive, hidden somewhere in these catacombs. The monsters gather near the hive,
+
+Text3:
+thereby blocking important paths. Many travellers try to avoid the affected
+
+Text4:
+area. However, I've decided to make an end to the problem. You can help me by
+
+Text5:
+destroying the current hive. I will take care of future hives.
+
+Description:
+Destroy the monster's hive in the Catacombs of Enoa
+
+TextProgress:
+Again travellers to the outskirts have been attacked near the hive.
+
+TextSolved:
+Finally. Now I'll take care to prevent the creation of new hives.
+
+Reward
+= Gold
+
+RewardNumber:
+150
+
+
+# BEGIN QUEST DLV 2 / NPC 3
+
+DungeonLvl:
+2
+
+NewQuest:
+3
+
+NPC-Name:
+Adam
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+The catacombs and sewers are full of antbees. You know, those nasty insects
+
+Text2:
+which spit acid on you and weave all those annoying webs. Well, they're just
+
+Text3:
+animals, but recently their population has increased greatly. They're a danger
+
+Text4:
+for travellers to the lost outpost or to the outskirts of Enoa. Please go
+
+Text5:
+down and hunt at least 20 antbees to make passages safer, for a while.
+
+Description:
+Adam asked you to hunt 20 antbees to make travelling safer
+
+TextProgress:
+So, how many antbees did you kill? Not 20 yet? Well, then come again later.
+
+TextSolved:
+Thank you for helping me. Now travelling will be easier for a while.
+
+Reward
+= Train
+
+RewardNumber:
+1
+
+HuntAmount:
+20
+
+TargetName:
+antbee
+
+# BEGIN QUEST DLV 2 / NPC 4
+
+DungeonLvl:
+2
+
+NewQuest:
+4
+
+NPC-Name:
+Santa
+
+QuestType
+= GetItemset
+
+GetItem:
+Santa's Coat,Santa's Boots,Santa's Cap,Santa's Bag,Santa's Rod
+
+CharLvl:
+1
+
+Text1:
+Ho-ho-ho!! Hail Dionysa to ev-- But wait!! This is just not true. :( Oh, oh,
+
+Text2:
+oh, poor children will be sad. Santa's getting old. Was just relaxing for a
+
+Text3:
+while: It's a long way from icy Noldarur down to this place. When I arrived,
+
+Text4:
+I sat down and lost attention. Suddenly, I saw a little troll. He laughed and
+
+Text5:
+insulted me. I was confused, and then he ran away--with everything I had!!
+
+Description:
+The insulting Krice has hidden Santa's coat, boots, cap, bag, & rod
+
+TextProgress:
+Oh, oh, oh, the little troll has hidden Santa's gear in his hideout.
+
+TextSolved:
+Ho, ho, ho, now I can carry on! Hail, beautiful Dionysa, to everybody!
+
+TextFinalVisit:
+(Santa's busy. He has to catch up the lost time.)
+
+Reward
+= Train
+
+RewardNumber:
+2
+
+
+#### Level 3 ####
+
+
+# BEGIN QUEST DLV 3 / NPC 1
+
+DungeonLvl:
+3
+
+NewQuest:
+1
+
+NPC-Name:
+Chan
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+IntroPlot:
+3
+
+Text1:
+Here's my suggestion: Perhaps you know that the Book of Stars is Yron's Major
+
+Text2:
+Book. Yron also wrote four Minor Books: The Book of Love, the Book of Hate,
+
+Text3:
+the Book of Joy, and the Book of Tears. Some years ago my master told me that
+
+Text4:
+you need to combine certain parts of the Minor Books in order to create the
+
+Text5:
+Major Book, and he also showed me how to do this. I would do this for you.
+
+Description:
+Chan will combine the four Minor Books of Yron to the Book of Stars
+
+TextProgress:
+If you have all four minor books, come back to me. Then I will help you.
+
+TextSolved:
+I have now combined the relevant pages---the Book of Stars is yours...
+
+Reward
+= Item
+
+RewardItem:
+Book of Stars
+
+GetItem:
+Book of Joy,Book of Tears,Book of Love,Book of Hate,Book of Hate
+
+
+# BEGIN QUEST 3/2
+
+DungeonLvl:
+3
+
+NewQuest:
+2
+
+NPC-Name:
+Tamara and Samuel
+
+QuestType
+= GetItem
+
+GetItem:
+Bridal Flowers
+
+CharLvl:
+1
+
+IntroBook:
+interlude-a
+
+Text1:
+We want to marry soon, but we still have not received our bridal flowers.
+
+Text2:
+We asked two of our friends to make suggestions for the bouquet, but they did
+
+Text3:
+not answer yet. Perhaps they have their own trouble, but we rely on them.
+
+Text4:
+Would you mind to go and remind them? One of our friends is called Amaro, the
+
+Text5:
+other Roslin. Both of them live down in the Lost Outpost.
+
+Description:
+Tamara and Samuel are in urgent need of Tamara's bridal flowers
+
+TextProgress:
+(Tamara and Samuel are busy with several preparations for their marriage.)
+
+TextSolved:
+How beautiful! (Tamara smiles happily.) Thank you so much!
+
+Class:
+1
+
+Reward
+= Item
+
+RewardItem:
+Heart of Aphrodite
+
+
+# BEGIN QUEST DLV 3 / NPC 3
+
+DungeonLvl:
+3
+
+NewQuest:
+3
+
+CharLvl:
+1
+
+NPC-Name:
+Marksman Vincent
+
+QuestType
+= GetGold
+
+GetGold:
+1500
+
+Text1:
+You! Stop! Where are you going? You want to speak to the Sergeant? Getting a
+
+Text2:
+promotion, I guess? Pah. I am working as archer since 30 years, and was I
+
+Text3:
+ever promoted to something more than marksman? Why should you do better than
+
+Text4:
+me? *spits on the ground* Anyway... the Sergeant is busy. Very busy. Unless
+
+Text5:
+you do me a little favor. *grins* You see, ammu is so expensive these days...
+
+Description:
+Vincent won't let you talk to Sg. Leonard until you paid 1500 Cr.
+
+TextProgress:
+I fear the Sergeant is still busy. Have you thought about my modest request?
+
+TextSolved:
+Well. So I guess the Sergeant will be available for you now. *mumbles*
+
+TextFinalVisit:
+You again? Still not content, "lieutenant"? Pah! *spits* Leave me alone.
+
+Reward
+= Nothing
+
+NeedProfession:
+4
+
+NeedDiploma:
+17
+
+
+# BEGIN QUEST DLV 3 / NPC 4
+
+DungeonLvl:
+3
+
+NewQuest:
+4
+
+CharLvl:
+5
+
+NPC-Name:
+Sergeant Leonard
+
+QuestType
+= Transport
+
+Text1:
+*mumbles* ... what? Ah. You. Vincent told me you're here to get your final
+
+Text2:
+promotion, but I have more problems than that. One example: The library as-
+
+Text3:
+sistant wants me to return a book on archery I lent a while ago, but I'm sooo
+
+Text4:
+busy that I always forget about it. Deliver the book for me. When you are
+
+Text5:
+back, we will perfom the promotion ceremony. A short version of it, at least.
+
+Description:
+Leonard asked you to deliver some books to the library assistant
+
+TextProgress:
+When I look on this table, I still see that book. Weren't you about to go?
+
+TextSolved:
+Thanks for the favor, "lieutenant". And sorry for being so tight-lipped.
+
+Reward
+= Diploma
+
+RewardNumber:
+18
+
+TargetID:
+1
+
+NeedQuest:
+3
+
+NeedProfession:
+4
+
+NeedDiploma:
+17
+
+#### Level 4 ####
+
+# BEGIN QUEST DLV 22 / NPC 4
+
+DungeonLvl:
+4
+
+NewQuest:
+1
+
+NPC-Name:
+Princeps Jonas
+
+QuestType
+= Hunt
+
+TargetName:
+ghost
+
+HuntAmount:
+40
+
+Text1:
+The Lost Outpost and the area around are infested with dozens of ghosts, and
+
+Text2:
+they are more than just a nuisance. During the night, they creep into the
+
+Text3:
+dreams of innocent people and create nightmares. When the people wake up the
+
+Text4:
+next morning, they feel more tired than the day before. The OOS was asked
+
+Text5:
+for help. I want you to redeem at least 40 ghosts from their fate.
+
+Description:
+Princeps Jonas wants you to redeem 40 ghosts in the Lost Outpost
+
+TextProgress:
+Even I could not sleep tonight.
+
+TextSolved:
+Hopefully there will be less ghosts from now on. But somehow I doubt it.
+
+TextFinalVisit:
+These ghosts are a real plague. I wonder what's responsible for them.
+
+Reward
+= Diploma
+
+RewardNumber:
+3
+
+NeedDiploma:
+2
+
+NeedProfession:
+5
+
+
+#### Level 5 ####
+
+# BEGIN QUEST DLV 5 / NPC 1
+
+DungeonLvl:
+5
+
+NewQuest:
+1
+
+NPC-Name:
+Princeps Ania
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+Some years ago, the weapon smith was cursed by the Dark Cult of Eris. Now his
+
+Text2:
+mind is dark, shadowed, and he has gone mad. He was not a bad man, but now
+
+Text3:
+he is a danger to all of us. Many have tried to kill him, but nobody
+
+Text4:
+was successful. You can prove yourself by eliminating this threat. I will
+
+Text5:
+promote you to the rank of Centurio afterwards.
+
+Description:
+Princeps Ania ordered you to kill the mad weapon smith
+
+TextProgress:
+Liberate the people of this area from the weapon smith and get promoted.
+
+TextSolved:
+You served us well. You are herewith granted the rank "Centurio".
+
+Reward
+= Diploma
+
+RewardNumber:
+1
+
+HuntAmount:
+1
+
+TargetName:
+Weapon Smith
+
+NeedProfession:
+5
+
+
+# BEGIN QUEST DLV 5 / NPC 2
+
+DungeonLvl:
+5
+
+NewQuest:
+2
+
+NPC-Name:
+Nina
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+Text1:
+My husband Daniel lives far away, down in the Caves. He's working there
+
+Text2:
+to fertilize the ground. I see him only twice a year. I miss him so much. He
+
+Text3:
+usually writes letters, but I did not receive anything in the last weeks.
+
+Text4:
+Please try to find him and see if everything is okay. If you can, ask him
+
+Text5:
+to give you a letter for me...a small sign that he is okay.
+
+Description:
+Nina yearns for a letter by Daniel who is working in the Caves
+
+TextProgress:
+I miss Daniel so deeply. I even can't sleep at night.
+
+TextSolved:
+Thank you for delivering me this letter. Better than any postman.
+
+Reward
+= Item
+
+RewardItem:
+Book of Love
+
+GetItem:
+Letter from Daniel
+
+
+# BEGIN QUEST 5/3
+
+DungeonLvl:
+5
+
+NewQuest:
+3
+
+NPC-Name:
+Ragnar Kana
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+IntroPlot:
+15
+
+Text1:
+I'm worried about the disappearence of Lassa. I would be happy if she sent
+
+Text2:
+me just a sign that she's okay and that nothing dangerous has happened.
+
+Text3:
+Perhaps she's only busy with her studies. Would you mind to ask her mentor
+
+Text4:
+for some information? I believe his name is Zimmerman. He's a professor
+
+Text5:
+who supports Lassa during her exams. He knows her work and might help us.
+
+Description:
+Ragnar asked you to talk with Prof. Zimmerman about Lassa
+
+TextFinalVisit:
+Did you already talk to Prof. Zimmerman? I'm sure he can help us.
+
+TextProgress:
+-
+
+TextSolved:
+-
+
+# BEGIN QUEST 5/4
+
+DungeonLvl:
+5
+
+NewQuest:
+4
+
+NPC-Name:
+Prof. Leo Zimmerman
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+ExtroPlot:
+17
+
+Text1:
+I think Lassa was on the prowl for something, but ignoring the dangers. That
+
+Text2:
+is the way she works. While she excels in most classes, she always criticized
+
+Text3:
+the lectures concerning the dangers of archeology. The last time I saw her she
+
+Text4:
+talked about a crystal. She thinks the crystal encloses old powers from the
+
+Text5:
+time before the war. She left to the old maze, to search for the crystal.
+
+Description:
+Lassa went to the Old Maze to search for an old crystal
+
+TextProgress:
+If you find out anything, please let me know. I'm as worried as her mother.
+
+TextSolved:
+So this crystal really exists. It looks very old, indeed. Let me have a look!
+
+TextFinalVisit:
+Offering the crystal on the Temple's altar might open a portal.
+
+GetItem:
+Crystal of "Revenge"
+
+Reward
+= Item
+
+RewardItem:
+Crystal of "Revenge"
+
+NeedQuest:
+3
+
+# BEGIN QUEST 5/5
+
+DungeonLvl:
+5
+
+NewQuest:
+5
+
+NPC-Name:
+Pythia
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+Text1:
+I'm so in love, with Rosegarden, a passionate beautiful man. Unfortunately
+
+Text2:
+he's not in love with me. Oh, how often I think about his extremely seductive
+
+Text3:
+fragrance! I'd like to have some of it, just for the sake of dreaming of
+
+Text4:
+him. I see that you are a messenger of Aphrodite---perhaps you could help
+
+Text5:
+me? However, you'd only do it for the honor; I can't pay you with money.
+
+Description:
+Pythia wants to get a sample of Rosegarden's seductive perfume
+
+TextProgress:
+(Pythia is dreaming of Rosegarden and does not want to be disturbed.)
+
+TextSolved:
+(Pythia takes a deep breath of the perfume, then sighs.) Thank you! :-)
+
+GetItem:
+Rosegarden's seductive perfume
+
+Reward
+= EXP
+
+RewardNumber:
+250
+
+NeedQuest:
+2
+
+Class:
+1
+
+# BEGIN QUEST 5/6
+
+DungeonLvl:
+5
+
+NewQuest:
+6
+
+NPC-Name:
+Rosegarden
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+Text1:
+A visitor? I'm very sorry, but I do not have time for you. I have a really big
+
+Text2:
+problem. See, yesterday I met a young woman. Her name is Nina and she is just
+
+Text3:
+wonderful. Such a delightful smile. I want to be attractive to her, but my
+
+Text4:
+perfume is out. The fragrance is created by Grenouille, a good chemist down
+
+Text5:
+in the dungeons. Please, could you get a flacon for me? I'll pay 250 Credits.
+
+Description:
+Rosegarden needs to get a flacon of his perfume
+
+TextProgress:
+(Rosegarden stares melancholicly at the wall, longing for Nina.)
+
+TextSolved:
+Oh, I am so very thankful for your help. Now Nina surely will admire me.
+
+GetItem:
+Rosegarden's seductive perfume
+
+Reward
+= Gold
+
+RewardNumber:
+250
+
+NeedQuest:
+2
+
+Class:
+1
+
+
+# BEGIN QUEST 5/7
+
+DungeonLvl:
+5
+
+NewQuest:
+7
+
+NPC-Name:
+Amaro
+
+QuestType
+= GetItemset
+
+GetItem:
+First Verse,Second Verse,Third Verse,Fourth Verse,Fourth Verse
+
+CharLvl:
+1
+
+Text1:
+I saw you talking to my sister Pythia and presenting her that flacon. Was
+
+Text2:
+it that perfume again? Oh dear. I have to tell you that Rosegarden isn't
+
+Text3:
+interested in Pythia. Instead, he casts a covetous eye on Nina---as do I.
+
+Text4:
+Like me, she loves poems. Recently I read about a poet supposed to live in
+
+Text5:
+the Forgotten Realm. I'd like to present Nina one of his poems one day...
+
+Description:
+Amaro wants to present Nina a poem of the Forgotten Realm's poet
+
+TextProgress:
+(Amaro is distrustfully watching Rosegarden's dirty passes at Nina.)
+
+TextSolved:
+Oh! This is really a poem from the Forgotten Realm? Thank you, my friend.
+
+NeedQuest:
+5
+
+Reward
+= Bridal Flowers
+
+
+# BEGIN QUEST 5/8
+
+DungeonLvl:
+5
+
+NewQuest:
+8
+
+NPC-Name:
+Roslin
+
+QuestType
+= GetItem
+
+GetItem:
+Beautiful Notebook
+
+CharLvl:
+1
+
+Text1:
+Do you see this book? This is the most recent part of my diary. I used to
+
+Text2:
+write it regularly, but now I've run out of notebooks. And using single
+
+Text3:
+sheets of paper is simply not the same. However, you're here because of
+
+Text4:
+Tamara's and Samuel's bridal flowers, right? *sigh* I'm on it. Listen, I'll
+
+Text5:
+prepare the bridal bouquet while you find a notebook somewhere -- okay?
+
+Description:
+Roslin's diary is full; she needs a new notebook as replacement
+
+TextProgress:
+Sorry, the bridal bouquet is not ready yet.
+
+TextSolved:
+Oh, this notebook looks old...still it's beautiful. Here are the flowers.
+
+NeedQuest:
+6
+
+Reward
+= Item
+
+RewardItem:
+Bridal Flowers
+
+# BEGIN QUEST 5/9
+
+DungeonLvl:
+5
+
+NewQuest:
+9
+
+NPC-Name:
+Pilus Georgias
+
+QuestType
+= DestroyHive
+
+TargetID:
+5
+
+NeedDiploma:
+3
+
+NeedProfession:
+5
+
+Text1:
+Hastatus! Wait! You surely have heard of (and perhaps even seen) monster's
+
+Text2:
+hives. A citizen told me about a hive in the catacombs of Enoa, and it seems
+
+Text3:
+the Lost Outpost has a similar problem, except that our hive is even bigger
+
+Text4:
+and attracts more enemies. I order you to destroy the Lost Outpost's hive!
+
+Text5:
+You'll be promoted to Princeps afterwards. Good luck.
+
+Description:
+Destroy the monster's hive in the Lost Outpost and return to Pilus Georgias
+
+TextProgress:
+Hastatus, carry out my order immediatly!
+
+TextSolved:
+Good work, Hastatus. Or from now on: Princeps! *smiles* Congratulations.
+
+Reward
+= Diploma
+
+RewardNumber:
+4
+
+
+#### Level 6 ####
+
+
+# BEGIN QUEST DLV 6 / NPC 1
+
+DungeonLvl:
+6
+
+NewQuest:
+1
+
+NPC-Name:
+Tony Capresi
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+IntroPlot:
+11
+
+IntroBook:
+interlude-b
+
+Text1:
+The Godfather is currently busy. However, I think you can prove your, well,
+
+Text2:
+serious interest in our family business by doing us a favor. Have you ever
+
+Text3:
+been to the stores in the lost outpost? From time to time they sell a set
+
+Text4:
+of rather expensive weapons and armor, manufactured by Adrian Smith.
+
+Text5:
+Buy or..."acquire" a complete set and deliver it to me.
+
+Description:
+Tony asked you to "acquire" a complete Combat Gear by Adrian Smith
+
+TextProgress:
+Come back to me when you are ready.
+
+TextSolved:
+Thanks. Ah, Luca was searching for you. Perhaps you should visit her.
+
+Reward
+= Diploma
+
+RewardNumber:
+13
+
+GetItem:
+Smith's Crossbow,Smith's Bolts,Smith's Armour,Smith's Cap,Smith's Blade
+
+NeedProfession:
+3
+
+
+# BEGIN QUEST DLV 6 / NPC 2
+
+DungeonLvl:
+6
+
+NewQuest:
+2
+
+NPC-Name:
+Luca, the bartender
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+Text1:
+So, you're the new guy in our family? Tony told me about you. He also told me
+
+Text2:
+that you already worked for us in the past. I'm Luca, I'm the bartender---no,
+
+Text3:
+wait, I am the bar; as long everything runs without problems. Well, today we
+
+Text4:
+have a problem---beer's out, cola's out, everything's out! Get me at least
+
+Text5:
+one bottle of beer, cola, coffee, and water, as well as a piece of cake.
+
+Description:
+Luca needs 1 Beer, 1 Cola, 1 Coffee, 1 Cake and 1 Bottle of Water
+
+TextProgress:
+Are you still here? Go get the beer! And hurry!
+
+TextSolved:
+Just in time. The client is already on his way
+
+Reward
+= Nothing
+
+GetItem:
+Beer,Cola,Coffee,Cake,Water
+
+NeedProfession:
+3
+
+NeedQuest:
+1
+
+# BEGIN QUEST DLV 6 / NPC 3
+
+DungeonLvl:
+6
+
+NewQuest:
+3
+
+NPC-Name:
+Lui
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+Text1:
+Hey, I'm Lui. Well, you're getting closer to the big boss of the family. How-
+
+Text2:
+ever, currently it's me who needs some assistance. Perhaps Luca or Tony have
+
+Text3:
+told you that we are currently expanding our drug sales, especially for Vita-
+
+Text4:
+ri. We also test some modifications, depending on some ingredients. Get me an
+
+Text5:
+Amphetamine, a Phial of Agility, a Dust, an Aspirin and a Cola.
+
+Description:
+Lui needs 1 Amphetam., 1 Ph. of Agility, 1 Dust, 1 Aspirin & 1 Cola
+
+TextProgress:
+I am busy. Come back later.
+
+TextSolved:
+Ah. Great! Here's a small sample of the good stuff: Hard Vitari.
+
+Reward
+= Item
+
+RewardItem:
+Hard Vitari
+
+GetItem:
+Amphetamine,Phial of Agility,Dust,Aspirin,Cola
+
+NeedProfession:
+3
+
+NeedQuest:
+2
+
+# BEGIN QUEST DLV 6 / NPC 4
+
+DungeonLvl:
+6
+
+NewQuest:
+4
+
+NPC-Name:
+Silvio Capresi, the Godfather
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+IntroPlot:
+12
+
+Text1:
+I am really annoyed by Benito Leone, he is a threat to my business. It is so
+
+Text2:
+difficult to keep his activities in check. Tony is thinking about a way to
+
+Text3:
+constrain Benito, but I fear this won't be enough. You know Tony. He's such a
+
+Text4:
+peaceful man. He always wants to talk with everybody, convince them by rea-
+
+Text5:
+son instead of force. Ah, I wish I knew somebody with less qualms...*sigh*
+
+Description:
+Silvio Capresi is annoyed by Benito Leone
+
+TextProgress:
+Come back to me when you are ready.
+
+TextSolved:
+Thanks and well done. You may now call yourself "Assassin".
+
+Reward
+= Diploma
+
+RewardNumber:
+11
+
+HuntAmount:
+1
+
+TargetName:
+Benito Leone
+
+NeedProfession:
+3
+
+NeedQuest:
+3
+
+# BEGIN QUEST DLV 6 / NPC 5
+
+DungeonLvl:
+6
+
+NewQuest:
+5
+
+NPC-Name:
+Francesca Leone
+
+QuestType
+= Transport
+
+CharLvl:
+1
+
+Text1:
+You! You really have the guts to come to me after all that you have done?
+
+Text2:
+Don't tell me you don't recognize me! I'm Francesca, Benito's sis! Got it?
+
+Text3:
+Believe me, if I was such a fucking asshole like the Capresis, I would rip
+
+Text4:
+your lungs out of you, throwing it on the stinking body of your boss! Go
+
+Text5:
+tell him that he's a dead man if he does not leave this place immediately!
+
+Description:
+Francesca Leone told you to deliver a message to the Godfather
+
+TextProgress:
+Fuck you, son of a bitch!
+
+TextSolved:
+So, what next? I've got nothing more to say to you. Leave. Now!
+
+TextFinalVisit:
+Leave. Me. Alone.
+
+Reward
+= Plot
+
+RewardNumber:
+24
+
+TargetID:
+4
+
+NeedProfession:
+3
+
+NeedQuest:
+4
+
+# BEGIN QUEST DLV 6 / NPC 6
+
+DungeonLvl:
+6
+
+NewQuest:
+6
+
+NPC-Name:
+Mario
+
+QuestType
+= GetItem
+
+GetItem:
+Book of Stars
+
+CharLvl:
+1
+
+Text1:
+Ah. The Godfather told me about your story with that book. What was its
+
+Text2:
+name? "Book of Light"? Anyway, Silvio will be busy the next weeks, so I'm in
+
+Text3:
+charge for now. Once you have this book, come to me. We'll then talk about
+
+Text4:
+the details of your plan. Ah, it's good to have you back in the family. You
+
+Text5:
+were always the brightest of us. Don't disappoint me, okay?
+
+Description:
+Mario is waiting for you to bring him the "Book of Stars"
+
+TextProgress:
+So, what about this "Book of Fire"? Have you still not found it?
+
+TextSolved:
+So, this is the book? Ah, "Book of Stars". Nice. Expensive gilt edging.
+
+Reward
+= Plot
+
+RewardNumber:
+26
+
+NeedProfession:
+3
+
+NeedQuest:
+5
+
+# BEGIN QUEST DLV 6 / NPC 7
+
+DungeonLvl:
+6
+
+NewQuest:
+7
+
+NPC-Name:
+Orpheus
+
+QuestType
+= GetGold
+
+CharLvl:
+1
+
+Text1:
+Hi there! Together with my brother Crono I run an antique bookstore com-
+
+Text2:
+pany. I tell you, it's a hard job to acquire the best books. Lots of the old
+
+Text3:
+works have been destroyed during the war. However, I just got something
+
+Text4:
+brand new. It's called the "Book of Stars" and it is a really major work. I
+
+Text5:
+want 5.000 credits for it which is a more than reasonable price, I think.
+
+Description:
+Orpheus sells the "Book of Stars" for 5.000 credits
+
+TextProgress:
+Sorry, but you need more credits to buy the "Book of Stars".
+
+TextSolved:
+Thank you. I am proud to sell the book to such a tasteful person.
+
+Reward
+= Item
+
+RewardItem:
+Book of Stars
+
+GetGold:
+5000
+
+NeedProfession:
+3
+
+NeedQuest:
+6
+
+# BEGIN QUEST DLV 6 / NPC 8
+
+DungeonLvl:
+6
+
+NewQuest:
+8
+
+NPC-Name:
+Grenouille
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+Text1:
+I am Grenouille and create seldom fragrances, of course for an adequate
+
+Text2:
+price. Today, however, I have a special offer for you: Get a flacon of my
+
+Text3:
+best perfume just by bringing me a few ingrediences. I only need 1 Bottle
+
+Text4:
+of Water, 1 big mushroom and 1 C# for creating the perfume. So, what do
+
+Text5:
+you say? Are you interested?
+
+Description:
+M. Grenouille needs 1 Bottle of Water, 1 Big mushroom and 1 C#
+
+TextProgress:
+Get me the ingrediences, then you'll get a flacon of my best perfume
+
+TextSolved:
+(Grenouille takes the ingrediences and mixes them.) Here you are.
+
+Reward
+= Item
+
+RewardItem:
+Rosegarden's seductive perfume
+
+GetItem:
+Water,Big mushroom,C#,C#,C#
+
+
+
+#### Level 7 ####
+
+# BEGIN QUEST DLV 7 / NPC 1
+
+DungeonLvl:
+7
+
+NewQuest:
+1
+
+NPC-Name:
+Marco
+
+QuestType
+= GetItemset
+
+CharLvl:
+1
+
+Text1:
+My daughter, Maria, is very interested in our history. She asked me if
+
+Text2:
+I could buy her a copy of The History of Herbstwelt. This is a very great
+
+Text3:
+chronicle in three parts. But look at us---we are poor and have no money.
+
+Text4:
+We are happy if we can afford food and clothes. It is sad to disappoint
+
+Text5:
+my own daughter, isn't it?
+
+Description:
+Marco wants to give his daughter a complete "History of Herbstwelt"
+
+TextProgress:
+If I only could get a copy of this book...Maria would be so happy!
+
+TextSolved:
+Oh, how could I thank you? I haven't much---only this drink...
+
+Reward
+= Item
+
+RewardItem:
+Beer
+
+GetItem:
+History of Herbstwelt (Part 1),History of Herbstwelt (Part 2),History of Herbstwelt (Part 3),History of Herbstwelt (Part 1),History of Herbstwelt (Part 1)
+
+# BEGIN QUEST DLV 8 / NPC 1
+
+DungeonLvl:
+8
+
+NewQuest:
+1
+
+NPC-Name:
+Daniel
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+Text1:
+My name is Daniel and I have a wife. Her name is Nina, perhaps you have met
+
+Text2:
+her somewhere. Since I'm working for the government, I am away from home way
+
+Text3:
+too much. Only letters and one, two visits a year. For weeks I've tried to
+
+Text4:
+find some sheets of paper, but I've simply had no success. I'm sure Nina is
+
+Text5:
+worried already. Could you please spare some sheets for me?
+
+Description:
+For writing to his wife Nina, Daniel needs some sheets of paper
+
+TextProgress:
+(Daniel is preparing an experiment to fertilize the cave's ground.)
+
+TextSolved:
+(30 minutes later) Please deliver this letter to Nina if you meet her.
+
+Reward
+= Item
+
+RewardItem:
+Letter from Daniel
+
+GetItem:
+Sheets
+
+# BEGIN QUEST DLV 9 / NPC 1
+
+DungeonLvl:
+9
+
+NewQuest:
+1
+
+NPC-Name:
+Dr. Franz Maier
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+I'm Dr. Maier, the last of an honored family of pharmacists. For a new
+
+Text2:
+drug I'm inventing I need the extract of flicker's blood. As you might know,
+
+Text3:
+flickers are rather small insectoids, therefore lots of them are needed. I
+
+Text4:
+already own about 40, but I need another 15 to complete my tests. I would
+
+Text5:
+give you a phial of my invention as reward.
+
+Description:
+Dr. Maier offers a new drug in exchange for 15 dead flickers
+
+TextProgress:
+Ah, you again. Are you still hunting the 15 flickers?
+
+TextSolved:
+Thank you so much; your efforts will be cited in my next research paper.
+
+Reward
+= Item
+
+RewardItem:
+Heartbeat
+
+HuntAmount:
+15
+
+TargetName:
+flicker
+
+# BEGIN QUEST DLV 10 / NPC 1
+
+DungeonLvl:
+10
+
+NewQuest:
+1
+
+NPC-Name:
+Crono
+
+QuestType
+= GetGold
+
+CharLvl:
+1
+
+Text1:
+My name is Crono and I sell books. Unfortunately this does not mean that
+
+Text2:
+I could help you in finding the Book of Stars. However, I often get other
+
+Text3:
+great works. Currently I've got a very fine and rare print of the History
+
+Text4:
+of Herbstwelt, at least the first of the three parts. It's bound in leather and
+
+Text5:
+has fine gilt edging. I sell it for 1998 credits -- a fair price, I think.
+
+Description:
+Crono sells the 1st part of the History of Herbstwelt for 1998 Cr.
+
+TextProgress:
+Sorry, but you do not have the 1998 credits for buying this great book.
+
+TextSolved:
+Thank you very much, my friend. You have an excellent taste in books.
+
+Reward
+= Item
+
+RewardItem:
+History of Herbstwelt (Part I)
+
+GetGold:
+1998
+
+
+# BEGIN QUEST DLV 12 / NPC 1
+
+DungeonLvl:
+12
+
+NewQuest:
+1
+
+NPC-Name:
+Bycantion Joseph
+
+QuestType
+= GetItemset
+
+Text1:
+You came down such a long way to seek me? Believer, what do you want from me?
+
+Text2:
+*stares* I can't give you much. I neither have goods, nor do I have money.
+
+Text3:
+*continues to stare* Only my solitude it is which I can share with you. Make
+
+Text4:
+you a true devotee of the Gods. But for this, you need to proof yourself
+
+Text5:
+worthy! How? Finding a set of Drekh'Narian runes MIGHT be enough... *laughs*
+
+Description:
+Show your belief by finding a set of runes for Bycantion Jospeh
+
+TextProgress:
+Are you worthy, believer? Will you join us, or will you leave us?
+
+TextSolved:
+Indeed, you ARE worthy, and now a monk of our order. Welcome in our ranks.
+
+GetItem:
+Rune of Beithe,Rune of hUath,Rune of Muin,Rune of Ailm,Rune of Ailm
+
+Reward
+= Diploma
+
+RewardNumber:
+9
+
+NeedProfession:
+2
+
+NeedDiploma:
+8
+
+
+
+# BEGIN QUEST 16/1
+
+DungeonLvl:
+16
+
+NewQuest:
+1
+
+NPC-Name:
+Novice Anahit
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+Text1:
+*mumble...mumble...* Eeks! WHY are 'ya scaring me? I nearly...and who ARE 'ya
+
+Text2:
+anyway? Nobody is supposed to know about this place! If Zealot Jennifer...or
+
+Text3:
+Priest Wunsolay--yeah, that's even better--if he sees you, he'll be VERY angry
+
+Text4:
+with you. Except...'ya wanna join? Then it's a different thing and 'ya talk to
+
+Text5:
+Jennifer. She takes care of novices. Otherwise...'ya not here at all. *mumble*
+
+Description:
+Talk to Zealot Jennifer to join the Rubyred Apostolate
+
+TextProgress:
+-
+
+TextSolved:
+-
+
+TextFinalVisit:
+Nobody is allowed to know that we're living here.
+
+
+
+# BEGIN QUEST 16/2
+
+DungeonLvl:
+16
+
+NewQuest:
+2
+
+NPC-Name:
+Zealot Jennifer
+
+NeedQuest:
+1
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+Text1:
+Either you're nuts or you really have guts. Coming the long way down, talking
+
+Text2:
+to us. Don't you know we're eating little children??--No? Isn't this one of
+
+Text3:
+the rumors about us? Nonsense. WE love mankind. The Drekh'Nar killed our an-
+
+Text4:
+cestors and forced us underground. But, as the Apostle says, this will soon
+
+Text5:
+come to an end. Well. You look promising. I'll tell Priest Wunsolay about you.
+
+Description:
+Zealot Jennifer told Priest Wunsolay about your presence
+
+TextProgress:
+-
+
+TextSolved:
+-
+
+TextFinalVisit:
+If you really want to join, talk to Priest Wunsolay first.
+
+
+
+# BEGIN QUEST 16/3
+
+DungeonLvl:
+16
+
+NewQuest:
+3
+
+NPC-Name:
+Priest Wunsolay
+
+NeedQuest:
+2
+
+QuestType
+= Answer
+
+Answer:
+myself
+
+CharLvl:
+1
+
+Text1:
+Zealot Jennifer said you want to join the Rubyred Apostolate. Is this really
+
+Text2:
+true? Have you found the One? Are you hearing her longing for your devotion?
+
+Text3:
+Are you dreaming of Eris' beauty while you're asleep and do you think of her
+
+Text4:
+when you're awake? If this is really true, stranger, you may become a novice
+
+Text5:
+of the Apostolate. Just tell me in one word: In whom do you believe?
+
+Description:
+Priest Wunsolay of the Rubyred Apostolate asked in whom you believe
+
+TextProgress:
+Tell me, stranger, in one word, in whom do you believe?
+
+TextSolved:
+So you are indeed one of us! The One loves nothing more than self-esteem.
+
+TextFinalVisit:
+I want you to meet the Patron. He tests all new novices with special tasks.
+
+
+# BEGIN QUEST 16/4
+
+DungeonLvl:
+16
+
+NewQuest:
+4
+
+NPC-Name:
+Patron Merapis
+
+NeedQuest:
+3
+
+QuestType
+= GetItem
+
+GetItem:
+Rubyred Mitra
+
+CharLvl:
+1
+
+Text1:
+So, you're devoting your life to the One? If this is true, you have my res-
+
+Text2:
+pect. We have to check your background, though, to ensure you are really with
+
+Text3:
+us. Not against us like that heretic. He used to be a priest, but he fell in
+
+Text4:
+love with a young student who...did a job for us. The girl changed...his mind.
+
+Text5:
+The heretic ran away, but not without stealing the holy Rubyred Mitra.
+
+Description:
+An heretic priest has stolen the Apostolate's Rubyred Mitra
+
+TextProgress:
+Find and kill the heretic priest, and bring back the Rubyred Mitra to me.
+
+TextSolved:
+Ah, you're back, and you brought the Rubyred Mitra with you. Well done.
+
+TextFinalVisit:
+We checked your background--made the Apostle himself wanting to see you.
+
+RewardType
+= Train
+
+RewardNumber:
+1
+
+
+
+# BEGIN QUEST 16/5
+
+DungeonLvl:
+16
+
+NewQuest:
+5
+
+NPC-Name:
+Apostle Barfaee
+
+NeedQuest:
+4
+
+IntroPlot:
+39
+
+ExtroPlot:
+40
+
+QuestType
+= GetItem
+
+GetItem:
+Northdoom
+
+CharLvl:
+1
+
+Text1:
+To overcome the reign of the Temple of Enoa, we have to be as strong as pos-
+
+Text2:
+sible. Perhaps you know about our past? The holy war between mankind and the
+
+Text3:
+Drekh'Nar? The Drekh'Nar who were sent by the old gods, to plague mankind?
+
+Text4:
+Even then mankind's cause was betrayed. A traitor gave "Northdoom", a very
+
+Text5:
+powerful sword, to the Drekh'Nar. The One wants YOU to find this sword for us.
+
+Description:
+Apostle Barfaee wants you to find the sword "Northdoom"
+
+TextProgress:
+You will receive a truely unique reward if you find "Northdoom" for us.
+
+TextSolved:
+So you really have found Northdoom and didn't use it for yourself!?
+
+TextFinalVisit:
+The One will judge your sins.
+
+Reward
+= SummonMonster
+
+RewardMonster:
+Astaroth
+
+
+# BEGIN QUEST DLV 18 / NPC 1
+
+DungeonLvl:
+18
+
+NewQuest:
+1
+
+NPC-Name:
+Rinahn
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+Stop! Don't go away. You look like a brave person, and I am in the need of
+
+Text2:
+a true hero. If you follow this way to the center of this area, you'll reach
+
+Text3:
+a chamber. In this chamber lives the Krice, a truely unique thing. It is
+
+Text4:
+dangerous, mean, nasty, and most of the time it is insulting the people.
+
+Text5:
+Please take care of him. As reward I will train two of your skills for free.
+
+Description:
+Rinahn wants you to take care of the insulting Krice
+
+TextProgress:
+If you manage to free us from Krice, I will train two of your skills.
+
+TextSolved:
+Thank you. My life will be much easier from now on.
+
+Reward
+= Train
+
+RewardNumber:
+2
+
+HuntAmount:
+1
+
+TargetName:
+Krice
+
+ 
+# BEGIN QUEST DLV 19 / NPC 1
+
+DungeonLvl:
+19
+
+NewQuest:
+1
+
+NPC-Name:
+Narmathal
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+Rumors say you are searching for a book, written by Yron and lost for ages.
+
+Text2:
+And it seems that you are strong and willing enough to make long journeys for
+
+Text3:
+this goal. Well, it's true that I own the probably last copy of this book
+
+Text4:
+and I would give it to you. However, you have to free me first from the
+
+Text5:
+nightmares caused by the mighty Dwarvenfall.
+
+Description:
+Narmathal wishes that you find and kill Dwarvenfall
+
+TextProgress:
+As long as the enemy still wanders around, I'll give nothing to you.
+
+TextSolved:
+I see that Dwarvenfall is gone. So you are worthy to take the book!
+
+Reward
+= Item
+
+RewardItem:
+Book of Hate
+
+HuntAmount:
+1
+
+TargetName:
+Dwarvenfall
+
+
+# BEGIN QUEST DLV 21 / NPC 1
+
+DungeonLvl:
+21
+
+NewQuest:
+1
+
+NPC-Name:
+the Guard of Time
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+IntroPlot:
+27
+
+Text1:
+Currently a Drekh'Nar Ordinator is the master of "Northdoom". If you want
+
+Text2:
+to snatch this sword away from him, you have to fight him. There is no other
+
+Text3:
+way, and most likely you will die in the attempt. Well, in the unlikely
+
+Text4:
+case of your survival, come back to me. Then I will open a portal back to
+
+Text5:
+your own place and time. I wish you good luck---you are in need of it.
+
+Description:
+The sword "Northdoom" is protected by a Drekh'Nar Ordinator
+
+TextProgress:
+You are still alive, eh? This is more than I expected.
+
+TextSolved:
+You are alive and have killed the Drekh'Nar Ordinator! I am impressed!
+
+TextFinalVisit:
+You have nothing more to do in Noldarur. Return to your own time now.
+
+Reward
+= LevelUp
+
+HuntAmount:
+1
+
+TargetName:
+Ordinator
+
+
+
+# BEGIN QUEST DLV 22 / NPC 1
+
+DungeonLvl:
+22
+
+NewQuest:
+1
+
+NPC-Name:
+the Outskirts Guardian
+
+QuestType
+= Hunt
+
+CharLvl:
+5
+
+Text1:
+The outskirts of Enoa are a beautiful place. It is very unusual for an under-
+
+Text2:
+ground area to have wide plains, big forests, lakes, and rivers. Many peaceful
+
+Text3:
+animals from our past have found a haven here. However, since some weeks nows
+
+Text4:
+the animals are threatened by an illegal hunter. He's chasing mainly horses,
+
+Text5:
+selling their meat, fur, and bones. We really have to stop this slaughter.
+
+Description:
+An illegal hunter threatens the animals in the outskirts of Enoa
+
+TextProgress:
+I have heard that the hunter has killed another bunch of animals...
+
+TextSolved:
+Finally! Now the animals can live without fear again. Thank you!
+
+Reward
+= EXP
+
+RewardNumber:
+300
+
+HuntAmount:
+1
+
+TargetName:
+Hunter
+
+
+
+# BEGIN QUEST DLV 22 / NPC 2
+
+DungeonLvl:
+22
+
+NewQuest:
+2
+
+NPC-Name:
+Ranger Hitotsu
+
+QuestType
+= GetResources
+
+CharLvl:
+1
+
+Text1:
+The Temple funded a research project which is now planned and carried out
+
+Text2:
+by the First Enchanter and myself. The Temple is interested in examining and
+
+Text3:
+predicting the growth cycles of the plants and mushrooms near Styx, the
+
+Text4:
+river. Therefore, we're building an observation station. We still need some
+
+Text5:
+resources, mainly wood, metal, stone, and leather, in order to complete it.
+
+Description:
+Hitotsu needs resources (80 wood, 30 metal, 15 stone, 10 leather)
+
+TextProgress:
+Come back to me when you are ready.
+
+TextSolved:
+Thanks! Now we can continue. Please, take my old bow as a small compensation!
+
+Reward
+= Item
+
+RewardItem:
+Hitotsu's Bow
+
+GetResources:
+80,30,15,10,0,0
+
+NeedProfession:
+4
+
+
+# BEGIN QUEST DLV 22 / NPC 3
+
+DungeonLvl:
+22
+
+NewQuest:
+3
+
+NPC-Name:
+Ranger Melvin
+
+QuestType
+= Hunt
+
+CharLvl:
+3
+
+Text1:
+Ah, it's you! *smiles, then sighs* Well, usually I would be really happy
+
+Text2:
+to have a drink with you and talk about the old times, but we are all very
+
+Text3:
+worried. In short: Some of the horses are terminally ill and there is no
+
+Text4:
+cure. To prevent a further spread of the disease we have to reduce the
+
+Text5:
+population, especially of the old horses. Please support us in this task.
+
+Description:
+Relieve 15 old horses from their suffering of the terminal illness
+
+TextProgress:
+The disease has already killed some of the younger horses...
+
+TextSolved:
+You did well. Thus, I am honored to promote you to the rank of "hunter".
+
+Reward
+= Diploma
+
+RewardNumber:
+15
+
+HuntAmount:
+8
+
+TargetName:
+old horse
+
+NeedProfession:
+4
+
+# BEGIN QUEST DLV 22 / NPC 4
+
+DungeonLvl:
+22
+
+NewQuest:
+4
+
+NPC-Name:
+Primus Pilus Antonius
+
+QuestType
+= GetItem
+
+GetItem:
+Mythic Sword
+
+Text1:
+A soldier's most important weapon is the sword. Sure, there are soldiers who
+
+Text2:
+prefer axes or lances. I even would say that archers have their...own, very
+
+Text3:
+different, I guess, kind of honor. BUT there is nothing like a good sword in
+
+Text4:
+capable hands. Recently, I've read about a rare so-called "Mythic" sword. I
+
+Text5:
+really like to know what's so special about it, but I don't have one.
+
+Description:
+PPi. Antonius is searching for a Mythic Sword to examine it
+
+TextProgress:
+Consider this an official task, Princeps. It may well lead to your promotion.
+
+TextSolved:
+So this is the Mythic Sword? Oh. I'm disappointed. It's so...small.
+
+TextFinalVisit:
+After all, the Mythic Sword may be small, but it handles very well.
+
+Reward
+= Diploma
+
+RewardNumber:
+4
+
+NeedDiploma:
+3
+
+NeedProfession:
+5
+
+
+# BEGIN QUEST DLV 22 / NPC 5
+
+DungeonLvl:
+22
+
+NewQuest:
+5
+
+NPC-Name:
+Archmage Hermine
+
+QuestType
+= GetItemset
+
+GetItem:
+holetoad corpse,scorpio corpse,sick rat corpse,sick rat corpse,sick rat corpse
+
+Text1:
+So you finally could make it, eh? It's been a while since you started out in
+
+Text2:
+the path of magic. Have you ever thought of using your skills to protect the
+
+Text3:
+weak and the poor? If so, why not join our ranks and qualify as battlemage?
+
+Text4:
+I will train you in this art, but first you could help me with a little task.
+
+Text5:
+It's easy: I need the corpses of a holetoad, a scorpio, and a sick rat.
+
+Description:
+Archmage Hermine needs corpses of 1 holetoad, 1 scorpio, and 1 sick rat
+
+TextProgress:
+(Archmage Hermine is currently not in her office.)
+
+TextSolved:
+You're back, eh? So ... (30 minutes later) Rejoice: You're "battlemage" now.
+
+Reward
+= Diploma
+
+RewardNumber:
+7
+
+NeedDiploma:
+6
+
+NeedProfession:
+2
+
+
+# BEGIN QUEST DLV 22 / NPC 6
+
+DungeonLvl:
+22
+
+NewQuest:
+6
+
+NPC-Name:
+Ranger Elena
+
+QuestType
+= GetItem
+
+GetItem:
+nightmare corpse
+
+Text1:
+When I went the last time to the Lost Outpost to visit my family, I was sur-
+
+Text2:
+prised by a group of mutated horses. They were bigger and more aggressive than
+
+Text3:
+the horses in the Outskirts. Back then I was not able to fight them and simply
+
+Text4:
+tried to avoid any contact. However, it's an interesting case I want to study.
+
+Text5:
+Please try to get me a corpse of these horses for further investigation.
+
+Description:
+Ranger Elena needs a nightmare corpse for studying
+
+TextProgress:
+I wonder what made these strange horses so aggressive.
+
+TextSolved:
+Well done. Like me, you may now call yourself "ranger".
+
+TextFinalVisit:
+It seems the nightmares had the same illness like the old horses...
+
+Reward
+= Diploma
+
+RewardNumber:
+16
+
+NeedProfession:
+4
+
+NeedDiploma:
+15
+
+
+# BEGIN QUEST DLV 24 / NPC 1
+
+DungeonLvl:
+24
+
+NewQuest:
+1
+
+NPC-Name:
+an old woman
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+Text1:
+Yes, my dear, your eyes are not betraying you. I am the only living person in
+
+Text2:
+these empty halls. They left me behind, you know? Told me I am just an old wo-
+
+Text3:
+man, not able to make the long journey. Journey whereto, I wonder...I heard
+
+Text4:
+some rumors among the novices and the zealots. They talked about getting clo-
+
+Text5:
+ser to the Core--closer to Her, they said. Pah! As if this was ever possible!
+
+Description:
+The Rubyred Apostolate might have moved closer to the Core
+
+TextProgress:
+-
+
+TextSolved:
+-
+
+TextFinalVisit:
+Don't worry about me. The Apostolate is always right, and She will safe me.
+
+
+
+# BEGIN QUEST DLV 25 / NPC 1
+
+DungeonLvl:
+25
+
+NewQuest:
+1
+
+NPC-Name:
+the undead priest
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+Text1:
+I am the former priest of the Undying King. Due to his pact with Eris, he
+
+Text2:
+banned me and the gods from his realm years ago. People soon became filled
+
+Text3:
+with grief and hatred. Eventually they turned undead. However, the king
+
+Text4:
+now mourns his mistake and wants to be freed from the pact. But instead
+
+Text5:
+of killing him, killing Eris is the right way---to redeem all our people!
+
+Description:
+The undead priest told you how to redeem the whole Forgotten Realm
+
+TextProgress:
+-
+
+TextSolved:
+-
+
+
+
+# BEGIN QUEST DLV 25 / NPC 2
+
+DungeonLvl:
+25
+
+NewQuest:
+2
+
+NPC-Name:
+the Riddle Master
+
+QuestType
+= Info
+
+CharLvl:
+1
+
+Text1:
+Once, I was the riddle master of the king...and I also was the best poet in
+
+Text2:
+his realm -- well, the only poet, to be precise, and I can tell you, this was
+
+Text3:
+not easy. Often, the king's mind was infiltrated by Eris, and Eris hates all
+
+Text4:
+beauty. So I stopped to write and stopped to create riddles, but there is one
+
+Text5:
+final poem I won't destroy. I gave its verses to my sons. Don't tell anyone!
+
+Description:
+The riddle master gave verses of his final poem to his sons
+
+TextProgress:
+-
+
+TextSolved:
+Here, take my old notebook. It is beautiful, so I don't need it anymore ...
+
+Reward
+= Item
+
+RewardItem:
+Beautiful Notebook
+
+
+
+# BEGIN QUEST DLV 25 / NPC 3
+
+DungeonLvl:
+25
+
+NewQuest:
+3
+
+NPC-Name:
+John
+
+QuestType
+= Answer
+
+Answer:
+window
+
+CharLvl:
+1
+
+NeedQuest:
+2
+
+Text1:
+Like my brothers, I have a riddle for you. Mine, however, is very
+
+Text2:
+easy. Here it is, listen: "There is an ancient invention, still used in
+
+Text3:
+some parts of the world today that allows people to see through walls.
+
+Text4:
+What is it?" Think about the riddle, then come back to me and just tell
+
+Text5:
+me the name of the thing described in the riddle.
+
+Description:
+"Which ancient invention allows people to see through walls?"
+
+TextProgress:
+Do you still not know the solution to my little riddle?
+
+TextSolved:
+I knew you would not disappoint me. Here is my part of the poem.
+
+Reward
+= Item
+
+RewardItem:
+First Verse
+
+
+
+# BEGIN QUEST DLV 25 / NPC 4
+
+DungeonLvl:
+25
+
+NewQuest:
+4
+
+NPC-Name:
+Ron
+
+QuestType
+= Answer
+
+Answer:
+towel
+
+CharLvl:
+1
+
+NeedQuest:
+2
+
+Text1:
+The riddle I have for you is very short and I am sure that you will solve
+
+Text2:
+it very quickly. Just tell me, "what gets wetter the more it dries?" Think
+
+Text3:
+about the riddle, return to me, tell me the name of the thing described in
+
+Text4:
+the riddle and get your reward -- the riddle master's poem's second verse.
+
+Text5:
+Come back when you're ready.
+
+Description:
+"What gets wetter the more it dries?"
+
+TextProgress:
+Oh, you still don't have the answer? Come on, it's really easy!
+
+TextSolved:
+Well done. Indeed it is a towel. Take the second verse with you.
+
+Reward
+= Item
+
+RewardItem:
+Second Verse
+
+
+
+# BEGIN QUEST DLV 25 / NPC 5
+
+DungeonLvl:
+25
+
+NewQuest:
+5
+
+NPC-Name:
+Fred
+
+QuestType
+= Answer
+
+Answer:
+three
+
+CharLvl:
+1
+
+NeedQuest:
+2
+
+Text1:
+Here is my riddle: "A murderer is condemned to death. He has to choose
+
+Text2:
+between three rooms. The first is full of raging fires, the second is
+
+Text3:
+full of assassins with deadly weapons, and the third is full of lions
+
+Text4:
+that haven't eaten in three years. Which room is safest for him?"
+
+Text5:
+Think about it, return to me and tell me the room's number.
+
+Description:
+"Which room is the safest for the murderer? One, two or three?"
+
+TextProgress:
+Do you still not know which room is safest?
+
+TextSolved:
+Well done. Here is one of the poem's verses for you.
+
+Reward
+= Item
+
+RewardItem:
+Third Verse
+
+
+
+# BEGIN QUEST DLV 25 / NPC 6
+
+DungeonLvl:
+25
+
+NewQuest:
+6
+
+NPC-Name:
+Ned
+
+QuestType
+= Answer
+
+Answer:
+volcano
+
+CharLvl:
+1
+
+NeedQuest:
+2
+
+Text1:
+I am the owner of the fourth verse of the riddle master's poem, and
+
+Text2:
+if you want to have a copy of this verse, you have to answer my short
+
+Text3:
+riddle. "What am I? My thunder comes before my lightning, my lightning
+
+Text4:
+comes before my rain. My rain dries up all the land it touches." Come
+
+Text5:
+back to me whenever you think you have the solution. Then tell me.
+
+Description:
+"Rain follows my lightning, which follows my thunder. What am I?"
+
+TextProgress:
+You are still thinking?
+
+TextSolved:
+You are smarter than I thought. Take verse number four with you.
+
+Reward
+= Item
+
+RewardItem:
+Fourth Verse
+
+# BEGIN QUEST DLV 26 / NPC 1
+
+DungeonLvl:
+26
+
+NewQuest:
+1
+
+NPC-Name:
+Security Chief
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+Text1:
+I am the newly appointed security chief of the "Valeri". The commander
+
+Text2:
+ordered me to get rid of all those ancient robots, but that's rather hard.
+
+Text3:
+They are nearly everywhere, and as the access to this ship is restricted,
+
+Text4:
+I barely have personnel to cope with the robots. I would be very thankful
+
+Text5:
+if you could help me. Destroy 20 model X robots, then return to me.
+
+Description:
+The security chief asked you to destroy 20 model X robots
+
+TextProgress:
+There are still so many robots around ...
+
+TextSolved:
+Thank you. I'd also like to share my lunch with you. Take this sandwich.
+
+Reward
+= Item
+
+RewardItem:
+Sandwich
+
+HuntAmount:
+20
+
+TargetName:
+model X robot
+
+# BEGIN QUEST DLV 27 / NPC 1
+
+DungeonLvl:
+27
+
+NewQuest:
+1
+
+NPC-Name:
+the Commander
+
+QuestType
+= Hunt
+
+CharLvl:
+1
+
+NeedQuest:
+2
+
+Text1:
+I am the commander of the "Valeri". It is a very old ship, and sometimes I
+
+Text2:
+doubt it will fly again. However, as long as this damn android is around,
+
+Text3:
+it surely won't. The android is blocking our access to many important ship
+
+Text4:
+functions; the android must be some kind of security system. So even with
+
+Text5:
+the meteor fuel, we can't start. You first have to take out that android.
+
+Description:
+The commander ordered you to destroy the Abandoned Android
+
+TextProgress:
+As long as the android is still running, this ship won't go anywhere
+
+TextSolved:
+Great work! By the way, the weapons officer was looking for you!
+
+Reward
+= EXP
+
+RewardNumber:
+500
+
+HuntAmount:
+1
+
+TargetName:
+Abandoned Android
+
+# BEGIN QUEST DLV 27 / NPC 2
+
+DungeonLvl:
+27
+
+NewQuest:
+2
+
+NPC-Name:
+Chief Engineer
+
+QuestType
+= GetItem
+
+CharLvl:
+1
+
+Text1:
+Hello there. You must be the one with my precious delivery, right? The fuel
+
+Text2:
+cube? Once I have loaded the engines of the "Valeri" with the fuel of the
+
+Text3:
+cube, we should have enough power to get this baby flying...Although it
+
+Text4:
+COULD be a good idea to first blow up the caves above us. You should talk
+
+Text5:
+to the weapons officer about that. After you gave me the fuel, of course.
+
+Description:
+The chief engineer needs the fuel cube to start the engines
+
+TextProgress:
+You already had that fuel cube, hadn't you?
+
+TextSolved:
+Exactly what I needed! Now you should talk to the commander.
+
+GetItem:
+Fuel Cube
+
+Reward
+= EXP
+
+RewardNumber:
+100
+
+
+# BEGIN QUEST DLV 27 / NPC 3
+
+DungeonLvl:
+27
+
+NewQuest:
+3
+
+NPC-Name:
+Weapons Officer
+
+QuestType
+= Answer
+
+Answer:
+DX57AC01
+
+CharLvl:
+1
+
+NeedQuest:
+1
+
+Text1:
+I am so excited! I always listened to the speeches of Ahna, about the sky and
+
+Text2:
+the stars. Finally I might be able to get out of these caves. However, first
+
+Text3:
+we have to destroy the surrounding caves, because the rock hinders this ship
+
+Text4:
+to start. I'm working on the Valeri's weapon systems, but they are protected
+
+Text5:
+with a password. You do not have an idea what the password might be, do you?
+
+Description:
+The weapons officer is searching the password for the weapon systems
+
+TextProgress:
+I still have no idea...what could the password be?
+
+TextSolved:
+The password worked! Did you get this from the android you destroyed?
+
+Reward
+= WinGame
+

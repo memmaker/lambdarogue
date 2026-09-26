@@ -1,0 +1,21 @@
+FIGHTING MONSTERS IN MELEE- AND LONG-RANGE BATTLE
+
+There are two possibilities to attack an enemy: Either attack it in melee
+combat, or keep distant and attack it with a long-range weapon, like bow
+or crossbow.
+
+To attack in melee, just walk into the direction of the enemy. If you're
+next to the enemy, you will attack it. Watch the status lines at the
+bottom of the screen to get information on your attacks, e.g. if you miss
+the enemy, or if you hit it very hard, or if you do no damage at all, or
+how many HP (health) the enemy has left. If the enemy's HP is 0, you have
+killed the enemy and won the battle.
+
+To attack from a greater distance, you need to equip a long-range weapon
+first. Then press the "fire"-key, [f] by default. Then press a direction
+key to shoot into the given direction. You need ammunition suited for your
+current weapon (if you have more than one suited ammo type in your inven-
+tory, the first one will be used; you should sort items accordingly).
+
+It depends highly on your View-skill how far you can shoot and how often
+your attack will miss. Train the skill well if you plan to use bows often!

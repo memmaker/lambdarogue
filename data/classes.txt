@@ -1,0 +1,64 @@
+# LambdaRogue religions
+
+
+NewClass:
+Aphrodite
+
+AffectedStatus
+= PP
+
+AffectedSkill
+= Chant
+
+
+####################
+
+
+NewClass:
+Hermes
+
+AffectedStatus
+= EXP
+
+AffectedSkill
+= Burgle
+
+
+###################
+
+
+NewClass:
+Apoll
+
+AffectedStatus
+= Gold
+
+AffectedSkill
+= View
+
+
+###################
+
+
+NewClass:
+Dionysa
+
+AffectedStatus
+= Hunger
+
+AffectedSkill
+= Move
+
+
+##################
+
+
+NewClass:
+Ares
+
+AffectedStatus
+= HP
+
+AffectedSkill
+= Fight
+

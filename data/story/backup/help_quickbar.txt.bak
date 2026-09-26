@@ -1,0 +1,22 @@
+CONFIGURING THE QUICKBAR
+
+Using the quick bar (or action bar), you can easily access chants (spells),
+potions and food by pressing one of the function keys, [F1] to [F12]. These
+keys are referred to as "quick keys".
+
+The bar is shown on the top of the screen; the exact position depends on the
+selected resolution (800x600 or 1024x768). You can move the bar to any posi-
+tion by right-clicking on the desired position. To move it to the default po-
+sition, open the quick key list (press [C] by default), then press [r].
+
+To bind potions or food to a quick key, open the inventory (by pressing [i]
+by default). Press the quick key you want to use. You are then asked to enter
+the number of the item.
+
+To bind chants to a quick key, open the songbook (press [m] by default). Then
+press the quick key you want to use. Finally, enter the number of the chant
+you want to bind to the key.
+
+To delete bindings, open the quick key list (press [C] by default). Press the
+quick key which should be resetted.
+

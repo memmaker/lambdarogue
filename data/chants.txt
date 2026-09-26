@@ -1,0 +1,635 @@
+#1
+NewChant:
+Flame
+
+Description:
+A flame of fire is thrown to the enemy
+
+Icon:
+8
+
+EffectType
+= Fire
+
+CharLvl:
+1
+
+EffectRange:
+10
+
+
+#2
+NewChant:
+Fastflame
+
+Description:
+A flame of fire is thrown to the enemy
+
+Icon:
+22
+
+EffectType
+= Fire
+
+CharLvl:
+2
+
+EffectRange:
+10
+
+
+#3
+NewChant:
+Campfire
+
+Description:
+The enemy is attacked with a bunch of fire flames
+
+Icon:
+8
+
+EffectType
+= Fire
+
+CharLvl:
+6
+
+EffectRange:
+20
+
+
+#4
+NewChant:
+Firebolt
+
+Description:
+A strong bolt of fire is casted on the enemy
+
+Icon:
+8
+
+EffectType
+= Fire
+
+CharLvl:
+8
+
+EffectRange:
+40
+
+
+#5
+NewChant:
+Inferno
+
+Description:
+Sets the environment on fire
+
+Icon:
+4
+
+EffectType
+= FireAura
+
+CharLvl:
+14
+
+EffectRange:
+25
+
+
+#6
+NewChant:
+Cold
+
+Description:
+Attacks an enemy with snow and ice
+
+Icon:
+9
+
+EffectType
+= Ice
+
+CharLvl:
+1
+
+EffectRange:
+8
+
+
+#7
+NewChant:
+Blitzeis
+
+Description:
+Ice is thrown quickly on the enemy
+
+Icon:
+21
+
+EffectType
+= Ice
+
+CharLvl:
+3
+
+EffectRange:
+8
+
+
+#8
+NewChant:
+Icebolt
+
+Description:
+A strong bolt of ice is casted on the enemy
+
+Icon:
+9
+
+EffectType
+= Ice
+
+CharLvl:
+1
+
+EffectRange:
+32
+
+
+#9
+NewChant:
+Avalanche
+
+Description:
+Freezes the environment
+
+Icon:
+5
+
+EffectType
+= IceAura
+
+CharLvl:
+12
+
+EffectRange:
+15
+
+
+#10
+NewChant:
+Stream
+
+Description:
+The enemy is attacked with a stream of water
+
+Icon:
+11
+
+EffectType
+= Water
+
+CharLvl:
+1
+
+EffectRange:
+6
+
+
+#11
+NewChant:
+Wave
+
+Description:
+The enemy is attacked with waves of water
+
+Icon:
+11
+
+EffectType
+= Water
+
+CharLvl:
+4
+
+EffectRange:
+24
+
+
+#12
+NewChant:
+Tsunami
+
+Description:
+The environment gets flooded
+
+Icon:
+12
+
+EffectType
+= WaterAura
+
+CharLvl:
+10
+
+EffectRange:
+10
+
+
+#13
+NewChant:
+Force
+
+Description:
+Strength is transformed into a psychical attack
+
+Icon:
+14
+
+EffectType
+= Force
+
+CharLvl:
+5
+
+EffectRange:
+30
+
+
+#14
+NewChant:
+Revenge
+
+Description:
+Strength and hate are transformed into a psychical attack
+
+Icon:
+14
+
+EffectType
+= Force
+
+CharLvl:
+14
+
+EffectRange:
+90
+
+
+#15
+NewChant:
+Heal
+
+Description:
+Restores a small amount of health points
+
+Icon:
+2
+
+EffectType
+= IncHP
+
+CharLvl:
+1
+
+EffectRange:
+25
+
+
+#16
+NewChant:
+Cure
+
+Description:
+Restores a large amount of health points
+
+Icon:
+2
+
+EffectType
+= IncHP
+
+CharLvl:
+8
+
+EffectRange:
+100
+
+
+#17
+NewChant:
+Purify
+
+Description:
+Purifies the environment
+
+Icon:
+15
+
+EffectType
+= HealAura
+
+CharLvl:
+10
+
+EffectRange:
+20
+
+
+#18
+NewChant:
+Viper
+
+Description:
+Reduces the amount of poison in your blood
+
+Icon:
+3
+
+EffectType
+= DecPoison
+
+CharLvl:
+2
+
+EffectRange:
+10
+
+
+#19
+NewChant:
+Justify
+
+Description:
+Reduces the duration of confusion status
+
+Icon:
+1
+
+EffectType
+= DecConfusion
+
+CharLvl:
+5
+
+EffectRange:
+10
+
+
+#20
+NewChant:
+Break
+
+Description:
+Reduces the duration of paralization status
+
+Icon:
+17
+
+EffectType
+= DecPara
+
+CharLvl:
+5
+
+EffectRange:
+10
+
+
+#21
+NewChant:
+Manna
+
+Description:
+Decreases your need for food
+
+Icon:
+6
+
+EffectType
+= DecHunger
+
+CharLvl:
+2
+
+EffectRange:
+150
+
+
+#22
+NewChant:
+Shade
+
+Description:
+Makes you invisible for a short time
+
+Icon:
+18
+
+EffectType
+= BecomeInvisible
+
+CharLvl:
+10
+
+EffectRange:
+10
+
+
+#23
+NewChant:
+Dimension
+
+Description:
+Teleports you to another place
+
+Icon:
+10
+
+EffectType
+= Teleport
+
+CharLvl:
+10
+
+EffectRange:
+1
+
+
+#24
+NewChant:
+Shield
+
+Description:
+Creates a barrier that protects from physical damage
+
+Icon:
+7
+
+EffectType
+= MagicWall
+
+CharLvl:
+9
+
+EffectRange:
+20
+
+
+#25
+NewChant:
+Tempora
+
+Description:
+Freezes time
+
+Icon:
+20
+
+EffectType
+= FreezeTime
+
+CharLvl:
+15
+
+EffectRange:
+15
+
+
+#26
+NewChant:
+Redeem
+
+Description:
+Removes a curse from your soul
+
+Icon:
+19
+
+EffectType
+= Uncurse
+
+CharLvl:
+15
+
+EffectRange:
+1
+
+
+#27
+NewChant:
+Identify
+
+Description:
+Identifies an unknown item from your inventory
+
+Icon:
+16
+
+EffectType
+= Identify
+
+CharLvl:
+1
+
+EffectRange:
+1
+
+
+#28
+NewChant:
+Familiarize
+
+Description:
+Makes you familiar with the current area
+
+Icon:
+54
+
+EffectType
+= FamiliarTerrain
+
+CharLvl:
+5
+
+EffectRange:
+15
+
+
+#29
+NewChant:
+Flash
+
+Description:
+A bolt of electricity is casted on the enemy
+
+Icon:
+56
+
+EffectType
+= Electricity
+
+CharLvl:
+8
+
+EffectRange:
+50
+
+
+#30
+NewChant:
+Reflect
+
+Description:
+Reflects electrical energy
+
+Icon:
+55
+
+EffectType
+= ResistElectricity
+
+CharLvl:
+8
+
+EffectRange:
+50
+
+
+#31
+NewChant:
+Blaze
+
+Description:
+All surrounding enemies are hurt
+
+Icon:
+14
+
+EffectType
+= AreaDamage
+
+CharLvl:
+1
+
+EffectRange:
+10
+
+#32
+NewChant:
+Poison
+
+Description:
+Poisons the chanting person -- no good use.
+
+EffectType
+= IncPoison
+
+CharLvl:
+1
+
+EffectRange:
+10
+

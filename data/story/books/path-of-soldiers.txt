@@ -1,0 +1,21 @@
+PATH OF SOLDIERS
+
+The Order of Soldiers (OOS) is one of the oldest professional organisations
+in our country. It dates back to times before mankind's banishment. In the
+last centuries, the Order has become the main police force. We protect our
+citizens from criminals and monsters. We believe in honorable fights, and al-
+though we accept the use of fire-arms or magic, we prefer melee combat style.
+
+The Order's hierarchy is very straightforward compared to other orders (which
+apparently can't decide for one clear path and for clear responsibilities re-
+garding orders and promotions). OOS ranks are listed in the following table:
+
+RANK                   POWERS          CURRENTLY RESPONSIBLE FOR PROMOTIONS:
+
+Soldier        S.      Turbulence      -
+Centurio       Ct.     Hard Attack     Princeps Ania (Lost Outpost)
+Hastatus       H.      Vortex          Princeps Jonas (Old Mine)
+Princeps       Pr.     Speedrun        Pilus Georgias (Lost Outpost)
+Pilus          Pi.     Maelstrom       Primus Pilus Antonius (Outskirts)
+Primus Pilus   PPi.    Steady State    Grandmaster Olsen (Temple of Enoa)
+Grandmaster    GMs.    ?               -

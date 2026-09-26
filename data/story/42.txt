@@ -1,0 +1,3 @@
+Wird angezeigt, wenn der Spieler Auftrag hat, fuer Apostel Northdoom zu finden,
+dies auch schon getan hat, aber Astaroth noch nicht besiegt ist.
+                                                                            -

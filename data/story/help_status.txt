@@ -1,0 +1,21 @@
+SOME NOTES ON BASIC STATUS VALUES (HP, PP, EXP, CLV)
+
+To represent the physical and psychic attributes of the character you're
+(role)playing, several numerical values are used. The most important value
+is HP (Health Points). It represents your basic physical constitution and
+is shown as, for example, 32/65, which means you currently have 32 out of
+a maximum of 65. HP decrease when you get hurt (e.g. enemy attacks, poison,
+lava...), and if your HP are below 1, you'll die. Use items or magic to
+heal yourself (e.g. Aspirin or Water). You may also go to hospital.
+
+If you want to use magic, you also have to watch your psychic power (PP).
+PP are used when chanting magical songs (i.e. doing magic). Every chant
+consumes a certain amount of PP---the exact value is shown in songbook. To
+regenerate PP, use Cola or Caffeine, or sit down a while.
+
+During the game, you collect experience (EXP), by killing monsters or by
+solving quests. When your EXP reach a certain value, you gain a level (CLV).
+Whenever you gain a level, you earn a skill point which you can distribute
+on one of your skills by going to the academy. You'll also notice that your
+maximum HP and PP get increased, and that you're fully healed. The status
+screen shows you how many EXP you need until you gain the next CLV.

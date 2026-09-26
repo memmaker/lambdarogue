@@ -1,0 +1,20 @@
+ITEM VALUES (WP, GP, AP) AND THEIR INFLUENCE ON BATTLE
+
+Your success during battles is also influenced by several properties of the
+items you're using for fighting. Every item has the following values:
+
+- WP (Weapon Points): Efficiency of item as weapon in melee combat
+- GP (Gun Points): Efficiency of item as firearm in long-range combat
+- AP (Armour Points): Efficiency of item as armour
+
+The WP, GP and AP of all currently equipped items are added to your Fight-
+ability, resulting in the MLD-value. M is your current total efficiency in
+melee-combat (L in long-range-combat), while D is your current total armour
+protection (defense).
+
+EXAMPLE: Wielding a Gladius with 8 WP while having a Fight-ability of 6 and
+a Sword-skill of 7 creates a total M of 13 (6 Fight + 7 out of 8 WP).
+
+To make use of a weapon's full WP/GP, to inflict critical damage, and to use
+possible magical bonuses of weapons, the related skill has to be the same as
+or higher than the weapon's WP/GP (min. 8 in the example).

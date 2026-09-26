@@ -1,0 +1,840 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <Title Value="LambdaRogue"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <MinorVersionNr Value="6"/>
+      <RevisionNr Value="4"/>
+      <StringTable CompanyName="Mario Donick" FileDescription="LambdaRogue" InternalName="LambdaRogue" ProductVersion="1.6.4"/>
+    </VersionInfo>
+    <BuildModes Count="1" Active="Default">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <Units Count="77">
+      <Unit0>
+        <Filename Value="fprl.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fprl"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="11229"/>
+        <CursorPos X="10" Y="11241"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="FileIO.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FileIO"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1718"/>
+        <CursorPos X="101" Y="1742"/>
+        <UsageCount Value="206"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="BaseOutput.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="BaseOutput"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1210"/>
+        <CursorPos X="25" Y="1234"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Chants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Chants"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="210"/>
+        <CursorPos X="35" Y="225"/>
+        <UsageCount Value="206"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="CollectData.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CollectData"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="444"/>
+        <CursorPos X="34" Y="459"/>
+        <UsageCount Value="206"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Constants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Constants"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="94"/>
+        <CursorPos X="3" Y="108"/>
+        <UsageCount Value="206"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="DrawDungeon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DrawDungeon"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="812"/>
+        <CursorPos X="111" Y="827"/>
+        <UsageCount Value="206"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Dungeon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Dungeon"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1329"/>
+        <CursorPos X="24" Y="1333"/>
+        <UsageCount Value="206"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Effects.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Effects"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="185"/>
+        <CursorPos X="102" Y="198"/>
+        <UsageCount Value="206"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="ExternMusic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ExternMusic"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="13"/>
+        <CursorPos X="51" Y="40"/>
+        <UsageCount Value="206"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ExternSFX.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ExternSFX"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="271"/>
+        <CursorPos X="49" Y="223"/>
+        <UsageCount Value="206"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="GFX.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GFX"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="343"/>
+        <CursorPos X="1" Y="403"/>
+        <UsageCount Value="206"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Input"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="431"/>
+        <CursorPos X="77" Y="455"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="InventoryScreen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="InventoryScreen"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1299"/>
+        <CursorPos X="86" Y="1311"/>
+        <UsageCount Value="206"/>
+        <Bookmarks Count="1">
+          <Item0 X="65" Y="57" ID="7"/>
+        </Bookmarks>
+      </Unit13>
+      <Unit14>
+        <Filename Value="Items.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Items"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="699"/>
+        <CursorPos X="1" Y="711"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="LambdaRogue.app"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="206"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="LineOfSight.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="LineOfSight"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="14" Y="27"/>
+        <UsageCount Value="206"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="logger.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="logger"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="206"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="MessageLog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MessageLog"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="88"/>
+        <CursorPos X="22" Y="106"/>
+        <UsageCount Value="206"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Player.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Player"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="436"/>
+        <CursorPos X="18" Y="432"/>
+        <UsageCount Value="206"/>
+        <Bookmarks Count="1">
+          <Item0 X="6" Y="582" ID="0"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="Plot.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Plot"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="88"/>
+        <CursorPos X="60" Y="112"/>
+        <UsageCount Value="206"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="project1.app"/>
+        <UsageCount Value="196"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="PuzzleMap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PuzzleMap"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="105"/>
+        <CursorPos X="27" Y="39"/>
+        <UsageCount Value="206"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="Quests.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Quests"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="122"/>
+        <CursorPos X="50" Y="141"/>
+        <UsageCount Value="206"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="RandomArea.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RandomArea"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="41"/>
+        <CursorPos X="11" Y="54"/>
+        <UsageCount Value="206"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="sdl_image.pas"/>
+        <UnitName Value="sdl_image"/>
+        <UsageCount Value="7"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="sdl_mixer.pas"/>
+        <UnitName Value="sdl_mixer"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="926"/>
+        <CursorPos X="46" Y="935"/>
+        <UsageCount Value="7"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="sdl_ttf.pas"/>
+        <UnitName Value="sdl_ttf"/>
+        <UsageCount Value="7"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="sdl.pas"/>
+        <UnitName Value="sdl"/>
+        <UsageCount Value="7"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="sdlaudiomixer.pas"/>
+        <UnitName Value="sdlaudiomixer"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="456"/>
+        <CursorPos X="85" Y="469"/>
+        <UsageCount Value="7"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="sdlbitmapfont.pas"/>
+        <UnitName Value="sdlbitmapfont"/>
+        <UsageCount Value="7"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="sdlinput.pas"/>
+        <UnitName Value="sdlinput"/>
+        <UsageCount Value="7"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="sdlmonofonts_class.pas"/>
+        <UnitName Value="sdlmonofonts_class"/>
+        <UsageCount Value="7"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="sdlstreams.pas"/>
+        <UnitName Value="sdlstreams"/>
+        <UsageCount Value="7"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="sdltruetypefont.pas"/>
+        <UnitName Value="sdltruetypefont"/>
+        <UsageCount Value="7"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="sdlutils.pas"/>
+        <UnitName Value="sdlutils"/>
+        <UsageCount Value="7"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="smpeg.pas"/>
+        <UnitName Value="smpeg"/>
+        <UsageCount Value="7"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="UserInterface.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UserInterface"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1425"/>
+        <CursorPos X="19" Y="1437"/>
+        <UsageCount Value="206"/>
+        <Bookmarks Count="1">
+          <Item0 X="22" Y="540" ID="8"/>
+        </Bookmarks>
+      </Unit37>
+      <Unit38>
+        <Filename Value="vidutil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="vidutil"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="206"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="data/chants.txt"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="607"/>
+        <CursorPos X="44" Y="625"/>
+        <UsageCount Value="206"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="data/classes.txt"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="206"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="items.txt"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="11207"/>
+        <CursorPos X="92" Y="11212"/>
+        <UsageCount Value="206"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="data/monsters.txt"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2340"/>
+        <CursorPos X="10" Y="2314"/>
+        <UsageCount Value="206"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="data/quests.txt"/>
+        <IsPartOfProject Value="True"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="944"/>
+        <CursorPos X="69" Y="948"/>
+        <UsageCount Value="206"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="docs/ChangeLog.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="50"/>
+        <CursorPos X="58" Y="33"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="data/story/help_talents.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="8" Y="20"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="data/story/help_skills.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="13" Y="7"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="data/levels/1.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="12"/>
+        <CursorPos X="37" Y="26"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="data/levels/premade/1-2.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="12"/>
+        <CursorPos X="30" Y="10"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="data/story/books/path-of-rangers.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="41" Y="1"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="data/story/books/path-of-soldiers.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="64" Y="17"/>
+        <UsageCount Value="1"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="data/story/books/thanans-note.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="48" Y="12"/>
+        <UsageCount Value="1"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="data/story/10.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="27" Y="9"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="data/story/books/conspiracy.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="34" Y="4"/>
+        <UsageCount Value="2"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="data/story/40.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="61" Y="21"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="data/story/books/history-of-herbstwelt-3.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="17"/>
+        <UsageCount Value="1"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="data/story/39.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="20" Y="3"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="data/story/38.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="39" Y="4"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="data/story/books/history-of-herbstwelt-1.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="51" Y="19"/>
+        <UsageCount Value="2"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="data/story/books/43.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="62" Y="2"/>
+        <UsageCount Value="99"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="data/story/42.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="78" Y="3"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="data/story/41.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="78" Y="3"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="data/story/books/interlude-conspiracy.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="25" Y="6"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="data/story/help_statusitems.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="data/story/help_fighting.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="54" Y="17"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="data/story/help_combatmagic.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="data/story/help_credits.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="38" Y="4"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/inc/videoh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="3" Y="47"/>
+        <UsageCount Value="1"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="data/story/18.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="data/story/20.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="data/story/21.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="data/story/37.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="52" Y="1"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/inc/systemh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="830"/>
+        <CursorPos X="24" Y="844"/>
+        <UsageCount Value="6"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/inc/objpash.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="57"/>
+        <CursorPos X="8" Y="71"/>
+        <UsageCount Value="6"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="data/items.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="11859"/>
+        <CursorPos X="3" Y="11837"/>
+        <UsageCount Value="69"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="data/story/help_about.txt"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="49" Y="13"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="data/story/help_quickbar.txt"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="49" Y="10"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit76>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4532" Column="31" TopLine="4514"/>
+      </Position1>
+      <Position2>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4542" Column="24" TopLine="4518"/>
+      </Position2>
+      <Position3>
+        <Filename Value="BaseOutput.pas"/>
+        <Caret Line="1234" Column="25" TopLine="1210"/>
+      </Position3>
+      <Position4>
+        <Filename Value="BaseOutput.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="BaseOutput.pas"/>
+        <Caret Line="1234" Column="18" TopLine="1210"/>
+      </Position5>
+      <Position6>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="9099" Column="25" TopLine="9073"/>
+      </Position6>
+      <Position7>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position7>
+      <Position8>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4532" Column="31" TopLine="4508"/>
+      </Position8>
+      <Position9>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position9>
+      <Position10>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4532" Column="24" TopLine="4508"/>
+      </Position10>
+      <Position11>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4542" Column="27" TopLine="4518"/>
+      </Position11>
+      <Position12>
+        <Filename Value="BaseOutput.pas"/>
+        <Caret Line="1234" Column="25" TopLine="1224"/>
+      </Position12>
+      <Position13>
+        <Filename Value="BaseOutput.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position13>
+      <Position14>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="9099" Column="25" TopLine="9073"/>
+      </Position14>
+      <Position15>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position15>
+      <Position16>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4519" Column="32" TopLine="4508"/>
+      </Position16>
+      <Position17>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position17>
+      <Position18>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="7028" Column="29" TopLine="7027"/>
+      </Position18>
+      <Position19>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position19>
+      <Position20>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="3122" Column="24" TopLine="3114"/>
+      </Position20>
+      <Position21>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4" Column="23" TopLine="1"/>
+      </Position21>
+      <Position22>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position22>
+      <Position23>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4794" Column="24" TopLine="4777"/>
+      </Position23>
+      <Position24>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="9788" Column="93" TopLine="9781"/>
+      </Position24>
+      <Position25>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position25>
+      <Position26>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="4794" Column="22" TopLine="4770"/>
+      </Position26>
+      <Position27>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="9805" Column="39" TopLine="9781"/>
+      </Position27>
+      <Position28>
+        <Filename Value="fprl.pas"/>
+        <Caret Line="11241" Column="10" TopLine="11229"/>
+      </Position28>
+      <Position29>
+        <Filename Value="Player.pas"/>
+        <Caret Line="256" Column="19" TopLine="244"/>
+      </Position29>
+      <Position30>
+        <Filename Value="Player.pas"/>
+        <Caret Line="258" Column="18" TopLine="244"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+    <Target>
+      <Filename Value="fprl"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+    </CodeGeneration>
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

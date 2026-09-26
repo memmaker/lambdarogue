@@ -1,0 +1,22 @@
+THE RESOURCE WORKSHOP AND ITS USES
+
+You will rather early see wooden barrels standing around in the dungeons.
+You can destroy these barrels, and often, they contain some item which you
+can pick up. But there's more: You can also pick up the wood that is left
+over from the destroyed barrel. Later, you will also find metal parts, that
+can be picked up, too. Wood and metal are examples for resources.
+
+Resources don't go into your inventory, but into a resource storage that can
+can hold wood, metal, stone, paper, and leather. You can access the resource
+storage from special traders, the resource workshops. There you can also dis-
+assemble items into their resources. For doing so, simply go to the trader,
+open your inventory, choose "drop" and select the item you want to disas-
+semble. The item gets destroyed and the resources are added to your resource
+storage.
+
+In a resource workshop, you can either sell resources, or you can use them
+to craft special items usually not available. These items use wood, metal,
+stone and leather. Sometimes also a certain item is required. Requirements
+are shown next to the items. The quality of crafted items depends on the
+dungeon level of the workshop; go deeper to find better crafting receipts.
+

@@ -1,0 +1,19 @@
+SKILLS AND ABILITIES
+
+Besides basic status values, there are values which represent the education of
+your character. These values are called abilities and skills, and they're used
+to calculate how well you perform actions related to these values. In general,
+higher values are better, but you might also consider to specialize in only a
+few fields, usually matching your selected profession and religion.
+
+"Abilities" describe your basic abilities to perform actions, independently
+from items or tools. "Fight" describes your ability to perform combat. "Hit"
+determines if you hit or miss enemies when shooting, throwing, or performing
+long-range magic attacks. "Chant" represents how well you perfom magic. A
+high "Steal"-ability allows you to steal without alarming the guards and to
+evade traps.
+
+"Skills" describe your abilities to use weapons (Sword, Axe, Lance, Fire-arm)
+and tools (Spades, Pick-axes). There are also two more general skills: High
+"Humility" means lower cost and greater effect of divine rage. A high "Trade"
+skill gives you advantages in buying and selling items.

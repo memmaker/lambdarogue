@@ -1,0 +1,20 @@
+MAGIC IN COMBAT SITUATIONS
+
+If you perfom well in using magic, you can use it to your advantage in
+combat situations. You then not only have a weapon to fight and potions to
+heal yourself, you can also use attack spells to harm the enemy (in many
+cases greater than by using weapons) or chant songs to heal yourself.
+
+Most attack spells make use of water, ice, and fire, and all of them are
+available in a weak and a standard variant. "Wet", for example, is the
+weak water spell, "water" is the standard. The weaker variants consume
+less psychic power (PP), but also do less damage.
+
+In general, water spells are weaker than ice spells, and ice spells are
+weaker than fire spells, but if you use e.g. a water spell against an
+enemy immune against water, you won't harm it. The same goes for ice and
+fire. All water animals are immune against water, and every enemy who is
+able to cast water, ice or fire itself is immune against such attacks.
+
+Hint: To repeat a spell, you don't need to open the songbook every time.
+Just press the "chant"-key, [c] by default, to chant a spell again.

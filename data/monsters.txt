@@ -1,0 +1,4002 @@
+# LambdaRogue Monster File
+# - all lines beginning with # are comments
+
+# BEGIN MONSTER 1
+
+NewMonster:
+caveworm
+
+DungeonLvl:
+1
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+w
+
+DrainSTR:
+5
+
+TransformTileTo:
+11
+
+TransformIntegrity:
+0
+
+TransformText:
+Panically, the caveworm defecates.
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+10
+
+WP:
+10
+
+GP:
+0
+
+AP:
+10
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 2
+
+NewMonster:
+Brother Thanan
+
+DungeonLvl:
+1
+
+NeedsOpenQuest:
+3
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+T
+
+Verb:
+hits
+
+ShootVerb:
+throws stones with his slingshot
+
+BulletOrdLetter:
+171
+
+HP:
+165
+
+PP:
+4
+
+WP:
+24
+
+GP:
+18
+
+AP:
+12
+
+Move:
+0
+
+CastsIce
+= True
+
+Summon:
+watchdog
+
+EXP:
+30
+
+Gold:
+50
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+KillPlot:
+23
+
+# BEGIN MONSTER 3
+
+NewMonster:
+holetoad
+
+DungeonLvl:
+1
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+h
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+Teleport:
+2
+
+CastsWater
+= True
+
+HP:
+8
+
+PP:
+2
+
+WP:
+11
+
+GP:
+0
+
+AP:
+5
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= True
+
+Human
+= True
+
+# BEGIN MONSTER 4
+
+NewMonster:
+scorpio
+
+DungeonLvl:
+1
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+p
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+15
+
+WP:
+11
+
+GP:
+0
+
+AP:
+10
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= True
+
+Human
+= False
+
+# BEGIN MONSTER 5
+
+NewMonster:
+hellrat
+
+DungeonLvl:
+1
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+r
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+15
+
+WP:
+8
+
+GP:
+0
+
+AP:
+5
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+2
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 6
+
+NewMonster:
+Weapon Smith
+
+DungeonLvl:
+5
+
+NeedsOpenQuest:
+1
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+W
+
+Verb:
+stares
+
+ShootVerb:
+-
+
+HP:
+180
+
+PP:
+4
+
+WP:
+30
+
+GP:
+0
+
+AP:
+15
+
+Move:
+0
+
+DrainSTR:
+20
+
+EXP:
+180
+
+Gold:
+70
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 7
+
+NewMonster:
+sick rat
+
+DungeonLvl:
+3
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+r
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+30
+
+PP:
+1
+
+WP:
+13
+
+GP:
+0
+
+AP:
+7
+
+Move:
+4
+
+Poison
+= True
+
+EXP:
+5
+
+Gold:
+4
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 8
+
+NewMonster:
+preacher
+
+DungeonLvl:
+4
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+P
+
+Intelligent
+= True
+
+Verb:
+converts
+
+ShootVerb:
+throws fire at you
+
+BulletOrdLetter:
+145
+
+CastsFire
+= True
+
+HP:
+40
+
+PP:
+1
+
+WP:
+16
+
+GP:
+18
+
+AP:
+10
+
+Move:
+7
+
+EXP:
+3
+
+Gold:
+4
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 9
+
+NewMonster:
+cavebat
+
+DungeonLvl:
+4
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+b
+
+Verb:
+nose-dives
+
+ShootVerb:
+-
+
+HP:
+35
+
+WP:
+15
+
+GP:
+0
+
+AP:
+10
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+4
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 10
+
+NewMonster:
+slowworm
+
+DungeonLvl:
+6
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+c
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+45
+
+PP:
+2
+
+WP:
+17
+
+GP:
+0
+
+AP:
+12
+
+Move:
+0
+
+Calm
+= True
+
+EXP:
+10
+
+Gold:
+3
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 11
+
+NewMonster:
+antbee
+
+DungeonLvl:
+2
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+a
+
+Verb:
+stabs
+
+ShootVerb:
+spits on you
+
+BulletOrdLetter:
+129
+
+HP:
+30
+
+WP:
+12
+
+GP:
+11
+
+AP:
+5
+
+Move:
+0
+
+EXP:
+8
+
+Gold:
+2
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 12
+
+NewMonster:
+mindhunter
+
+DungeonLvl:
+8
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+i
+
+Verb:
+sucks
+
+ShootVerb:
+-
+
+HP:
+55
+
+PP:
+1
+
+PP:
+2
+
+WP:
+22
+
+GP:
+0
+
+AP:
+14
+
+Move:
+0
+
+Confusion
+= True
+
+EXP:
+10
+
+Gold:
+6
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 13
+
+NewMonster:
+lost priestess
+
+DungeonLvl:
+10
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+l
+
+Verb:
+prays
+
+ShootVerb:
+-
+
+HP:
+70
+
+PP:
+1
+
+WP:
+25
+
+GP:
+0
+
+AP:
+15
+
+Move:
+0
+
+SelfHeal
+= True
+
+EXP:
+12
+
+Gold:
+8
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 14
+
+NewMonster:
+snake
+
+DungeonLvl:
+12
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+s
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+90
+
+PP:
+1
+
+WP:
+37
+
+GP:
+0
+
+AP:
+16
+
+Move:
+0
+
+Poison
+= True
+
+EXP:
+0
+
+Gold:
+6
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 15
+
+NewMonster:
+dark preacher
+
+DungeonLvl:
+14
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+P
+
+Verb:
+condemns
+
+ShootVerb:
+throws ice at you
+
+BulletOrdLetter:
+133
+
+HP:
+100
+
+PP:
+2
+
+WP:
+42
+
+GP:
+27
+
+AP:
+18
+
+Move:
+0
+
+Calm
+= True
+
+CastsIce
+= True
+
+EXP:
+15
+
+Gold:
+10
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 16
+
+NewMonster:
+sandman
+
+DungeonLvl:
+16
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+N
+
+Verb:
+hypnotizes
+
+ShootVerb:
+-
+
+HP:
+110
+
+PP:
+2
+
+WP:
+45
+
+GP:
+0
+
+AP:
+19
+
+Move:
+0
+
+Paralyze
+= True
+
+EXP:
+15
+
+Gold:
+22
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 17
+
+NewMonster:
+Dwarvenfall
+
+DungeonLvl:
+19
+
+NeedsOpenQuest:
+1
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+D
+
+Verb:
+laughs
+
+ShootVerb:
+-
+
+HP:
+360
+
+PP:
+10
+
+WP:
+96
+
+GP:
+0
+
+AP:
+30
+
+Move:
+0
+
+Curses
+= True
+
+DigIntoTile:
+6
+
+TransformIntegrity:
+200
+
+TransformText:
+Dwarvenfall summons Earth's power to protect himself
+
+Summon:
+evocator
+
+EXP:
+400
+
+Gold:
+150
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 18
+
+NewMonster:
+ghost
+
+DungeonLvl:
+5
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+g
+
+Verb:
+scares
+
+ShootVerb:
+-
+
+HP:
+35
+
+PP:
+1
+
+WP:
+16
+
+GP:
+0
+
+AP:
+11
+
+Move:
+0
+
+Invisible
+= True
+
+EXP:
+2
+
+Gold:
+3
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 19
+
+NewMonster:
+nightmare
+
+DungeonLvl:
+3
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+n
+
+Verb:
+drives crazy
+
+ShootVerb:
+-
+
+HP:
+35
+
+WP:
+14
+
+GP:
+0
+
+AP:
+8
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+4
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 20
+
+NewMonster:
+worm mother
+
+DungeonLvl:
+7
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+M
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+45
+
+WP:
+20
+
+GP:
+0
+
+AP:
+14
+
+Move:
+0
+
+DrainSTR:
+10
+
+SplitInto:
+caveworm
+
+EXP:
+0
+
+Gold:
+5
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 21
+
+NewMonster:
+Lonely Librarian
+
+DungeonLvl:
+3
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+L
+
+Verb:
+consults the book
+
+ShootVerb:
+throws scriptures
+
+BulletOrdLetter:
+193
+
+HP:
+170
+
+PP:
+6
+
+WP:
+28
+
+GP:
+30
+
+AP:
+16
+
+Move:
+0
+
+Blindness
+= True
+
+CastsWater
+= True
+
+DrainSTR:
+20
+
+TransformTileTo:
+49
+
+TransformIntegrity:
+100
+
+TransformText:
+The Lonely Librarian hides behind a bookshelf.
+
+EXP:
+100
+
+Gold:
+35
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+KillPlot:
+32
+
+# BEGIN MONSTER 22
+
+NewMonster:
+Canthra
+
+DungeonLvl:
+9
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+C
+
+Verb:
+dances
+
+ShootVerb:
+-
+
+HP:
+300
+
+PP:
+4
+
+WP:
+42
+
+GP:
+0
+
+AP:
+24
+
+Move:
+4
+
+Confusion
+= True
+
+CastsIce
+= True
+
+Shout:
+30
+
+EXP:
+350
+
+Gold:
+200
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 23
+
+NewMonster:
+Eris
+
+DungeonLvl:
+20
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+E
+
+Verb:
+argues
+
+ShootVerb:
+attacks with fire balls
+
+BulletOrdLetter:
+145
+
+HP:
+500
+
+PP:
+15
+
+WP:
+90
+
+GP:
+20
+
+AP:
+35
+
+Move:
+6
+
+Summon:
+Eris Illusion
+
+CastsFire
+= True
+
+Tremble:
+50
+
+EXP:
+400
+
+Gold:
+300
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+KillPlot:
+33
+
+# BEGIN MONSTER 24
+
+NewMonster:
+Sleeper
+
+DungeonLvl:
+15
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+S
+
+Verb:
+groans
+
+ShootVerb:
+-
+
+HP:
+300
+
+WP:
+80
+
+GP:
+0
+
+AP:
+28
+
+PP:
+6
+
+Move:
+0
+
+Paralyze
+= True
+
+EXP:
+350
+
+Gold:
+150
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 25
+
+NewMonster:
+watchdog
+
+DungeonLvl:
+18
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+d
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+90
+
+PP:
+1
+
+WP:
+25
+
+GP:
+0
+
+AP:
+16
+
+Move:
+0
+
+Poison
+= True
+
+EXP:
+3
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 26
+
+NewMonster:
+lavabee
+
+DungeonLvl:
+20
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+v
+
+Verb:
+stabs
+
+ShootVerb:
+spits on you
+
+BulletOrdLetter:
+129
+
+TransformTileTo:
+20
+
+TransformIntegrity:
+0
+
+TransformText:
+Lava erupts around the lavabee.
+
+HP:
+145
+
+WP:
+45
+
+GP:
+20
+
+AP:
+15
+
+Move:
+2
+
+Blindness
+= True
+
+EXP:
+2
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 27
+
+NewMonster:
+flicker
+
+DungeonLvl:
+9
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+f
+
+Verb:
+hits
+
+ShootVerb:
+-
+
+HP:
+50
+
+PP:
+1
+
+WP:
+25
+
+GP:
+0
+
+AP:
+16
+
+Move:
+0
+
+Teleport:
+5
+
+EXP:
+12
+
+Gold:
+6
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 28
+
+NewMonster:
+evocator
+
+DungeonLvl:
+11
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+e
+
+Verb:
+recites prayers
+
+ShootVerb:
+-
+
+HP:
+80
+
+WP:
+29
+
+GP:
+0
+
+AP:
+15
+
+Move:
+0
+
+Summon:
+undead
+
+EXP:
+14
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 29
+
+NewMonster:
+undead
+
+DungeonLvl:
+24
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+u
+
+Verb:
+grunts
+
+ShootVerb:
+-
+
+HP:
+80
+
+WP:
+20
+
+GP:
+0
+
+AP:
+12
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 30
+
+NewMonster:
+medusa
+
+DungeonLvl:
+17
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+m
+
+Verb:
+bites
+
+CastsWater
+= True
+
+HP:
+130
+
+WP:
+50
+
+GP:
+0
+
+AP:
+20
+
+Move:
+0
+
+SplitInto:
+snake
+
+EXP:
+16
+
+Gold:
+6
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 31
+
+NewMonster:
+Krice
+
+DungeonLvl:
+18
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+K
+
+Verb:
+insults
+
+ShootVerb:
+-
+
+HP:
+280
+
+WP:
+50
+
+GP:
+0
+
+AP:
+25
+
+Move:
+6
+
+PP:
+6
+
+Summon:
+worm mother
+
+EXP:
+320
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 32
+
+NewMonster:
+juno
+
+DungeonLvl:
+13
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+j
+
+Verb:
+exhales
+
+ShootVerb:
+-
+
+HP:
+95
+
+WP:
+39
+
+GP:
+0
+
+AP:
+17
+
+Move:
+6
+
+Invisible
+= True
+
+Teleport:
+4
+
+EXP:
+10
+
+Gold:
+5
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 33
+
+NewMonster:
+guardian zealot
+
+DungeonLvl:
+23
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+G
+
+Verb:
+hits
+
+ShootVerb:
+uses his taser
+
+BulletOrdLetter:
+36
+
+HP:
+35
+
+WP:
+18
+
+GP:
+18
+
+AP:
+12
+
+Move:
+5
+
+EXP:
+2
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 34
+
+NewMonster:
+Ronda Gardner
+
+DungeonLvl:
+2
+
+NeedsOpenQuest:
+1
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+R
+
+Verb:
+swings her blade
+
+HP:
+160
+
+WP:
+24
+
+GP:
+0
+
+AP:
+10
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 35
+
+NewMonster:
+Benito Leone
+
+DungeonLvl:
+6
+
+NeedsOpenQuest:
+4
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+B
+
+Verb:
+hits
+
+HP:
+190
+
+WP:
+32
+
+GP:
+0
+
+AP:
+19
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 36
+
+NewMonster:
+icewolf
+
+DungeonLvl:
+21
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+I
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+110
+
+WP:
+30
+
+GP:
+0
+
+AP:
+16
+
+PP:
+1
+
+Move:
+0
+
+Paralyze
+= True
+
+EXP:
+3
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 37
+
+NewMonster:
+Ordinator
+
+DungeonLvl:
+21
+
+NeedsOpenQuest:
+1
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+O
+
+Verb:
+attacks
+
+ShootVerb:
+-
+
+HP:
+320
+
+PP:
+10
+
+WP:
+60
+
+GP:
+0
+
+AP:
+26
+
+Move:
+4
+
+CastsIce
+= True
+
+CastsWater
+= True
+
+Curses
+= True
+
+EXP:
+20
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 38
+
+NewMonster:
+scorpio
+
+DungeonLvl:
+22
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+p
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+15
+
+WP:
+11
+
+GP:
+0
+
+AP:
+10
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= True
+
+Human
+= False
+
+# BEGIN MONSTER 39
+
+NewMonster:
+undead rat
+
+DungeonLvl:
+23
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+r
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+25
+
+WP:
+15
+
+GP:
+0
+
+AP:
+10
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 40
+
+NewMonster:
+archguard
+
+DungeonLvl:
+99
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+A
+
+Verb:
+hits
+
+HP:
+75
+
+PP:
+4
+
+WP:
+25
+
+GP:
+0
+
+AP:
+18
+
+DrainPP:
+2
+
+Paralyze
+= True
+
+Move:
+5
+
+EXP:
+3
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 41
+
+NewMonster:
+Hunter
+
+DungeonLvl:
+22
+
+NeedsOpenQuest:
+1
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+H
+
+Verb:
+attacks
+
+HP:
+230
+
+WP:
+18
+
+GP:
+20
+
+AP:
+6
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 42
+
+NewMonster:
+silent ghost
+
+DungeonLvl:
+23
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+g
+
+Verb:
+breaths
+
+DrainSTR:
+40
+
+ShootVerb:
+-
+
+HP:
+45
+
+PP:
+4
+
+WP:
+18
+
+GP:
+0
+
+AP:
+12
+
+Move:
+0
+
+Invisible
+= True
+
+EXP:
+2
+
+Gold:
+3
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 43
+
+NewMonster:
+horse
+
+DungeonLvl:
+22
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+F
+
+Verb:
+hits
+
+ShootVerb:
+-
+
+HP:
+35
+
+WP:
+11
+
+GP:
+0
+
+AP:
+13
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 44
+
+NewMonster:
+Undying King
+
+DungeonLvl:
+25
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+U
+
+Verb:
+mourns
+
+HP:
+330
+
+PP:
+10
+
+WP:
+25
+
+CastsIce
+= True
+
+CastsFire
+= True
+
+Summon:
+archguard
+
+GP:
+0
+
+AP:
+30
+
+Move:
+8
+
+EXP:
+350
+
+Gold:
+500
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+KillPlot:
+30
+
+# BEGIN MONSTER 45
+
+NewMonster:
+rat king
+
+DungeonLvl:
+4
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+k
+
+Verb:
+bites
+
+HP:
+60
+
+WP:
+14
+
+GP:
+0
+
+AP:
+8
+
+Move:
+7
+
+EXP:
+30
+
+Gold:
+20
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 46
+
+NewMonster:
+old horse
+
+DungeonLvl:
+22
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+F
+
+Verb:
+neighs painfully
+
+ShootVerb:
+-
+
+HP:
+55
+
+WP:
+15
+
+GP:
+0
+
+AP:
+6
+
+Move:
+5
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 47
+
+NewMonster:
+model X robot
+
+DungeonLvl:
+26
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+x
+
+Verb:
+hits
+
+ShootVerb:
+throws plasma beams at you
+
+BulletOrdLetter:
+36
+
+CastsElectricity
+= True
+
+HP:
+90
+
+WP:
+40
+
+GP:
+10
+
+AP:
+30
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 48
+
+NewMonster:
+model Y robot
+
+DungeonLvl:
+27
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+y
+
+Verb:
+hits
+
+ShootVerb:
+-
+
+HP:
+80
+
+WP:
+20
+
+GP:
+0
+
+AP:
+30
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 49
+
+NewMonster:
+Abandoned Android
+
+DungeonLvl:
+27
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+Z
+
+Verb:
+hits
+
+ShootVerb:
+throws plasma beams at you
+
+BulletOrdLetter:
+36
+
+CastsElectricity
+= True
+
+MightyHit
+= True
+
+BreakDefence
+= True
+
+SelfHeal
+= True
+
+Summon:
+model X robot
+
+HP:
+450
+
+WP:
+80
+
+PP:
+16
+
+GP:
+40
+
+AP:
+40
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+1
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+KillPlot:
+35
+
+# BEGIN MONSTER 50
+
+NewMonster:
+guard
+
+DungeonLvl:
+99
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+G
+
+Verb:
+hits
+
+ShootVerb:
+shoots
+
+HP:
+35
+
+WP:
+15
+
+GP:
+20
+
+AP:
+12
+
+Move:
+5
+
+EXP:
+2
+
+Gold:
+0
+
+Unique
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+# BEGIN MONSTER 51
+
+NewMonster:
+Heretic Priest
+
+DungeonLvl:
+17
+
+Letter:
+P
+
+Human
+= True
+
+Intelligent
+= True
+
+Verb:
+blasphemes
+
+ShootVerb:
+crys
+
+BulletOrdLetter:
+147
+
+CastsWater
+= True
+
+SelfHeal
+= True
+
+HP:
+310
+
+PP:
+5
+
+WP:
+45
+
+GP:
+30
+
+AP:
+20
+
+Move:
+8
+
+EXP:
+280
+
+Gold:
+60
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+# BEGIN MONSTER 52
+
+NewMonster:
+Astaroth
+
+DungeonLvl:
+98
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+u
+
+Verb:
+shrives you
+
+ShootVerb:
+spits sacrileges
+
+BulletOrdLetter:
+129
+
+HP:
+310
+
+PP:
+5
+
+WP:
+50
+
+GP:
+40
+
+AP:
+23
+
+Move:
+6
+
+DrainPP:
+5
+
+DrainSTR:
+30
+
+Summon:
+juno
+
+EXP:
+350
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+KillPlot:
+13
+
+# BEGIN MONSTER 53
+
+NewMonster:
+Python
+
+DungeonLvl:
+1
+
+NeedsOpenQuest:
+9
+
+NeedsSolvedQuest:
+0
+
+Letter:
+Q
+
+Verb:
+growls
+
+ShootVerb:
+-
+
+HP:
+260
+
+WP:
+90
+
+GP:
+0
+
+AP:
+28
+
+PP:
+8
+
+Move:
+0
+
+CastFire
+= True
+
+EXP:
+320
+
+Gold:
+0
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+# BEGIN MONSTER 54
+
+NewMonster:
+Eris Illusion
+
+DungeonLvl:
+99
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+E
+
+Verb:
+argues
+
+
+HP:
+340
+
+WP:
+90
+
+GP:
+0
+
+AP:
+30
+
+Move:
+7
+
+Teleport:
+8
+
+EXP:
+0
+
+Gold:
+0
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+
+
+# BEGIN MONSTER 55
+
+NewMonster:
+antbee (Elite)
+
+DungeonLvl:
+7
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+a
+
+Verb:
+stabs
+
+ShootVerb:
+spits on you
+
+BulletOrdLetter:
+129
+
+HP:
+90
+
+WP:
+24
+
+GP:
+22
+
+AP:
+9
+
+Move:
+0
+
+EXP:
+20
+
+Gold:
+40
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 56
+
+NewMonster:
+nightmare (Elite)
+
+DungeonLvl:
+8
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+n
+
+Verb:
+drives crazy
+
+ShootVerb:
+-
+
+HP:
+105
+
+WP:
+28
+
+GP:
+0
+
+AP:
+10
+
+Move:
+0
+
+EXP:
+0
+
+Gold:
+40
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 57
+
+NewMonster:
+slowworm (Elite)
+
+DungeonLvl:
+11
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+c
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+135
+
+PP:
+4
+
+WP:
+34
+
+GP:
+0
+
+AP:
+12
+
+Move:
+0
+
+Calm
+= True
+
+EXP:
+10
+
+Gold:
+30
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 58
+
+NewMonster:
+mindhunter (Elite)
+
+DungeonLvl:
+13
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+i
+
+Verb:
+sucks
+
+ShootVerb:
+-
+
+HP:
+165
+
+PP:
+3
+
+WP:
+44
+
+GP:
+0
+
+AP:
+15
+
+Move:
+0
+
+Confusion
+= True
+
+EXP:
+20
+
+Gold:
+60
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 59
+
+NewMonster:
+flicker (Elite)
+
+DungeonLvl:
+14
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+f
+
+Verb:
+hits
+
+ShootVerb:
+-
+
+HP:
+150
+
+PP:
+2
+
+WP:
+50
+
+GP:
+0
+
+AP:
+18
+
+Move:
+0
+
+Teleport:
+7
+
+EXP:
+24
+
+Gold:
+60
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 60
+
+NewMonster:
+lost priestess (Elite)
+
+DungeonLvl:
+16
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Intelligent
+= True
+
+Letter:
+l
+
+Verb:
+prays
+
+ShootVerb:
+-
+
+HP:
+210
+
+PP:
+2
+
+WP:
+50
+
+GP:
+0
+
+AP:
+16
+
+Move:
+0
+
+SelfHeal
+= True
+
+EXP:
+24
+
+Gold:
+80
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 61
+
+NewMonster:
+watchdog (Elite)
+
+DungeonLvl:
+23
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+d
+
+Verb:
+bites
+
+ShootVerb:
+-
+
+HP:
+270
+
+PP:
+2
+
+WP:
+50
+
+GP:
+0
+
+AP:
+16
+
+Move:
+0
+
+Poison
+= True
+
+EXP:
+6
+
+Gold:
+0
+
+Unique
+= True
+
+Elite
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+
+
+# BEGIN MONSTER 62
+
+NewMonster:
+Revenant
+
+DungeonLvl:
+24
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+F
+
+Verb:
+neighs painfully
+
+ShootVerb:
+-
+
+HP:
+165
+
+WP:
+30
+
+GP:
+0
+
+AP:
+20
+
+Move:
+5
+
+EXP:
+0
+
+Gold:
+0
+
+Unique
+= True
+
+Elite
+= False
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= True
+
+# BEGIN MONSTER 63
+
+NewMonster:
+cavebat (Elite)
+
+DungeonLvl:
+10
+
+NeedsOpenQuest:
+0
+
+NeedsSolvedQuest:
+0
+
+Letter:
+b
+
+Verb:
+nose-dives
+
+ShootVerb:
+-
+
+HP:
+105
+
+WP:
+30
+
+GP:
+0
+
+AP:
+11
+
+Move:
+6
+
+EXP:
+0
+
+Gold:
+40
+
+Unique
+= True
+
+LastEnemy
+= False
+
+MoveOnWater
+= False
+
+Human
+= False
+

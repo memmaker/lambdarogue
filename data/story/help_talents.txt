@@ -1,0 +1,20 @@
+TALENTS, DIVINE RAGE, AND DISTRESS
+
+Each profession offers a "talent" as special action which consists of 4 or 5
+powers. Powers are learned by gaining ranks within your character's profes-
+sion. A soldier, for example, can gain the ranks Centurio, Hastatus, Prin-
+ceps, Pilus, and finally Primus Pilus. Each rank of a profession's career
+has one associated power, either active or passive. The talent you can use
+is the cumulated effect of all active powers. Passive powers improve status
+values of your character. The 1st power of a talent is available for free
+right from the start. Press the talent key (default: [x]) to use the talent.
+
+Each religion has one associated "divine rage". Like the profession talent,
+this is a special action you can use when needed, but divine rage is not di-
+vided into powers. You can increase the effect and reduce the costs of di-
+vine rage by training your Humility skill. To invoke divine rage, press the
+divine rage key (default: [X]).
+
+Both powers and divine rage cost "distress" (DST). You gain distress by ta-
+king damage. When you use your talent or invoke divine rage, DST is reduced
+by the DST cost of the talent's powers or the divine rage.

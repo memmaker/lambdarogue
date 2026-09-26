@@ -1,0 +1,12297 @@
+# LambdaRogue Item definition -- version: 1.6.4
+
+#######################################################################################
+
+NewItem:
+2 Credits
+
+ItemType
+= Gold
+
+Description:
+Credits are the currency in Herbstwelt
+
+Price:
+2
+
+############################################################################################
+
+NewItem:
+4 Credits
+
+ItemType
+= Gold
+
+Description:
+Credits are the currency of Herbstwelt
+
+Price:
+4
+
+############################################################################################
+
+NewItem:
+8 Credits
+
+ItemType
+= Gold
+
+Description:
+Credits are the currency of Herbstwelt
+
+Price:
+8
+
+#######################################################################################
+
+NewItem:
+Dungeon Key
+
+ItemType
+= Key
+
+Description:
+Dungeon keys can unlock doors
+
+Price:
+60
+
+#######################################################################################
+
+NewItem:
+Eris' Key
+
+ItemType
+= Key
+
+Unique
+= True
+
+Description:
+The inscription says this key will provide a way to Eris' realm
+
+Price:
+1
+
+DungeonLvl:
+99
+
+
+#######################################################################################
+
+NewItem:
+Picklock
+
+ItemType
+= Key
+
+Description:
+Picklocks open locked doors without the need for a key
+
+Price:
+250
+
+Profession:
+3
+
+
+#######################################################################################
+
+NewItem:
+Cola
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncPP
+
+EffectRange:
+40
+
+EffectText:
+You feel better after drinking the cola
+
+Price:
+35
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+NewItem:
+Dust
+
+Description:
+Dust concentrates psychic power to a physical attack
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= Force
+
+EffectRange:
+10
+
+EffectText:
+You feel a power surge
+
+Price:
+35
+
+DungeonLvl:
+2
+
+
+#######################################################################################
+
+NewItem:
+Fish
+
+Description:
+These are pikes, already prepared to be consumed
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+700
+
+EffectText:
+The fish tastes rather good
+
+Price:
+80
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+
+NewItem:
+Bread
+
+Description:
+Bright bread made of wheat
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+250
+
+EffectText:
+Nearly tasteless, but you feel less hungry now
+
+Price:
+40
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Meat
+
+Description:
+Some delicious meat
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+800
+
+EffectText:
+The meat tastes really good
+
+Price:
+95
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Water
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+15
+
+EffectText:
+The water refreshes you
+
+Price:
+10
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Candle
+
+Description:
+Candles enlarge your field of view
+
+ItemType
+= Torch
+
+Extra
+= True
+
+Light:
+1
+
+Price:
+40
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Lantern
+
+Description:
+Lanterns enlight really dark places
+
+ItemType
+= Torch
+
+ShopOnly
+= True
+
+Extra
+= True
+
+Light:
+2
+
+EffectType
+= RemoveDarkness
+
+Price:
+150
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Spade
+
+Description:
+Used to dig through walls
+
+ItemType
+= Spade
+
+Hands
+= True
+
+ShopOnly
+= True
+
+Price:
+45
+
+SP:
+6
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+NewItem:
+Amphetamine
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= DecConfusion
+
+EffectRange:
+8
+
+EffectText:
+You feel less confused now
+
+Price:
+40
+
+DungeonLvl:
+8
+
+
+#######################################################################################
+
+NewItem:
+Clear Potion
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= BecomeInvisible
+
+EffectRange:
+10
+
+EffectText:
+You feel stealthy
+
+Price:
+90
+
+DungeonLvl:
+7
+
+
+#######################################################################################
+
+
+NewItem:
+Glowing Sunrise
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= FireAura
+
+EffectRange:
+16
+
+EffectText:
+You feel hot
+
+Price:
+170
+
+DungeonLvl:
+6
+
+
+#######################################################################################
+
+
+NewItem:
+Frozen Depths
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IceAura
+
+EffectRange:
+12
+
+EffectText:
+It's getting very cold around you
+
+Price:
+100
+
+DungeonLvl:
+21
+
+
+#######################################################################################
+
+
+NewItem:
+C#
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= DecBlindness
+
+EffectRange:
+8
+
+EffectText:
+You can see better
+
+Price:
+40
+
+DungeonLvl:
+1
+
+
+
+#######################################################################################
+
+
+NewItem:
+Phial of Agility
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= DecPara
+
+EffectRange:
+8
+
+EffectText:
+You can move again
+
+Price:
+40
+
+DungeonLvl:
+16
+
+
+
+#######################################################################################
+
+NewItem:
+Coffee
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncPP
+
+EffectRange:
+80
+
+EffectText:
+Your senses are sharpened
+
+Price:
+70
+
+DungeonLvl:
+3
+
+
+#######################################################################################
+
+
+NewItem:
+Beer
+
+ShopOnly
+= True
+
+Description:
+The worlds oldest, most popular alcoholic beverage
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncConfusion
+
+EffectRange:
+15
+
+EffectText:
+Suddenly, you feel confused - but it's funny
+
+Price:
+40
+
+DungeonLvl:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Dragon Poison
+
+Description:
+A very strong green poison
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncPoison
+
+EffectRange:
+20
+
+EffectText:
+You feel extremely sick after drinking the poison
+
+Price:
+100
+
+DungeonLvl:
+99
+
+
+#######################################################################################
+
+
+NewItem:
+Leviathan's Blood
+
+Description:
+-
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= Teleport
+
+EffectText:
+You feel lighter
+
+Price:
+350
+
+DungeonLvl:
+19
+
+
+#######################################################################################
+
+
+NewItem:
+Junoblood
+
+Description:
+This is the blood of Junos; probably unhealthy
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= DecHP
+
+EffectRange:
+40
+
+EffectText:
+You feel sick
+
+Price:
+1
+
+DungeonLvl:
+13
+
+
+#######################################################################################
+
+NewItem:
+Stone Skin
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= MagicWall
+
+EffectText:
+You feel safer
+
+EffectRange:
+20
+
+Price:
+190
+
+DungeonLvl:
+11
+
+
+#######################################################################################
+
+
+NewItem:
+Waterfall
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= WaterAura
+
+EffectText:
+You're surrounded by floods of water
+
+EffectRange:
+8
+
+Price:
+50
+
+DungeonLvl:
+1
+
+#######################################################################################
+
+
+NewItem:
+Spirit
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= HealAura
+
+EffectText:
+The air smells fresh and purified
+
+EffectRange:
+6
+
+Price:
+50
+
+DungeonLvl:
+4
+
+#######################################################################################
+
+
+NewItem:
+Potion of Time
+
+Description:
+-
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= FreezeTime
+
+EffectText:
+Time is frozen
+
+EffectRange:
+10
+
+Price:
+250
+
+DungeonLvl:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Antidepressant
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= Uncurse
+
+EffectText:
+You feel a dark shadow disappear
+
+Price:
+70
+
+DungeonLvl:
+9
+
+
+#######################################################################################
+
+
+NewItem:
+Heartbeat
+
+Description:
+Makes you feel the beat of your healthy heart
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+400
+
+EffectText:
+You feel very healthy now
+
+Price:
+500
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+
+NewItem:
+Fuel Cube
+
+Description:
+A small magnetic cube with fuel and three small openings on one side
+
+ItemType
+= Rune
+
+Price:
+500
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+
+NewItem:
+Meteor
+
+Description:
+Contains the powers of the sun
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= Meteor
+
+EffectRange:
+1
+
+EffectText:
+Everything shatters ...
+
+Price:
+500
+
+DungeonLvl:
+20
+
+
+#######################################################################################
+
+NewItem:
+Water of Life
+
+Description:
+After drinking this green liquid, you'll feel very healthy
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+200
+
+EffectText:
+You have been healed
+
+Price:
+250
+
+DungeonLvl:
+13
+
+
+#######################################################################################
+
+NewItem:
+Phial of Eternity
+
+Description:
+The power of the gods enclosed in this liquid will bless you
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= Bless
+
+EffectText:
+You're blessed
+
+Price:
+200
+
+DungeonLvl:
+15
+
+
+#######################################################################################
+
+NewItem:
+Drink of Profanation
+
+Description:
+Darkness is enclosed in this bottle. Drinking is not recommended
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= Curse
+
+EffectText:
+Suddenly you feel very sad and lonely
+
+Price:
+70
+
+DungeonLvl:
+10
+
+
+#######################################################################################
+
+
+NewItem:
+Potion of Duplication
+
+Description:
+-
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= CloneItem
+
+EffectText:
+You clone the item
+
+Price:
+70
+
+DungeonLvl:
+6
+
+
+#######################################################################################
+
+
+NewItem:
+Identificator
+
+Description:
+-
+
+ItemType
+= Potion
+
+ShopOnly
+= True
+
+Drink
+= True
+
+EffectType
+= Identify
+
+EffectText:
+You concentrate on your inventory
+
+Price:
+25
+
+DungeonLvl:
+1
+
+
+#####################################################################################
+
+
+NewItem:
+Tears of War
+
+Description:
+Millions of tears, cried in the great war. The phial looks like a well
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= False
+
+EffectText:
+-
+
+Price:
+40
+
+DungeonLvl:
+99
+
+
+#####################################################################################
+
+
+NewItem:
+100 Credits
+
+Description:
+Credits are the currency of Herbstwelt
+
+ItemType
+= Gold
+
+Unique
+= True
+
+Price:
+100
+
+DungeonLvl:
+2
+
+CharLvl:
+1
+
+#######################################################################################
+
+NewItem:
+Aspirin
+
+Description:
+-
+
+ItemType
+= Food
+
+ShopOnly
+= True
+
+Eat
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+50
+
+Amount:
+25
+
+EffectText:
+Your health regenerates after taking the Aspirin
+
+Price:
+50
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+NewItem:
+Penicillin
+
+Description:
+Penicillin works better than Aspirin on greater damage
+
+ItemType
+= Food
+
+ShopOnly
+= True
+
+Eat
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+150
+
+Amount:
+15
+
+EffectText:
+Your health regenerates after taking the Penicillin
+
+Price:
+100
+
+DungeonLvl:
+3
+
+
+#######################################################################################
+
+
+NewItem:
+Fire of Prometheus
+
+Description:
+The phial contains the fire of Prometheus. It creates a fire aura
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= FireAura
+
+Price:
+250
+
+EffectRange:
+40
+
+DungeonLvl:
+6
+
+
+#######################################################################################
+
+
+NewItem:
+Sanctum
+
+Description:
+It is holy
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= HealAura
+
+Price:
+250
+
+EffectRange:
+40
+
+DungeonLvl:
+15
+
+#####################################################################################
+
+NewItem:
+230 Credits
+
+Description:
+Credits are the currency of Herbstwelt
+
+ItemType
+= Gold
+
+Rare
+= True
+
+Price:
+230
+
+DungeonLvl:
+6
+
+######################################################################################
+
+
+NewItem:
+Pandora's Ale
+
+Description:
+Nobody knows what will happen when drinking this
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Price:
+50
+
+Drink
+= True
+
+EffectType
+= Random
+
+EffectRange:
+12
+
+DungeonLvl:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Cake
+
+Description:
+A cake, good with coffee
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+100
+
+EffectText:
+It's sweet and tasty
+
+Price:
+25
+
+DungeonLvl:
+1
+
+#######################################################################################
+
+NewItem:
+Small mushroom
+
+Description:
+-
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= IncPoison
+
+EffectRange:
+10
+
+EffectText:
+It's tasty ... but suddenly you feel awful
+
+Price:
+1
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Big mushroom
+
+Description:
+-
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= IncConfusion
+
+EffectRange:
+9
+
+EffectText:
+You feel confused
+
+Price:
+2
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Tiva's Cheese Cake
+
+Description:
+This cake has been created by Tiva for her wedding
+
+ItemType
+= Food
+
+Unique
+= True
+
+Eat
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+50
+
+EffectText:
+It tastes wonderful - and your health seems to be better now
+
+Price:
+40
+
+DungeonLvl:
+2
+
+#######################################################################################
+
+
+NewItem:
+Insurance Card
+
+Description:
+With this card in inventory, hospital treatments are for free
+
+ItemType
+= Rune
+
+Unique
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Price:
+30
+
+
+#######################################################################################
+
+
+NewItem:
+Antidot
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= DecPoison
+
+Price:
+40
+
+EffectRange:
+8
+
+EffectText:
+You feel that the poison in your veins becomes less
+
+DungeonLvl:
+2
+
+
+#######################################################################################
+
+
+NewItem:
+V.I.P. Card
+
+Description:
+Owners of a V.I.P. Card profit by many financial benefits
+
+ItemType
+= Rune
+
+Unique
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+Price:
+60
+
+
+#######################################################################################
+
+
+NewItem:
+Vitari
+
+Description:
+This will help you to be stronger, but it also makes addictive
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncSTR
+
+Price:
+70
+
+EffectRange:
+20
+
+EffectText:
+It tastes horrible, but it seems to work
+
+DungeonLvl:
+5
+
+
+#################
+
+
+NewItem:
+Hard Vitari
+
+Description:
+This will help you to be stronger, but it also makes addictive
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= IncSTR
+
+Price:
+140
+
+EffectRange:
+60
+
+EffectText:
+It tastes horrible, but the effect is incredible
+
+DungeonLvl:
+99
+
+
+######################################################################################
+## PAPER, BOOKS ######################################################################
+######################################################################################
+
+NewItem:
+Sheets
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Just some empty paper to write on
+
+Amount:
+20
+
+Price:
+20
+
+######################################################################################
+
+NewItem:
+Scroll of Hope
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+Poetic words of wisdom are written on this scroll
+
+Price
+150
+
+DungeonLvl:
+99
+
+Textfile:
+scroll-of-hope
+
+
+######################################################################################
+
+NewItem:
+Short History of Herbstwelt
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Why does mankind live beneath the surface?
+
+Price:
+25
+
+DungeonLvl:
+1
+
+Textfile:
+short-history
+
+
+######################################################################################
+
+NewItem:
+Ranger's Words
+
+ItemType
+= Page
+
+Rare
+= True
+
+Description:
+A quote from the past
+
+Price:
+50
+
+DungeonLvl:
+3
+
+Textfile:
+rangers-words
+
+######################################################################################
+
+NewItem:
+The Shadow
+
+ItemType
+= Page
+
+Description:
+A poem
+
+Price:
+50
+
+DungeonLvl:
+5
+
+Textfile:
+the-shadow
+
+
+######################################################################################
+
+
+NewItem:
+Dead Comrade
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+The page of a diary
+
+Price:
+50
+
+DungeonLvl:
+7
+
+Textfile:
+dead-comrade
+
+
+######################################################################################
+
+NewItem:
+Diary Page
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+Small letters are handwritten on this sheet of paper
+
+Price
+150
+
+DungeonLvl:
+3
+
+Textfile:
+diary-page
+
+
+
+######################################################################################
+
+NewItem:
+Scroll of Ares
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+A short history of Ares' interferring in Earth's life
+
+Price:
+80
+
+DungeonLvl:
+1
+
+Textfile:
+scroll-of-ares
+
+
+######################################################################################
+
+NewItem:
+The Temple of Enoa
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Brief information on the temple of Enoa
+
+Price:
+50
+
+DungeonLvl:
+1
+
+Textfile:
+temple-of-enoa
+
+######################################################################################
+
+NewItem:
+World Map
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Some information on the surroundings of the temple
+
+Price:
+50
+
+DungeonLvl:
+1
+
+Textfile:
+worldmap
+
+######################################################################################
+
+NewItem:
+Scroll of Eris
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+About the shameful actions of Eris, deity of dispute and chaos
+
+Price:
+80
+
+DungeonLvl:
+1
+
+Textfile:
+scroll-of-eris
+
+
+######################################################################################
+
+NewItem:
+Scroll of Apoll
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+How Python was killed by Apoll
+
+Price:
+80
+
+DungeonLvl:
+2
+
+Textfile:
+scroll-of-apoll
+
+#######################################################################################
+
+NewItem:
+Book of Stars
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+This is the last book of Yron, with prophecies about his return
+
+Price
+400
+
+DungeonLvl:
+99
+
+Textfile:
+book-of-stars
+
+
+######################################################################################
+
+
+NewItem:
+Letter from Daniel
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+This is a love letter from Daniel to Nina
+
+Price
+100
+
+DungeonLvl:
+99
+
+Textfile:
+letter-from-daniel
+
+######################################################################################
+## WEARABLES #########################################################################
+######################################################################################
+
+### body #############################################################################
+
+NewItem:
+Cape
+
+Description:
+A brown simple cape, often used by wanderers
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+160
+
+AP:
+1
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+######################################################################################
+
+NewItem:
+Thick Cape
+
+Description:
+A green cape made of a thick material
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+170
+
+AP:
+2
+
+DungeonLvl:
+2
+
+CharLvl:
+2
+
+
+######################################################################################
+
+NewItem:
+Leather Suit
+
+Description:
+This is a simple suit of leather
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+290
+
+AP:
+3
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+######################################################################################
+
+
+NewItem:
+Guard's Uniform
+
+Description:
+This is a black uniform of Herbstwelt's police guards
+
+ItemType
+= Clothes
+
+Rare
+= True
+
+Body
+= True
+
+Price:
+350
+
+AP:
+5
+
+DungeonLvl:
+2
+
+CharLvl:
+5
+
+
+######################################################################################
+
+
+NewItem:
+Refined Suit
+
+Description:
+This is a fine suit of silk and leather
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+400
+
+AP:
+6
+
+DungeonLvl:
+3
+
+CharLvl:
+6
+
+
+######################################################################################
+
+
+NewItem:
+Doublet
+
+Description:
+This is a rather common jacket
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+550
+
+AP:
+7
+
+DungeonLvl:
+3
+
+CharLvl:
+7
+
+######################################################################################
+
+NewItem:
+Shadow and Light
+
+Description:
+A black tight jacket
+
+ItemType
+= Clothes
+
+Body
+= True
+
+ShopOnly
+= True
+
+Price:
+180
+
+AP:
+1
+
+EffectType
+= ResistBlindness
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+Profession:
+2
+
+######################################################################################
+
+NewItem:
+Brigandine
+
+Description:
+Brigandines are made of leather, with added steel plates
+
+ItemType
+= Armour
+
+Body
+= True
+
+Price:
+700
+
+AP:
+8
+
+DungeonLvl:
+5
+
+CharLvl:
+9
+
+######################################################################################
+
+NewItem:
+Hauberk
+
+Description:
+This is a shirt of chain mail armour
+
+ItemType
+= Armour
+
+Body
+= True
+
+Price:
+850
+
+AP:
+10
+
+DungeonLvl:
+7
+
+CharLvl:
+10
+
+######################################################################################
+
+NewItem:
+Pixane
+
+Description:
+A mail collar that covers shoulders, breast and upper back
+
+ItemType
+= Armour
+
+Body
+= True
+
+Price:
+900
+
+AP:
+11
+
+DungeonLvl:
+9
+
+CharLvl:
+12
+
+######################################################################################
+
+NewItem:
+Lamellar Cuirass
+
+Description:
+This cuirass is made of many small plates
+
+ItemType
+= Armour
+
+Rare
+= True
+
+Body
+= True
+
+Price:
+1010
+
+AP:
+14
+
+DungeonLvl:
+11
+
+CharLvl:
+14
+
+######################################################################################
+
+NewItem:
+Bronze Cuirass
+
+Description:
+This is a rather leightweight metal cuirass
+
+ItemType
+= Armour
+
+Body
+= True
+
+Price:
+1200
+
+AP:
+16
+
+DungeonLvl:
+14
+
+CharLvl:
+17
+
+######################################################################################
+
+NewItem:
+Iron Cuirass
+
+Description:
+This is a cuirass made of heavy iron plates
+
+ItemType
+= Armour
+
+Body
+= True
+
+Price:
+1500
+
+AP:
+18
+
+DungeonLvl:
+16
+
+CharLvl:
+19
+
+Profession:
+5
+
+######################################################################################
+
+NewItem:
+Sanguine Cuirass of Ares
+
+Description:
+This is a cuirass made of heavy iron plates
+
+ItemType
+= Armour
+
+Unique
+= True
+
+Body
+= True
+
+Price:
+950
+
+AP:
+13
+
+DungeonLvl:
+9
+
+CharLvl:
+12
+
+Profession:
+5
+
+######################################################################################
+
+NewItem:
+Rain Cape
+
+Description:
+The material of this cape is waterproof
+
+ItemType
+= Clothes
+
+Unique
+= True
+
+Body
+= True
+
+EffectType
+= ResistWater
+
+Price:
+200
+
+AP:
+2
+
+DungeonLvl:
+4
+
+CharLvl:
+2
+
+######################################################################################
+
+NewItem:
+Cloak of Caution
+
+Description:
+This cloak helps to avoid traps in the dungeon
+
+ItemType
+= Clothes
+
+Rare
+= True
+
+Body
+= True
+
+EffectType
+= AvoidTrap
+
+Price:
+190
+
+AP:
+1
+
+DungeonLvl:
+3
+
+CharLvl:
+3
+
+
+### head #############################################################################
+
+NewItem:
+Leather Cap
+
+Description:
+This is a simple cap made of leather
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+140
+
+AP:
+1
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+Barbute
+
+Description:
+A close helmet with a Y-shaped slit for vision and breathing
+
+ItemType
+= Helmet
+
+Rare
+= True
+
+Head
+= True
+
+Price:
+200
+
+AP:
+2
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+Armet
+
+Description:
+This is a simple, but effective protection for your head
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+260
+
+AP:
+3
+
+DungeonLvl:
+3
+
+CharLvl:
+4
+
+######################################################################################
+
+NewItem:
+Burgonet
+
+Description:
+Another type of helmet
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+330
+
+AP:
+4
+
+DungeonLvl:
+5
+
+CharLvl:
+6
+
+######################################################################################
+
+NewItem:
+Cervelliere
+
+Description:
+This helmet protects your head from damage
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+450
+
+AP:
+5
+
+DungeonLvl:
+7
+
+CharLvl:
+8
+
+######################################################################################
+
+NewItem:
+Bascinet
+
+Description:
+Wear this helmet to protect yourself
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+500
+
+AP:
+6
+
+DungeonLvl:
+10
+
+CharLvl:
+10
+
+######################################################################################
+
+NewItem:
+Great Helm
+
+Description:
+This is an ancient helm, very impressive
+
+ItemType
+= Helmet
+
+Rare
+= True
+
+Head
+= True
+
+Price:
+550
+
+AP:
+7
+
+DungeonLvl:
+16
+
+CharLvl:
+14
+
+Profession:
+5
+
+######################################################################################
+
+NewItem:
+Cap of Illumination
+
+Description:
+It's a simple cap, but it glows in the darkness
+
+ItemType
+= Helmet
+
+Unique
+= True
+
+Head
+= True
+
+Price:
+190
+
+Light:
+2
+
+EffectType
+= ResistCalm
+
+DungeonLvl:
+1
+
+CharLvl:
+4
+
+######################################################################################
+
+NewItem:
+Cap of the Ranger
+
+Description:
+This cap was worn by a legendary ranger, in better times
+
+ItemType
+= Helmet
+
+Unique
+= True
+
+Head
+= True
+
+Price:
+250
+
+AP:
+4
+
+DungeonLvl:
+99
+
+CharLvl:
+3
+
+Profession:
+4
+
+
+### finger ###########################################################################
+
+NewItem:
+Blue Ring
+
+Description:
+This is a simple blue ring, rather unspecial
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+250
+
+WP:
+1
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+######################################################################################
+
+NewItem:
+Green Ring
+
+Description:
+This is a shiny green ring
+
+ItemType
+= Ring
+
+ShopOnly
+= True
+
+Finger
+= True
+
+Price:
+300
+
+AP:
+3
+
+DungeonLvl:
+1
+
+CharLvl:
+4
+
+######################################################################################
+
+NewItem:
+Red Ring
+
+Description:
+This is a beautiful red ring
+
+ItemType
+= Ring
+
+Rare
+= True
+
+Finger
+= True
+
+Price:
+400
+
+WP:
+2
+
+AP:
+2
+
+DungeonLvl:
+1
+
+CharLvl:
+5
+
+######################################################################################
+
+NewItem:
+Silver Ring
+
+Description:
+This is a very beautiful silver ring
+
+ItemType
+= Ring
+
+Rare
+= True
+
+Finger
+= True
+
+Price:
+500
+
+EffectType
+= ResistIce
+
+DungeonLvl:
+8
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+Golden Ring
+
+Description:
+This ring is made of pure shiny gold
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+450
+
+EffectType
+= ExtraGold
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+Ring of Caution
+
+Description:
+This ring helps you to recognize and to avoid dungeon traps
+
+ItemType
+= Ring
+
+Rare
+= True
+
+Finger
+= True
+
+Price:
+220
+
+EffectType
+= AvoidTrap
+
+DungeonLvl:
+7
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+Pandora's Ring
+
+Description:
+This ring is made of deep black glass
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+400
+
+EffectType
+= ResistFire
+
+DungeonLvl:
+99
+
+CharLvl:
+9
+
+
+######################################################################################
+## WEAPONS ###########################################################################
+######################################################################################
+
+# BEGIN Claymore
+
+NewItem:
+Claymore
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+16
+
+CharLvl:
+18
+
+Strength:
+80
+
+WP:
+27
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1260
+
+Profession:
+5
+
+# BEGIN Longsword
+
+NewItem:
+Longsword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+11
+
+CharLvl:
+16
+
+Strength:
+80
+
+WP:
+24
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1120
+
+Profession:
+5
+
+# BEGIN Dussack
+
+NewItem:
+Dussack
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+5
+
+CharLvl:
+9
+
+Strength:
+70
+
+WP:
+15
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+700
+
+# BEGIN Knife
+
+NewItem:
+Knife
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+60
+
+WP:
+3
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+140
+
+# BEGIN Sword
+
+NewItem:
+Sword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+60
+
+WP:
+9
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+400
+
+# BEGIN Slayer
+
+NewItem:
+Slayer
+
+ItemType
+= Sword
+
+Rare
+= True
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+Strength:
+40
+
+WP:
+10
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+420
+
+
+# BEGIN Protector
+
+NewItem:
+Protector
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+3
+
+Strength:
+70
+
+WP:
+9
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+450
+
+
+# BEGIN Broadsword
+
+NewItem:
+Broadsword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+10
+
+CharLvl:
+11
+
+Strength:
+70
+
+WP:
+20
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+980
+
+Profession:
+5
+
+# BEGIN Gladius
+
+NewItem:
+Gladius
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+3
+
+CharLvl:
+5
+
+Strength:
+60
+
+WP:
+12
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+600
+
+# BEGIN Dagger
+
+NewItem:
+Dagger
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+60
+
+WP:
+6
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+280
+
+# BEGIN Fairydagger
+
+NewItem:
+Fairydagger
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+2
+
+CharLvl:
+1
+
+Strength:
+60
+
+EffectType
+= Water
+
+EffectRange:
+4
+
+WP:
+7
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+300
+
+# BEGIN Blade
+
+NewItem:
+Blade
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+9
+
+CharLvl:
+10
+
+Strength:
+70
+
+WP:
+18
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+840
+
+Profession:
+5
+
+# BEGIN Axe
+
+NewItem:
+Axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+70
+
+WP:
+6
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+260
+
+
+# BEGIN Domai
+
+NewItem:
+Domai
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+Strength:
+75
+
+WP:
+6
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+290
+
+# BEGIN Broadaxe
+
+NewItem:
+Broadaxe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+5
+
+CharLvl:
+7
+
+Strength:
+80
+
+WP:
+15
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+700
+
+# BEGIN Waraxe
+
+NewItem:
+Waraxe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+16
+
+CharLvl:
+16
+
+Strength:
+90
+
+WP:
+27
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1240
+
+Profession:
+5
+
+# BEGIN Berdysch
+
+NewItem:
+Berdysch
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+4
+
+CharLvl:
+3
+
+Strength:
+70
+
+WP:
+12
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+540
+
+# BEGIN Labrys
+
+NewItem:
+Labrys
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+8
+
+CharLvl:
+10
+
+Strength:
+80
+
+WP:
+18
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+820
+
+# BEGIN Lochaber
+
+NewItem:
+Lochaber
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+13
+
+CharLvl:
+15
+
+Strength:
+90
+
+WP:
+24
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1100
+
+Profession:
+5
+
+# BEGIN Hatchet
+
+NewItem:
+Hatchet
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+70
+
+WP:
+3
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+120
+
+# BEGIN Steelaxe
+
+NewItem:
+Steelaxe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+10
+
+CharLvl:
+13
+
+Strength:
+80
+
+WP:
+21
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+990
+
+Profession:
+5
+
+# BEGIN Doubleaxe
+
+NewItem:
+Doubleaxe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+2
+
+CharLvl:
+3
+
+Strength:
+70
+
+WP:
+9
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+400
+
+# BEGIN Sarissa
+
+NewItem:
+Sarissa
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+18
+
+Strength:
+100
+
+WP:
+27
+
+GP:
+0
+
+AP:
+5
+
+Light:
+0
+
+Price:
+1350
+
+Profession:
+5
+
+# BEGIN Yari
+
+NewItem:
+Yari
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+11
+
+CharLvl:
+14
+
+Strength:
+90
+
+WP:
+21
+
+GP:
+0
+
+AP:
+4
+
+Light:
+0
+
+Price:
+1010
+
+Profession:
+5
+
+# BEGIN Doublepike
+
+NewItem:
+Doublepike
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+8
+
+CharLvl:
+10
+
+Strength:
+90
+
+WP:
+18
+
+GP:
+0
+
+AP:
+4
+
+Light:
+0
+
+Price:
+860
+
+Profession:
+5
+
+# BEGIN Crosslance
+
+NewItem:
+Crosslance
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+5
+
+CharLvl:
+5
+
+Strength:
+80
+
+WP:
+12
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+580
+
+# BEGIN Winglance
+
+NewItem:
+Winglance
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+Strength:
+80
+
+WP:
+6
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+300
+
+# BEGIN Triwing
+
+NewItem:
+Triwing
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+14
+
+CharLvl:
+16
+
+Strength:
+100
+
+WP:
+24
+
+GP:
+0
+
+AP:
+5
+
+Light:
+0
+
+Price:
+1200
+
+Profession:
+5
+
+# BEGIN Hasta
+
+NewItem:
+Hasta
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+2
+
+CharLvl:
+3
+
+Strength:
+80
+
+WP:
+9
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+440
+
+# BEGIN Berserk
+
+NewItem:
+Berserk
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+4
+
+CharLvl:
+4
+
+Strength:
+90
+
+EffectType
+= RageBonus
+
+WP:
+10
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+500
+
+# BEGIN Lance
+
+NewItem:
+Lance
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+80
+
+WP:
+3
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+160
+
+# BEGIN Contus
+
+NewItem:
+Contus
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+7
+
+CharLvl:
+8
+
+Strength:
+90
+
+WP:
+16
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+720
+
+# BEGIN Shortbow
+
+NewItem:
+Shortbow
+
+Description:
+Uses short arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+50
+
+WP:
+0
+
+GP:
+4
+
+NeedsAmmu:
+1
+
+AP:
+0
+
+Light:
+0
+
+Price:
+170
+
+# BEGIN Bow
+
+NewItem:
+Bow
+
+Description:
+Uses short arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+50
+
+WP:
+0
+
+GP:
+7
+
+NeedsAmmu:
+1
+
+AP:
+0
+
+Light:
+0
+
+Price:
+310
+
+# BEGIN Rangerbow
+
+NewItem:
+Rangerbow
+
+Description:
+Uses long arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+5
+
+CharLvl:
+6
+
+Strength:
+60
+
+WP:
+0
+
+GP:
+15
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+730
+
+Profession:
+4
+
+# BEGIN Hitotsu's Bow
+
+NewItem:
+Hitotsu's Bow
+
+Description:
+Uses long arrows
+
+ItemType
+= Gun
+
+Unique
+= True
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+3
+
+Strength:
+70
+
+WP:
+0
+
+GP:
+13
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+650
+
+Profession:
+4
+
+# BEGIN Yumi
+
+NewItem:
+Yumi
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+8
+
+CharLvl:
+10
+
+Strength:
+60
+
+WP:
+0
+
+GP:
+18
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+870
+
+Profession:
+4
+
+# BEGIN Crossbow
+
+NewItem:
+Crossbow
+
+Description:
+Uses long bolts
+
+ItemType
+= Gun
+
+Hands
+= True
+
+DungeonLvl:
+15
+
+CharLvl:
+17
+
+Strength:
+70
+
+WP:
+0
+
+GP:
+27
+
+NeedsAmmu:
+4
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1290
+
+Profession:
+4
+
+# BEGIN Warbow
+
+NewItem:
+Warbow
+
+Description:
+Uses long arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+11
+
+CharLvl:
+13
+
+Strength:
+60
+
+WP:
+0
+
+GP:
+21
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1010
+
+Profession:
+4
+
+# BEGIN Compbow
+
+NewItem:
+Compbow
+
+Description:
+Uses small arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+2
+
+CharLvl:
+2
+
+Strength:
+50
+
+WP:
+0
+
+GP:
+10
+
+NeedsAmmu:
+1
+
+AP:
+0
+
+Light:
+0
+
+Price:
+450
+
+# BEGIN Balester
+
+NewItem:
+Balester
+
+Description:
+Uses small bolts
+
+ItemType
+= Gun
+
+Hands
+= True
+
+DungeonLvl:
+12
+
+CharLvl:
+16
+
+Strength:
+70
+
+WP:
+0
+
+GP:
+24
+
+NeedsAmmu:
+3
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1150
+
+Profession:
+4
+
+# BEGIN Longbow
+
+NewItem:
+Longbow
+
+Description:
+Uses long arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+Strength:
+50
+
+WP:
+0
+
+GP:
+13
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+610
+
+# BEGIN Waraxe of Power
+
+NewItem:
+Waraxe of Power
+
+ItemType
+= Axe
+
+Hands
+= True
+
+TwoHands
+= True
+
+Rare
+= True
+
+EffectType
+= Force
+
+EffectRange:
+14
+
+DungeonLvl:
+17
+
+CharLvl:
+16
+
+Strength:
+90
+
+WP:
+27
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1750
+
+Profession:
+5
+
+
+# BEGIN Mighty Berdysch
+
+NewItem:
+Mighty Berdysch
+
+ItemType
+= Axe
+
+Hands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+6
+
+CharLvl:
+4
+
+Strength:
+70
+
+WP:
+13
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+650
+
+# BEGIN Light Yumi
+
+NewItem:
+Light Yumi
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+9
+
+CharLvl:
+10
+
+Strength:
+50
+
+WP:
+0
+
+GP:
+18
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+950
+
+Profession:
+4
+
+# BEGIN Warbow of Kaduria
+
+NewItem:
+Warbow of Kaduria
+
+Description:
+Uses long arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+Unique
+= True
+
+DungeonLvl:
+18
+
+CharLvl:
+14
+
+Strength:
+60
+
+WP:
+0
+
+GP:
+21
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+1
+
+Price:
+700
+
+Profession:
+4
+
+# BEGIN Protecting Doublepike
+
+NewItem:
+Protecting Doublepike
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+9
+
+CharLvl:
+10
+
+Strength:
+90
+
+WP:
+18
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+1250
+
+# BEGIN Mighty Claymore
+
+NewItem:
+Mighty Claymore
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+19
+
+Strength:
+80
+
+WP:
+28
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+2520
+
+Profession:
+5
+
+# BEGIN Shania
+
+NewItem:
+Shania
+
+ItemType
+= Sword
+
+Hands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+4
+
+CharLvl:
+7
+
+Strength:
+65
+
+WP:
+13
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+650
+
+
+#######################################################################################
+
+
+NewItem:
+Small Arrows
+
+Description:
+These wooden arrows are needed for several kinds of bows
+
+ItemType
+= Ammu
+
+IsAmmu:
+1
+
+Price:
+20
+
+Amount:
+100
+
+WP:
+1
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Long Arrows
+
+Description:
+These arrows are needed for larger bows
+
+ItemType
+= Ammu
+
+IsAmmu:
+2
+
+Price:
+30
+
+Amount:
+100
+
+WP:
+2
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Ebony Arrows
+
+Description:
+These arrows are a special variant of long arrows, for larger bows
+
+ItemType
+= Ammu
+
+IsAmmu:
+2
+
+Price:
+60
+
+Amount:
+100
+
+WP:
+3
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Small Bolts
+
+Description:
+These bolts are used in smaller crossbows
+
+ItemType
+= Ammu
+
+IsAmmu:
+3
+
+Price:
+30
+
+Amount:
+100
+
+WP:
+2
+
+DungeonLvl:
+12
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Long Bolts
+
+Description:
+These are bolts for standard sized crossbows
+
+ItemType
+= Ammu
+
+IsAmmu:
+4
+
+Price:
+40
+
+Amount:
+100
+
+WP:
+4
+
+DungeonLvl:
+15
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Strong Bolts
+
+Description:
+These are better bolts for standard sized crossbows
+
+ItemType
+= Ammu
+
+Rare
+= True
+
+IsAmmu:
+4
+
+Price:
+100
+
+Amount:
+60
+
+WP:
+8
+
+DungeonLvl:
+15
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Rubble
+
+Description:
+Rubble, made of stones of various size
+
+ItemType
+= Rock
+
+IsAmmu:
+5
+
+Barricade
+= True
+
+WP:
+20
+
+Price:
+10
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+### 1: Runes of Beithe ###############################################################
+
+
+NewItem:
+Rune of Beithe
+
+Description:
+A Drekh'narian rune of Beithe
+
+ItemType
+= Rune
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Rune of hUath
+
+Description:
+A Drekh'narian rune of hUath
+
+ItemType
+= Rune
+
+DungeonLvl:
+3
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Rune of Muin
+
+Description:
+A Drekh'narian rune of Muin
+
+ItemType
+= Rune
+
+DungeonLvl:
+12
+
+CharLvl:
+1
+
+#######################################################################################
+
+NewItem:
+Rune of Ailm
+
+Description:
+A Drekh'narian rune of Ailm
+
+ItemType
+= Rune
+
+DungeonLvl:
+17
+
+CharLvl:
+1
+
+
+### 2: Redemption ###############################################################
+
+NewItem:
+Cape of Magic
+
+Description:
+An old, shimmering cloak, suitable for enchanters
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Unique
+= True
+
+Price:
+200
+
+AP:
+3
+
+EffectType
+= MaxMagic
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+Profession:
+2
+
+#######################################################################################
+
+NewItem:
+Barbute of Invisibility
+
+Description:
+This helmet hides his owner from being recognized by others
+
+ItemType
+= Helmet
+
+Unique
+= True
+
+Price:
+400
+
+AP:
+2
+
+EffectType
+= BecomeInvisible
+
+DungeonLvl:
+99
+
+CharLvl:
+4
+
+Profession:
+2
+
+#######################################################################################
+
+NewItem:
+Ring of Wisdom
+
+Description:
+The wisdom of eternity seems to be enclosed in this old ring
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+150
+
+EffectType
+= ExtraEXP
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+NewItem:
+Ring of Agility
+
+Description:
+This ring protects you from being paralized
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+300
+
+EffectType
+= ResistParalization
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+
+### 3: Books of Yron ##################################################################
+
+NewItem:
+Book of Joy
+
+ItemType
+= Page
+
+Rare
+= True
+
+Description:
+This is one of the books of Yron, describing his way of joy
+
+Price
+400
+
+DungeonLvl:
+9
+
+Textfile:
+book-of-joy
+
+#######################################################################################
+
+NewItem:
+Book of Tears
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+This is one of the books of Yron, describing his way to cry
+
+Price
+400
+
+DungeonLvl:
+99
+
+Textfile:
+book-of-tears
+
+#######################################################################################
+
+NewItem:
+Book of Hate
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+This is one of the books of Yron, describing his way to hate
+
+Price
+400
+
+DungeonLvl:
+99
+
+Textfile:
+book-of-hate
+
+#######################################################################################
+
+NewItem:
+Book of Love
+
+ItemType
+= Page
+
+Unique
+= True
+
+Sacrifice
+= True
+
+Description:
+This is one of the books of Yron, describing his way to love
+
+Price
+400
+
+DungeonLvl:
+99
+
+Textfile:
+book-of-love
+
+#######################################################################################
+
+NewItem:
+History of Herbstwelt (Part 1)
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+A very precious book, bound in leather and with gilt edging
+
+Price
+1500
+
+DungeonLvl:
+99
+
+Textfile:
+history-of-herbstwelt-1
+
+######################################################################################
+
+
+NewItem:
+History of Herbstwelt (Part 2)
+
+ItemType
+= Page
+
+Rare
+= True
+
+Description:
+This scripture describes some of the events leading to Herbstwelt
+
+Price
+100
+
+DungeonLvl:
+16
+
+Textfile:
+history-of-herbstwelt-2
+
+######################################################################################
+
+NewItem:
+History of Herbstwelt (Part 3)
+
+ItemType
+= Page
+
+Rare
+= True
+
+Description:
+This scripture describes some of the events leading to Herbstwelt
+
+Price
+100
+
+DungeonLvl:
+3
+
+Textfile:
+history-of-herbstwelt-3
+
+
+### 5: Minor Gear of Thagor ##########################################################
+
+
+NewItem:
+Fire Blade of Thagor
+
+Description:
+This is the magical blade used by Thagor
+
+ItemType
+= Sword
+
+Unique
+= True
+
+Hands
+= True
+
+TwoHands
+= True
+
+Price:
+1050
+
+WP:
+18
+
+Strength:
+70
+
+EffectType
+= Fire
+
+EffectRange:
+20
+
+DungeonLvl:
+99
+
+CharLvl:
+10
+
+Profession:
+5
+
+######################################################################################
+
+NewItem:
+Great Helm of Thagor
+
+Description:
+This is the helmet of the mystical hero Thagor
+
+ItemType
+= Helmet
+
+Unique
+= True
+
+Head
+= True
+
+Price:
+500
+
+WP:
+2
+
+AP:
+6
+
+SP:
+2
+
+GP:
+2
+
+Light:
+1
+
+DungeonLvl:
+19
+
+CharLvl:
+17
+
+Profession:
+5
+
+
+### 6: Major Gear of Thagor ##########################################################
+
+
+NewItem:
+Precise Bow of Thagor
+
+Description:
+This bow has been used by Thagor centuries ago
+
+ItemType
+= Gun
+
+Unique
+= True
+
+NeedsAmmu:
+1
+
+Hands
+= True
+
+TwoHands
+= True
+
+Shoot
+= True
+
+Price:
+900
+
+GP:
+19
+
+Strength:
+30
+
+DungeonLvl:
+15
+
+CharLvl:
+14
+
+
+######################################################################################
+
+NewItem:
+Focus Ring
+
+Description:
+The beauty of this ring is breathtaking
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+300
+
+EffectType
+= ResistConfusion
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+
+## some other items ############################################################
+
+NewItem:
+Jade Ring
+
+Description:
+This ring is made of a precious mineral
+
+ItemType
+= Ring
+
+Rare
+= True
+
+Finger
+= True
+
+Price:
+350
+
+EffectType
+= ResistPoison
+
+DungeonLvl:
+3
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+Ring of Speed
+
+Description:
+You can move faster with this ring
+
+ItemType
+= Ring
+
+Rare
+= True
+
+Finger
+= True
+
+Price:
+250
+
+EffectType
+= IncMove
+
+EffectRange:
+2
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+############
+
+# BEGIN Northdoom
+
+NewItem:
+Northdoom
+
+ItemType
+= Sword
+
+Unique
+= True
+
+Hands
+= True
+
+DungeonLvl:
+21
+
+CharLvl:
+20
+
+Strength:
+50
+
+EffectType
+= Ice
+
+EffectRange:
+10
+
+WP:
+30
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+3500
+
+#######################################################################################
+
+NewItem:
+Tamiflu
+
+Description:
+Tamiflu is an effective, yet experimental medicine
+
+ItemType
+= Food
+
+Rare
+= True
+
+Eat
+= True
+
+EffectType
+= IncHP
+
+EffectRange:
+200
+
+Amount:
+15
+
+EffectText:
+Your health regenerates after taking the Tamiflu
+
+Price:
+150
+
+DungeonLvl:
+7
+
+#######################################################################################
+
+NewItem:
+Rosegarden's seductive perfume
+
+Description:
+This is a rose-scented perfume, created by M. Grenouille
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= DecHP
+
+EffectRange:
+20
+
+EffectText:
+Terrible. Better not drink perfumes.
+
+Price:
+160
+
+DungeonLvl:
+99
+
+# BEGIN Rusty Dagger
+
+NewItem:
+Rusty Dagger
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+Strength:
+50
+
+WP:
+4
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+150
+
+######################################################################################
+
+NewItem:
+The Forgotten Realm
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+A short summary of our knowledge about the Forgotten Realm
+
+Price:
+80
+
+DungeonLvl:
+1
+
+Textfile:
+forgotten-realm
+
+######################################################################################
+
+NewItem:
+The Undying King
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+The legend of the king of the Forgotten Realm
+
+Price:
+100
+
+DungeonLvl:
+1
+
+Textfile:
+undying-king
+
+
+# BEGIN Fire Axe
+
+NewItem:
+Fire Axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+3
+
+CharLvl:
+4
+
+Strength:
+70
+
+WP:
+6
+
+EffectType
+= Fire
+
+EffectRange:
+3
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+300
+
+# BEGIN Icelance
+
+NewItem:
+Icelance
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+4
+
+CharLvl:
+4
+
+Strength:
+80
+
+WP:
+6
+
+EffectType
+= Ice
+
+EffectRange:
+6
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+300
+
+
+#######################################################################################
+
+####### Temporary Resistance Items ########
+
+NewItem:
+Vaccine
+
+Description:
+-
+
+ItemType
+= Potion
+
+ShopOnly
+= True
+
+Drink
+= True
+
+EffectType
+= ResistPoison
+
+EffectRange:
+10
+
+EffectText:
+You feel immune against poison
+
+Price:
+100
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Cold Potion
+
+Description:
+-
+
+ItemType
+= Potion
+
+ShopOnly
+= True
+
+Drink
+= True
+
+EffectType
+= ResistFire
+
+EffectRange:
+20
+
+EffectText:
+You feel immune against fire
+
+Price:
+200
+
+DungeonLvl:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Warm Potion
+
+Description:
+-
+
+ItemType
+= Potion
+
+ShopOnly
+= True
+
+Drink
+= True
+
+EffectType
+= ResistIce
+
+EffectRange:
+10
+
+EffectText:
+You feel immune against ice
+
+Price:
+100
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Ion Potion
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= ResistElectricity
+
+EffectRange:
+10
+
+EffectText:
+You feel immune against electricity
+
+Price:
+100
+
+DungeonLvl:
+15
+
+
+#######################################################################################
+
+
+NewItem:
+Open Eye Potion
+
+Description:
+-
+
+ItemType
+= Potion
+
+ShopOnly
+= True
+
+Drink
+= True
+
+EffectType
+= ResistBlindness
+
+EffectRange:
+5
+
+EffectText:
+You feel immune against blindness
+
+Price:
+100
+
+DungeonLvl:
+3
+
+
+#######################################################################################
+
+
+NewItem:
+Dry Potion
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= ResistWater
+
+EffectRange:
+5
+
+EffectText:
+You feel immune against water
+
+Price:
+50
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Potion of Memory
+
+Description:
+-
+
+ItemType
+= Potion
+
+Rare
+= True
+
+Drink
+= True
+
+EffectType
+= FamiliarTerrain
+
+EffectRange:
+10
+
+EffectText:
+This area seems familiar to you
+
+Price:
+100
+
+DungeonLvl:
+15
+
+#######################################################################################
+
+
+NewItem:
+Sacred Food
+
+Description:
+-
+
+ItemType
+= Food
+
+ShopOnly
+= True
+
+Eat
+= True
+
+EffectType
+= ResistCurse
+
+EffectRange:
+10
+
+EffectText:
+You feel immune against curses
+
+Price:
+500
+
+DungeonLvl:
+15
+
+
+#######################################################################################
+
+
+NewItem:
+Phial of Distress
+
+Description:
+Increases distress generation; doubles effect of rage and powers
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= RageBonus
+
+EffectRange:
+10
+
+EffectText:
+You feel very nervous
+
+Price:
+500
+
+DungeonLvl:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Potion of Magic
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= MaxMagic
+
+EffectRange:
+20
+
+EffectText:
+You feel your psychic powers grow strong
+
+Price:
+100
+
+DungeonLvl:
+10
+
+
+#######################################################################################
+
+
+NewItem:
+Potion of Movement
+
+Description:
+-
+
+ItemType
+= Potion
+
+ShopOnly
+= True
+
+Drink
+= True
+
+EffectType
+= ResistParalization
+
+EffectRange:
+10
+
+EffectText:
+You feel that nothing can bind you
+
+Price:
+100
+
+DungeonLvl:
+10
+
+#######################################################################################
+
+NewItem:
+Purple Ring
+
+Description:
+This is a nice purple ring
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+250
+
+GP:
+1
+
+DungeonLvl:
+1
+
+CharLvl:
+2
+
+#######################################################################################
+
+
+NewItem:
+Liquid Death
+
+Description:
+This potion kills all life in the current area
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= Wipe
+
+EffectText:
+You feel pain and suddenly you're all alone
+
+Price:
+100
+
+DungeonLvl:
+22
+
+
+#######################################################################################
+
+NewItem:
+Ring of Vigor
+
+Description:
+-
+
+ItemType
+= Ring
+
+ShopOnly
+= True
+
+Finger
+= True
+
+Price:
+350
+
+EffectType
+= ResistDrainSTR
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+######################################################################################
+
+NewItem:
+First Verse
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+The first verse of a poem
+
+Price:
+50
+
+DungeonLvl:
+99
+
+Textfile:
+first-verse
+
+######################################################################################
+
+NewItem:
+Second Verse
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+The second verse of a poem
+
+Price:
+50
+
+DungeonLvl:
+99
+
+Textfile:
+second-verse
+
+######################################################################################
+
+NewItem:
+Third Verse
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+The third verse of a poem
+
+Price:
+50
+
+DungeonLvl:
+99
+
+Textfile:
+third-verse
+
+######################################################################################
+
+NewItem:
+Fourth Verse
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+The fourth verse of a poem
+
+Price:
+50
+
+DungeonLvl:
+99
+
+Textfile:
+fourth-verse
+
+######################################################################################
+
+NewItem:
+Beautiful Notebook
+
+ItemType
+= Page
+
+Unique
+= True
+
+Description:
+A notebook. Very beautiful, with some missing pages
+
+Price:
+70
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Bridal Flowers
+
+Description:
+A beautiful bouquet of flowers
+
+ItemType
+= Food
+
+Unique
+= True
+
+Price:
+20
+
+DungeonLvl:
+99
+
+######################################################################################
+
+NewItem:
+Heart of Aphrodite
+
+Description:
+This is an anthracite ring with a ruby red gemstone
+
+ItemType
+= Ring
+
+Unique
+= True
+
+EffectType
+= RageBonus
+
+Finger
+= True
+
+Price:
+450
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+#######################################################################################
+
+
+NewItem:
+Wooden Shield
+
+Description:
+A simple shield, made of cheap wood
+
+ItemType
+= Shield
+
+ShopOnly
+= True
+
+Extra
+= True
+
+AP:
+1
+
+Price:
+150
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Walking Shoes
+
+Description:
+Simple shoes without any special properties
+
+ItemType
+= Shoes
+
+ShopOnly
+= True
+
+Feet
+= True
+
+Price:
+50
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+#######################################################################################
+
+
+NewItem:
+Big Wooden Shield
+
+Description:
+A more protective variant of the wooden shield
+
+ItemType
+= Shield
+
+Unique
+= True
+
+Extra
+= True
+
+AP:
+2
+
+Price:
+200
+
+DungeonLvl:
+2
+
+CharLvl:
+2
+
+
+#######################################################################################
+
+
+NewItem:
+Copper Shield
+
+Description:
+-
+
+ItemType
+= Shield
+
+ShopOnly
+= True
+
+Extra
+= True
+
+AP:
+2
+
+Price:
+300
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+#######################################################################################
+
+
+NewItem:
+Bronze Shield
+
+Description:
+-
+
+ItemType
+= Shield
+
+ShopOnly
+= True
+
+Extra
+= True
+
+AP:
+4
+
+Price:
+400
+
+DungeonLvl:
+10
+
+CharLvl:
+6
+
+#######################################################################################
+
+
+NewItem:
+Iron Shield
+
+Description:
+-
+
+ItemType
+= Shield
+
+ShopOnly
+= True
+
+Extra
+= True
+
+AP:
+5
+
+Price:
+500
+
+DungeonLvl:
+12
+
+CharLvl:
+10
+
+Profession:
+5
+
+#######################################################################################
+
+
+NewItem:
+Great Shield
+
+Description:
+-
+
+ItemType
+= Shield
+
+ShopOnly
+= True
+
+Extra
+= True
+
+AP:
+6
+
+Price:
+650
+
+DungeonLvl:
+15
+
+CharLvl:
+13
+
+Profession:
+5
+
+#######################################################################################
+
+
+NewItem:
+Guardian of Kaduria
+
+Description:
+A shield that protects its bearer by grief and despair
+
+ItemType
+= Shield
+
+Unique
+= True
+
+Extra
+= True
+
+AP:
+6
+
+Price:
+700
+
+DungeonLvl:
+18
+
+CharLvl:
+15
+
+Profession:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Boots of Regeneration
+
+Description:
+-
+
+ItemType
+= Shoes
+
+Unique
+= True
+
+Feet
+= True
+
+EffectType
+= IncHP
+
+Price:
+500
+
+DungeonLvl:
+19
+
+CharLvl:
+10
+
+
+#######################################################################################
+
+
+NewItem:
+Gracile Sandals
+
+Description:
+A beautiful pair of sandals, ornated with small diamonds
+
+ItemType
+= Shoes
+
+Unique
+= True
+
+Feet
+= True
+
+EffectType
+= IncPP
+
+AP:
+1
+
+Price:
+400
+
+DungeonLvl:
+15
+
+Sex:
+2
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Patent Leather Shoes
+
+Description:
+An expensive pair of men's shoes
+
+ItemType
+= Shoes
+
+Unique
+= True
+
+Feet
+= True
+
+EffectType
+= IncPP
+
+AP:
+1
+
+Price:
+400
+
+DungeonLvl:
+15
+
+Sex:
+1
+
+CharLvl:
+1
+
+
+#####################################################################################
+
+
+NewItem:
+500 Credits
+
+Description:
+Credits are the currency of Herbstwelt
+
+ItemType
+= Gold
+
+Unique
+= True
+
+Price:
+500
+
+DungeonLvl:
+25
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Good Shoes
+
+Description:
+-
+
+ItemType
+= Shoes
+
+ShopOnly
+= True
+
+Feet
+= True
+
+AP:
+1
+
+Price:
+170
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Worker's Boots
+
+Description:
+Solid leather boots
+
+ItemType
+= Shoes
+
+ShopOnly
+= True
+
+Feet
+= True
+
+AP:
+2
+
+Price:
+250
+
+DungeonLvl:
+1
+
+CharLvl:
+3
+
+
+#######################################################################################
+
+
+NewItem:
+Army Boots
+
+Description:
+Black boots, mainly used by the soldiers of Herbstwelt
+
+ItemType
+= Shoes
+
+ShopOnly
+= True
+
+Feet
+= True
+
+AP:
+3
+
+Price:
+400
+
+DungeonLvl:
+5
+
+CharLvl:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Heavy Army Boots
+
+Description:
+Heavy black boots, only used by the soldiers of Herbstwelt
+
+ItemType
+= Shoes
+
+ShopOnly
+= True
+
+Feet
+= True
+
+AP:
+4
+
+Price:
+550
+
+DungeonLvl:
+10
+
+CharLvl:
+7
+
+Profession:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Fur Boots
+
+Description:
+Boots covered by thick fur, keeping your legs warm
+
+ItemType
+= Shoes
+
+Unique
+= True
+
+Feet
+= True
+
+EffectType
+= ResistIce
+
+AP:
+2
+
+Price:
+300
+
+DungeonLvl:
+4
+
+CharLvl:
+5
+
+#######################################################################################
+
+NewItem:
+Coffee Set
+
+Description:
+This set consists of a sweet cake and a big cup of hot coffee
+
+ItemType
+= Food
+
+Drink
+= True
+
+EffectType
+= MaxMagic
+
+EffectRange:
+10
+
+EffectText:
+You feel your psychic powers grow strong
+
+Price:
+50
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+
+NewItem:
+Sandwich
+
+Description:
+Fresh bread and delicious meat
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+1050
+
+EffectText:
+The meat and the fresh bread make a tasteful combination
+
+Price:
+70
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+
+NewItem:
+Bread Roll with Fish
+
+Description:
+Tasteful fish, rolled in fresh bread
+
+ItemType
+= Food
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+950
+
+EffectText:
+The pork and the fresh bread make a tasteful combination
+
+Price:
+60
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Stale Cola
+
+Description:
+Cola restores psychic power. This one, however, looks very stale
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncPP
+
+EffectRange:
+10
+
+EffectText:
+It's sweet, but moldy
+
+Price:
+1
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Unremarkable Ring
+
+Description:
+This ring has a small socket on its upper side
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+40
+
+DungeonLvl:
+7
+
+CharLvl:
+1
+
+
+#######################################################################################
+
+NewItem:
+Psychic Ring
+
+Description:
+Looking at this ring makes you feel happy
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+200
+
+EffectType
+= ReducedPPCosts
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+#######################################################################################
+
+NewItem:
+Sparkling Blue Ring
+
+Description:
+This is a beautiful blue ring
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+300
+
+WP:
+2
+
+DungeonLvl:
+99
+
+CharLvl:
+3
+
+#######################################################################################
+
+NewItem:
+Sparkling Purple Ring
+
+Description:
+This is a beautiful purple ring
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+300
+
+GP:
+2
+
+DungeonLvl:
+99
+
+CharLvl:
+3
+
+#######################################################################################
+
+NewItem:
+Sparkling Yellow Ring
+
+Description:
+This is a rather pretty yellow ring
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+300
+
+AP:
+2
+
+DungeonLvl:
+99
+
+CharLvl:
+3
+
+#######################################################################################
+
+NewItem:
+Yellow Ring
+
+Description:
+This is a thin yellow ring
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+150
+
+AP:
+1
+
+DungeonLvl:
+2
+
+CharLvl:
+2
+
+#######################################################################################
+
+NewItem:
+Protective Ring
+
+Description:
+This ring looks like made of stone
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+250
+
+EffectType
+= MagicWall
+
+DungeonLvl:
+99
+
+CharLvl:
+5
+
+#######################################################################################
+
+NewItem:
+Teflon Ring
+
+Description:
+The material of this feels very repellent material
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+250
+
+EffectType
+= ResistWater
+
+DungeonLvl:
+99
+
+CharLvl:
+3
+
+#######################################################################################
+
+
+NewItem:
+Fine Coffee Set
+
+Description:
+This set consists of a cheese cake and a cup of expensive coffee
+
+ItemType
+= Food
+
+Drink
+= True
+
+EffectType
+= MaxMagic
+
+EffectRange:
+20
+
+EffectText:
+You feel your psychic powers grow very strong
+
+Price:
+70
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+
+NewItem:
+Stale Beer
+
+ShopOnly
+= True
+
+Description:
+This beer is not very fresh anymore
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncConfusion
+
+EffectRange:
+2
+
+EffectText:
+That stale beer has nearly no effect on you
+
+Price:
+10
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Copyrin
+
+Description:
+Aspirin and Caffeine combined restore health & psychic power
+
+ItemType
+= Food
+
+Eat
+= True
+
+Amount:
+1
+
+EffectType
+= IncHPandPP
+
+EffectRange:
+50
+
+EffectText:
+Your health and psychic power regenerate after taking Copyrin
+
+Price:
+50
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Caffeine
+
+Description:
+A caffeine tablet restores psychic power
+
+ItemType
+= Food
+
+Amount:
+15
+
+ShopOnly
+= True
+
+Eat
+= True
+
+EffectType
+= IncPP
+
+EffectRange:
+200
+
+EffectText:
+You feel very focused
+
+Price:
+100
+
+DungeonLvl:
+5
+
+#######################################################################################
+
+NewItem:
+Copper Ring
+
+Description:
+This is a cheap ring
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+50
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+#######################################################################################
+
+NewItem:
+Toy Ring
+
+Description:
+This is a plastics ring, for children
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+30
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+#######################################################################################
+
+
+NewItem:
+VitaMix
+
+Description:
+Vitari, mixed with Cola, for better taste and effect
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncSTR
+
+Price:
+80
+
+EffectRange:
+30
+
+EffectText:
+Mixed with Cola, it tastes better than normal Vitari
+
+DungeonLvl:
+99
+
+
+#######################################################################################
+
+
+NewItem:
+Vitarin
+
+Description:
+Vitari, plus amphetamine. Even better than VitaMix
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncSTR
+
+Price:
+90
+
+EffectRange:
+40
+
+EffectText:
+It's not tasteful, but at least it works
+
+DungeonLvl:
+99
+
+############################################################################
+
+NewItem:
+Inconspicious Blade
+
+Description:
+This is a rather unimpressive sword, with a socket on its shaft
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+4
+
+CharLvl:
+1
+
+Strength:
+60
+
+WP:
+6
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+280
+
+######################################################################################
+
+# BEGIN Enchanted Sword
+
+NewItem:
+Enchanted Sword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+CharLvl:
+5
+
+Strength:
+20
+
+WP:
+12
+
+GP:
+0
+
+AP:
+1
+
+Light:
+1
+
+Price:
+300
+
+DungeonLvl:
+99
+
+######################################################################################
+
+# BEGIN Mythic Sword
+
+NewItem:
+Mythic Sword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+CharLvl:
+6
+
+Strength:
+10
+
+WP:
+13
+
+GP:
+0
+
+AP:
+2
+
+Price:
+300
+
+DungeonLvl:
+99
+
+############################################################################
+
+NewItem:
+Unimpressive Axe
+
+Description:
+This is a socketed, but otherwise unremarkable axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+4
+
+CharLvl:
+1
+
+Strength:
+70
+
+WP:
+5
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+280
+
+######################################################################################
+
+# BEGIN Magic Axe
+
+NewItem:
+Magic Axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+7
+
+Strength:
+40
+
+WP:
+15
+
+GP:
+0
+
+AP:
+1
+
+Light:
+1
+
+Price:
+350
+
+######################################################################################
+
+# BEGIN Epic Axe
+
+NewItem:
+Epic Axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+8
+
+Strength:
+20
+
+WP:
+15
+
+GP:
+0
+
+AP:
+2
+
+Price:
+350
+
+############
+
+# BEGIN Purified Northdoom
+
+NewItem:
+Purified Northdoom
+
+ItemType
+= Sword
+
+Unique
+= True
+
+Hands
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+20
+
+Strength:
+50
+
+WP:
+35
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+2000
+
+#######################################################################################
+
+
+NewItem:
+Shoes of Memory
+
+Description:
+Simple, but comfortable shoes which remind you of your youth
+
+ItemType
+= Shoes
+
+Rare
+= True
+
+Feet
+= True
+
+EffectType
+= FamiliarTerrain
+
+Price:
+80
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+######################################################################################
+
+# BEGIN Electriclance
+
+NewItem:
+Electriclance
+
+ItemType
+= Lance
+
+Unique
+= True
+
+Hands
+= True
+
+TwoHands
+= True
+
+CharLvl:
+10
+
+Strength:
+90
+
+EffectType
+= Electricity
+
+EffectRange:
+15
+
+WP:
+14
+
+GP:
+0
+
+AP:
+4
+
+Light:
+1
+
+Price:
+900
+
+Profession:
+5
+
+DungeonLvl:
+99
+
+############################################################################
+
+NewItem:
+Meaningless Lance
+
+Description:
+This is a simple lance, but with a socket on its shaft
+
+ItemType
+= Lance
+
+Hands
+= True
+
+DungeonLvl:
+8
+
+CharLvl:
+1
+
+Strength:
+80
+
+WP:
+3
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+280
+
+######################################################################################
+
+NewItem:
+Buzzing Ring
+
+Description:
+This ring is made of deep black glass
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+300
+
+EffectType
+= ResistElectricity
+
+DungeonLvl:
+25
+
+CharLvl:
+5
+
+######################################################################################
+
+# BEGIN Silver Blade of Punishment
+
+NewItem:
+Silver Blade of Punishment
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+11
+
+CharLvl:
+10
+
+Strength:
+50
+
+WP:
+18
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+900
+
+Profession:
+5
+
+
+#######################################################################################
+
+
+NewItem:
+Banana
+
+Description:
+A tasty fruit, grown in the Gardens of Enoa
+
+ItemType
+= Food
+
+Rare
+= True
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+100
+
+EffectText:
+It's tasty and gives new energy
+
+Price:
+25
+
+DungeonLvl:
+1
+
+
+#######################################################################################
+
+
+NewItem:
+Banana Peel
+
+Description:
+The empty remains of a banana
+
+ItemType
+= Food
+
+Rare
+= True
+
+Eat
+= False
+
+Drink
+= False
+
+Price:
+1
+
+DungeonLvl:
+99
+
+
+#######################################################################################
+
+NewItem:
+Strong Copyrin
+
+Description:
+Aspirin and Caffeine combined restore health & psychic power
+
+ItemType
+= Food
+
+Eat
+= True
+
+Amount:
+1
+
+EffectType
+= IncHPandPP
+
+EffectRange:
+100
+
+EffectText:
+Your health and psychic power regenerate after taking Copyrin
+
+Price:
+100
+
+DungeonLvl:
+99
+
+#######################################################################################
+
+NewItem:
+Copyrin Overdose
+
+Description:
+Way too much penicillin and caffeine are in this drug
+
+ItemType
+= Food
+
+Eat
+= True
+
+Amount:
+1
+
+EffectType
+= DecPP
+
+EffectRange:
+150
+
+EffectText:
+Your psychic power drains heavily
+
+Price:
+80
+
+DungeonLvl:
+99
+
+
+#######################################################################################
+
+
+NewItem:
+Cavetin
+
+Description:
+Vitari and Copyrin, for a stronger effect
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncSTR
+
+Price:
+200
+
+EffectRange:
+100
+
+EffectText:
+The blood rushes through your veins
+
+DungeonLvl:
+99
+
+
+#######################################################################################
+
+NewItem:
+Cavetin Overdose
+
+Description:
+The amount of vitari and caffeeine in this drug is surely unhealthy
+
+ItemType
+= Food
+
+Eat
+= True
+
+Amount:
+1
+
+EffectType
+= DecHP
+
+EffectRange:
+150
+
+EffectText:
+You feel really awful
+
+Price:
+80
+
+DungeonLvl:
+99
+
+######################################################################################
+
+# BEGIN Enchanted Broadsword
+
+NewItem:
+Enchanted Broadsword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+Unique
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+15
+
+Strength:
+70
+
+WP:
+20
+
+GP:
+0
+
+AP:
+1
+
+Light:
+1
+
+Price:
+1000
+
+Profession:
+5
+
+######################################################################################
+
+# BEGIN Mythic Broadsword
+
+NewItem:
+Mythic Broadsword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+Unique
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+15
+
+Strength:
+60
+
+WP:
+21
+
+GP:
+0
+
+AP:
+2
+
+Price:
+1000
+
+Profession:
+5
+
+#######################################################################################
+
+NewItem:
+Liquid of Blaze
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= AreaDamage
+
+EffectRange:
+20
+
+EffectText:
+You damage the surrounding enemies
+
+Price:
+100
+
+DungeonLvl:
+10
+
+#######################################################################################
+
+
+NewItem:
+Weak Poison
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncPoison
+
+EffectRange:
+5
+
+EffectText:
+You feel sick after drinking the poison
+
+Price:
+20
+
+DungeonLvl:
+10
+
+
+#######################################################################################
+
+
+NewItem:
+Poison
+
+Description:
+-
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncPoison
+
+EffectRange:
+8
+
+EffectText:
+You feel very sick after drinking the poison
+
+Price:
+30
+
+DungeonLvl:
+15
+
+######################################################################################
+
+# BEGIN Long Viper
+
+NewItem:
+Long Viper
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+Rare
+= True
+
+DungeonLvl:
+8
+
+CharLvl:
+10
+
+EffectType
+= IncPoison
+
+EffectRange:
+5
+
+Strength:
+90
+
+WP:
+18
+
+GP:
+0
+
+AP:
+4
+
+Light:
+0
+
+Price:
+950
+
+Profession:
+5
+
+######################################################################################
+
+# BEGIN Unhealthy Axe
+
+NewItem:
+Unhealthy Axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+7
+
+EffectType
+= IncPoison
+
+EffectRange:
+4
+
+Strength:
+40
+
+WP:
+15
+
+GP:
+0
+
+AP:
+0
+
+Price:
+350
+
+######################################################################################
+
+# BEGIN Resounding Success
+
+NewItem:
+Resounding Success
+
+ItemType
+= Sword
+
+Hands
+= True
+
+CharLvl:
+7
+
+Strength:
+10
+
+WP:
+13
+
+GP:
+0
+
+EffectType
+= IncPoison
+
+EffectRange:
+5
+
+Price:
+350
+
+DungeonLvl:
+99
+
+######################################################################################
+
+# BEGIN Poisonous Northdoom
+
+NewItem:
+Poisonous Northdoom
+
+ItemType
+= Sword
+
+Unique
+= True
+
+Hands
+= True
+
+DungeonLvl:
+99
+
+CharLvl:
+20
+
+Strength:
+50
+
+WP:
+35
+
+GP:
+0
+
+AP:
+0
+
+EffectType
+= IncPoison
+
+EffectRange:
+8
+
+Price:
+2100
+
+######################################################################################
+
+NewItem:
+Path of Soldiers
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Information on the Order of Soldiers and its ranks
+
+Price:
+50
+
+DungeonLvl:
+1
+
+Textfile:
+path-of-soldiers
+
+######################################################################################
+
+NewItem:
+Path of Enchanters
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Information on the Council of Enchanters and Mages (CEM) and its ranks
+
+Price:
+50
+
+DungeonLvl:
+1
+
+Textfile:
+path-of-enchanters
+
+######################################################################################
+
+NewItem:
+Path of Archers
+
+ItemType
+= Page
+
+ShopOnly
+= True
+
+Description:
+Information on the Order of Archers and Rungers (OAR) and its ranks
+
+Price:
+50
+
+DungeonLvl:
+1
+
+Textfile:
+path-of-archers
+
+
+######################################################################################
+
+NewItem:
+Thanan's note
+
+ItemType
+= Page
+
+Description:
+A note, written by Brother Thanan
+
+Price:
+0
+
+DungeonLvl:
+99
+
+Textfile:
+thanans-note
+
+
+######################################################################################
+
+NewItem:
+Rubyred Mitra
+
+Description:
+This impressive mitra is worn by priests of the Rubyred Apostolate
+
+ItemType
+= Helmet
+
+Unique
+= True
+
+Head
+= True
+
+Price:
+400
+
+AP:
+1
+
+DungeonLvl:
+17
+
+CharLvl:
+1
+
+#######################################################################################
+
+NewItem:
+Ring of Divinity
+
+Description:
+A glowing ring with your picture engraved in heavenly gold
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Unique
+= True
+
+Price:
+1000
+
+EffectType
+= IncHPandPP
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+
+######################################################################################
+### New items for patch 1.6.3 ###
+######################################################################################
+
+# BEGIN Ebony Bow
+
+NewItem:
+Ebony Bow
+
+Description:
+Uses long or ebony arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+6
+
+CharLvl:
+6
+
+Strength:
+50
+
+WP:
+0
+
+GP:
+16
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+800
+
+################
+
+# BEGIN Tiny Balester
+
+NewItem:
+Tiny Balester
+
+Description:
+Uses small bolts
+
+ItemType
+= Gun
+
+Hands
+= True
+
+DungeonLvl:
+13
+
+CharLvl:
+15
+
+Strength:
+70
+
+WP:
+0
+
+GP:
+20
+
+NeedsAmmu:
+3
+
+AP:
+0
+
+Light:
+0
+
+Price:
+950
+
+
+# BEGIN Apollum
+
+NewItem:
+Apollum
+
+Description:
+Uses long arrows
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+20
+
+Strength:
+40
+
+WP:
+0
+
+GP:
+30
+
+NeedsAmmu:
+2
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1700
+
+# BEGIN Infinity
+
+NewItem:
+Infinity
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+20
+
+Strength:
+40
+
+EffectType
+= Water
+
+EffectRange:
+10
+
+WP:
+30
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+2000
+
+# BEGIN Everest
+
+NewItem:
+Everest
+
+ItemType
+= Axe
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+20
+
+Strength:
+40
+
+EffectType
+= Ice
+
+EffectRange:
+10
+
+WP:
+30
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+2000
+
+# BEGIN Winglet
+
+NewItem:
+Winglet
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+18
+
+Strength:
+70
+
+WP:
+30
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1700
+
+Profession:
+5
+
+# BEGIN Jagged Blade
+
+NewItem:
+Jagged Blade
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+19
+
+CharLvl:
+18
+
+Strength:
+65
+
+WP:
+30
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1700
+
+Profession:
+5
+
+# BEGIN Katana
+
+NewItem:
+Katana
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+17
+
+CharLvl:
+16
+
+Strength:
+60
+
+WP:
+25
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1200
+
+Profession:
+5
+
+# BEGIN Soulfall
+
+NewItem:
+Soulfall
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+18
+
+CharLvl:
+15
+
+Strength:
+70
+
+WP:
+20
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+EffectType
+= MaxMagic
+
+Price:
+1000
+
+Profession:
+2
+
+# BEGIN Tanto
+
+NewItem:
+Tanto
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+13
+
+CharLvl:
+15
+
+Strength:
+40
+
+WP:
+22
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1050
+
+Profession:
+5
+
+# BEGIN Daynight
+
+NewItem:
+Daynight
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+11
+
+CharLvl:
+15
+
+Strength:
+50
+
+WP:
+20
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1000
+
+# BEGIN Wakizashi
+
+NewItem:
+Wakizashi
+
+ItemType
+= Sword
+
+Hands
+= True
+
+DungeonLvl:
+6
+
+CharLvl:
+9
+
+Strength:
+60
+
+WP:
+17
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+900
+
+Profession:
+5
+
+# BEGIN Dane Axe
+
+NewItem:
+Dane Axe
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+6
+
+CharLvl:
+9
+
+Strength:
+75
+
+WP:
+17
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+800
+
+# BEGIN Parashu
+
+NewItem:
+Parashu
+
+ItemType
+= Axe
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+9
+
+CharLvl:
+10
+
+Strength:
+70
+
+WP:
+19
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+900
+
+# BEGIN Trinity
+
+NewItem:
+Trinity
+
+ItemType
+= Axe
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+16
+
+CharLvl:
+15
+
+Strength:
+65
+
+WP:
+24
+
+GP:
+0
+
+AP:
+0
+
+Light:
+0
+
+Price:
+1100
+
+# BEGIN Earthbound
+
+NewItem:
+Earthbound
+
+ItemType
+= Axe
+
+Hands
+= True
+
+DungeonLvl:
+17
+
+CharLvl:
+17
+
+Strength:
+55
+
+WP:
+28
+
+GP:
+0
+
+AP:
+1
+
+Light:
+0
+
+Price:
+1300
+
+Profession:
+5
+
+# BEGIN Moonson
+
+NewItem:
+Moonson
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+18
+
+CharLvl:
+17
+
+Strength:
+55
+
+WP:
+24
+
+GP:
+0
+
+AP:
+2
+
+Light:
+0
+
+Price:
+1200
+
+
+# BEGIN Steel-toed Boots
+
+NewItem:
+Steel-toed Boots
+
+Description:
+Steel-capped heavy boots for work and combat 
+
+ItemType
+= Shoes
+
+Feet
+= True
+
+AP:
+5
+
+Price:
+600
+
+DungeonLvl:
+13
+
+CharLvl:
+10
+
+# BEGIN Forged Boots
+
+NewItem:
+Forged Boots
+
+Description:
+Boots made completely off steel
+
+ItemType
+= Shoes
+
+Feet
+= True
+
+AP:
+6
+
+Price:
+900
+
+DungeonLvl:
+17
+
+CharLvl:
+17
+
+# BEGIN Kabuto
+
+NewItem:
+Kabuto
+
+Description:
+The Kabuto is the helmet of an acient soldier caste
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+700
+
+AP:
+7
+
+DungeonLvl:
+16
+
+CharLvl:
+15
+
+# BEGIN Bright Toga
+
+NewItem:
+Bright Toga
+
+Description:
+A simple linen-made toga, with enhanced capabilities
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+1000
+
+AP:
+14
+
+Light:
+1
+
+EffectType
+= MaxMagic
+
+DungeonLvl:
+17
+
+CharLvl:
+15
+
+Profession:
+2
+
+# BEGIN Onion Ring
+
+NewItem:
+Onion Ring
+
+Description:
+This is a snack made of roasted onion rings
+
+ItemType
+= Food
+
+Eat
+= True
+
+Finger
+= True
+
+Price:
+40
+
+WP:
+0
+
+GP:
+0
+
+AP:
+0
+
+EffectType
+= DecHunger
+
+EffectRange:
+20
+
+EffectText:
+The onion ring tastes really good
+
+DungeonLvl:
+12
+
+CharLvl:
+1
+
+# BEGIN Sausage
+
+NewItem:
+Sausage
+
+Description:
+Meat with salt and spices in a skin made from intestine 
+
+ItemType
+= Food
+
+Eat
+= True
+
+Price:
+70
+
+EffectType
+= DecHunger
+
+EffectRange:
+700
+
+EffectText:
+The sausage stills your hunger for a while
+
+DungeonLvl:
+6
+
+CharLvl:
+1
+
+# BEGIN Salad
+
+NewItem:
+Salad
+
+Description:
+This salad is made of different plants growing in the caves
+
+ItemType
+= Food
+
+Eat
+= True
+
+Price:
+25
+
+EffectType
+= DecHunger
+
+EffectRange:
+200
+
+EffectText:
+The salad tastes boring, but is better than nothing
+
+DungeonLvl:
+18
+
+CharLvl:
+1
+
+# BEGIN Icecream
+
+NewItem:
+Icecream
+
+Description:
+This is a sweet frozen cream
+
+ItemType
+= Food
+
+Eat
+= True
+
+Price:
+100
+
+EffectType
+= Ice
+
+EffectRange:
+10
+
+EffectText:
+You feel icy
+
+DungeonLvl:
+9
+
+CharLvl:
+1
+
+# BEGIN Crossfire
+
+NewItem:
+Crossfire
+
+Description:
+A golden potion, feeling hot
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+100
+
+EffectType
+= Fire
+
+EffectRange:
+15
+
+EffectText:
+You feel hot
+
+DungeonLvl:
+11
+
+CharLvl:
+1
+
+# BEGIN Liquid Fever
+
+NewItem:
+Liquid Fever
+
+Description:
+This potion buzzes from its enclosed energy
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+100
+
+EffectType
+= Electricity
+
+EffectRange:
+15
+
+EffectText:
+You feel prickling in your stomach
+
+DungeonLvl:
+13
+
+CharLvl:
+1
+
+# BEGIN Infusion
+
+NewItem:
+Infusion
+
+Description:
+This potion includes the powers of magic
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+200
+
+EffectType
+= MaxMagic
+
+EffectRange:
+35
+
+EffectText:
+You feel very powerful
+
+DungeonLvl:
+14
+
+CharLvl:
+1
+
+# BEGIN Elixir
+
+NewItem:
+Elixir
+
+Description:
+This is a strong healing potion
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+100
+
+EffectType
+= IncHP
+
+EffectRange:
+300
+
+EffectText:
+You feel healthier
+
+DungeonLvl:
+14
+
+CharLvl:
+1
+
+# BEGIN Mindheist
+
+NewItem:
+Mindheist
+
+Description:
+This potion decreases psychic power
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+200
+
+EffectType
+= DecPP
+
+EffectRange:
+30
+
+EffectText:
+You feel very tired
+
+DungeonLvl:
+16
+
+CharLvl:
+1
+
+# BEGIN Olympic Fire
+
+NewItem:
+Olympic Fire
+
+Description:
+This potion contains flames of an ancient fire
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+100
+
+EffectType
+= FireAura
+
+EffectRange:
+20
+
+EffectText:
+You unleash the ancient fires
+
+DungeonLvl:
+18
+
+CharLvl:
+1
+
+# BEGIN Potion of Wisdom
+
+NewItem:
+Potion of Wisdom
+
+Description:
+This potion helps you to learn more efficiently
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+100
+
+EffectType
+= ExtraEXP
+
+EffectRange:
+30
+
+EffectText:
+You are eager for knowledge
+
+DungeonLvl:
+9
+
+CharLvl:
+1
+
+# BEGIN Classic Soda
+
+NewItem:
+Classic Soda
+
+Description:
+This bottle contains pressurized water
+
+ItemType
+= Potion
+
+Drink
+= True
+
+Price:
+100
+
+EffectType
+= Water
+
+EffectRange:
+15
+
+EffectText:
+The water is sputtering out of the bottle
+
+DungeonLvl:
+6
+
+CharLvl:
+1
+
+# BEGIN Toga
+
+NewItem:
+Toga
+
+Description:
+A simple linen-made toga
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+700
+
+AP:
+8
+
+DungeonLvl:
+13
+
+CharLvl:
+10
+
+Profession:
+2
+
+# BEGIN Ebony Ring
+
+NewItem:
+Ebony Ring
+
+Description:
+This ring is made of dark wood
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+400
+
+DungeonLvl:
+14
+
+WP:
+0
+
+GP:
+2
+
+AP:
+0
+
+CharLvl:
+1
+
+
+# BEGIN Ebony Ring
+
+NewItem:
+Star Ring
+
+Description:
+This ring glows like starlight
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+500
+
+DungeonLvl:
+18
+
+WP:
+2
+
+GP:
+2
+
+AP:
+2
+
+Light:
+2
+
+CharLvl:
+1
+
+# BEGIN Sworn Ring
+
+NewItem:
+Sworn Ring
+
+Description:
+This ring enhances magic powers
+
+ItemType
+= Ring
+
+Finger
+= True
+
+Price:
+500
+
+DungeonLvl:
+18
+
+WP:
+2
+
+GP:
+0
+
+AP:
+0
+
+EffectType
+= MaxMagic
+
+CharLvl:
+1
+
+# BEGIN Great Iron Shield
+
+NewItem:
+Great Iron Shield
+
+Description:
+-
+
+ItemType
+= Shield
+
+Extra
+= True
+
+AP:
+7
+
+Price:
+800
+
+DungeonLvl:
+17
+
+CharLvl:
+16
+
+Profession:
+5
+
+# BEGIN Horned Helmet
+
+NewItem:
+Horned Helmet
+
+Description:
+This is the horned helmet of Astaroth
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+500
+
+WP:
+1
+
+GP:
+1
+
+AP:
+1
+
+EffectType
+= ReducedPPCosts
+
+DungeonLvl:
+98
+
+CharLvl:
+10
+
+
+# BEGIN Divine Assistance
+
+NewItem:
+Divine Assistance
+
+Description:
+This potion strengthens your religious ties
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncHumility
+
+EffectRange:
+10
+
+EffectText:
+You have great trust in your god
+
+Price:
+100
+
+DungeonLvl:
+20
+
+CharLvl:
+1
+
+# BEGIN Master's Essence
+
+NewItem:
+Master's Essence
+
+Description:
+This potion increases your professional abilities
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncTalent
+
+EffectRange:
+10
+
+EffectText:
+You have great trust in yourself
+
+Price:
+100
+
+DungeonLvl:
+23
+
+CharLvl:
+1
+
+# BEGIN Android Blood
+
+NewItem:
+Android Blood
+
+Description:
+The articial blood of androids consists of healthy ingredients
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= HealAura
+
+EffectRange:
+10
+
+EffectText:
+You trust your god very much
+
+Price:
+100
+
+DungeonLvl:
+27
+
+CharLvl:
+1
+
+# BEGIN Deadly Fever
+
+NewItem:
+Deadly Fever
+
+Description:
+This liquid can induce electric damage
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= Electricity
+
+EffectRange:
+30
+
+EffectText:
+You unleash the deadly electric forces
+
+Price:
+200
+
+DungeonLvl:
+2
+
+CharLvl:
+1
+
+# BEGIN Waters of Styx
+
+NewItem:
+Waters of Styx
+
+Description:
+This bottle contains waters of the river Styx
+
+ItemType
+= Potion
+
+Unique
+= True
+
+Drink
+= True
+
+EffectType
+= WaterAura
+
+EffectRange:
+40
+
+EffectText:
+The water of Styx floodens the area
+
+Price:
+250
+
+DungeonLvl:
+6
+
+CharLvl:
+1
+
+# BEGIN Snow of Noldarur
+
+NewItem:
+Snow of Noldarur
+
+Description:
+Legend says this frozen mass is snow from Noldarur
+
+ItemType
+= Food
+
+Unique
+= True
+
+Eat
+= True
+
+EffectType
+= IceAura
+
+EffectRange:
+40
+
+EffectText:
+The area is covered by ancient snow of Noldarur
+
+Price:
+250
+
+DungeonLvl:
+6
+
+CharLvl:
+1
+
+
+# BEGIN Mitra of the Master
+
+NewItem:
+Mitra of the Master
+
+Description:
+This Mitra was worn by the founder of the Temple of Enoa
+
+ItemType
+= Helmet
+
+Unique
+= True
+
+Head
+= True
+
+Price:
+500
+
+AP:
+0
+
+EffectType
+= IncTalent
+
+DungeonLvl:
+1
+
+CharLvl:
+1
+
+# BEGIN HUD System
+
+NewItem:
+HUD System
+
+Description:
+This head-up system enhances long-range precision
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Price:
+500
+
+AP:
+0
+
+EffectType
+= IncHit
+
+EffectRange:
+5
+
+DungeonLvl:
+26
+
+CharLvl:
+16
+
+# BEGIN Diamond Shield
+
+NewItem:
+Diamond Shield
+
+Description:
+This is one the strongest types of shields available
+
+ItemType
+= Shield
+
+Extra
+= True
+
+Price:
+2000
+
+AP:
+8
+
+DungeonLvl:
+20
+
+CharLvl:
+20
+
+# BEGIN Claw Shield
+
+NewItem:
+Claw Shield
+
+Description:
+This furry shield is beset with the claws of the Rat King
+
+ItemType
+= Shield
+
+Extra
+= True
+
+Unique
+= True
+
+Price:
+250
+
+AP:
+1
+
+DungeonLvl:
+4
+
+CharLvl:
+5
+
+# BEGIN Hard Tail
+
+NewItem:
+Hard Tail
+
+Description:
+The long tail of the Rat King was the basis for this lance
+
+ItemType
+= Lance
+
+Unique
+= True
+
+Hands
+= True
+
+Price:
+250
+
+WP:
+6
+
+GP:
+0
+
+AP:
+1
+
+DungeonLvl:
+4
+
+CharLvl:
+5
+
+# BEGIN Crusader Lance
+
+NewItem:
+Crusader Lance
+
+Description:
+Centuries ago, Drekh'Nar crusaders fought with this type of lance
+
+ItemType
+= Lance
+
+Hands
+= True
+
+TwoHands
+= True
+
+Price:
+900
+
+WP:
+19
+
+GP:
+0
+
+AP:
+4
+
+DungeonLvl:
+24
+
+CharLvl:
+11
+
+
+# BEGIN Cutter of Kaduria
+
+NewItem:
+Cutter of Kaduria
+
+Description:
+Krice's sword was made in the far-away lands of Kaduria
+
+ItemType
+= Sword
+
+Unique
+= True
+
+Hands
+= True
+
+Price:
+700
+
+WP:
+25
+
+GP:
+0
+
+AP:
+0
+
+EffectType
+= Force
+
+DungeonLvl:
+18
+
+CharLvl:
+14
+
+# BEGIN Adept Dagger
+
+NewItem:
+Adept Dagger
+
+Description:
+This elegant dagger is given to new adepts of the Apostolate
+
+ItemType
+= Sword
+
+Hands
+= True
+
+Price:
+250
+
+WP:
+10
+
+GP:
+0
+
+AP:
+0
+
+DungeonLvl:
+23
+
+CharLvl:
+5
+
+# BEGIN Cultist Sword
+
+NewItem:
+Cultist Sword
+
+Description:
+The cultists of the Forgotten Realm used this sword
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+Price:
+950
+
+WP:
+21
+
+GP:
+0
+
+AP:
+0
+
+DungeonLvl:
+24
+
+CharLvl:
+11
+
+# BEGIN Technoblade
+
+NewItem:
+Technoblade
+
+Description:
+Valeri robots are equipped with this piece of ancient technology
+
+ItemType
+= Sword
+
+Hands
+= True
+
+TwoHands
+= True
+
+EffectType
+= MaxMagic
+
+Price:
+2000
+
+WP:
+30
+
+GP:
+0
+
+AP:
+0
+
+DungeonLvl:
+27
+
+CharLvl:
+20
+
+Profession:
+5
+
+# BEGIN Missionary's Truth
+
+NewItem:
+Missionary's Truth
+
+Description:
+Drekh'Nar missionaries used this axe-like weaon to enforce the law
+
+ItemType
+= Axe
+
+Hands
+= True
+
+Price:
+250
+
+WP:
+10
+
+GP:
+0
+
+AP:
+0
+
+DungeonLvl:
+23
+
+CharLvl:
+5
+
+# BEGIN Hammer of Kaduria
+
+NewItem:
+Hammer of Kaduria
+
+Description:
+Krice used this tool to dig the realm of Kaduria
+
+ItemType
+= Axe
+
+Hands
+= True
+
+EffectType
+= MaxDistress
+
+EffectRange:
+10
+
+Price:
+700
+
+WP:
+25
+
+GP:
+0
+
+AP:
+0
+
+SP:
+4
+
+DungeonLvl:
+18
+
+CharLvl:
+14
+
+# BEGIN Holy Robe
+
+NewItem:
+Holy Robe
+
+Description:
+Each true enchanter should wear this elegant robe
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Price:
+2000
+
+WP:
+0
+
+GP:
+0
+
+AP:
+8
+
+DungeonLvl:
+20
+
+CharLvl:
+20
+
+# BEGIN Robot Suit
+
+NewItem:
+Robot Suit
+
+Description:
+Muscle power is enhanced by embedded miniature machinery
+
+ItemType
+= Armour
+
+Body
+= True
+
+Price:
+500
+
+WP:
+0
+
+GP:
+0
+
+AP:
+8
+
+EffectType
+= IncFight
+
+EffectRange:
+5
+
+DungeonLvl:
+26
+
+CharLvl:
+16
+
+# BEGIN Taurin
+
+NewItem:
+Taurin
+
+Description:
+This potion facilitates the use of magic
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= ReducedPPCosts
+
+EffectRange:
+10
+
+EffectText:
+Your mind is calm, but awake
+
+Price:
+100
+
+DungeonLvl:
+21
+
+CharLvl:
+1
+
+# BEGIN Proteine Drink
+
+NewItem:
+Proteine Drink
+
+Description:
+This potion temporarly increases your fighting power
+
+ItemType
+= Potion
+
+Drink
+= True
+
+EffectType
+= IncFight
+
+EffectRange:
+10
+
+EffectText:
+You feel very powerful and focused
+
+Price:
+100
+
+DungeonLvl:
+21
+
+CharLvl:
+1
+
+# BEGIN Long Hunter Arrows
+
+NewItem:
+Long Hunter Arrows
+
+Description:
+These arrows were used by the Outskirts hunter
+
+ItemType
+= Ammu
+
+Unique
+= True
+
+IsAmmu:
+2
+
+Price:
+100
+
+Amount:
+20
+
+WP:
+6
+
+DungeonLvl:
+22
+
+CharLvl:
+1
+
+# BEGIN Small Hunter Arrows
+
+NewItem:
+Small Hunter Arrows
+
+Description:
+These arrows were used by the Outskirts hunter
+
+ItemType
+= Ammu
+
+Unique
+= True
+
+IsAmmu:
+1
+
+Price:
+100
+
+Amount:
+20
+
+WP:
+5
+
+DungeonLvl:
+22
+
+CharLvl:
+1
+
+# BEGIN Bone Bolts
+
+NewItem:
+Bone Bolts
+
+Description:
+These are ancient crossbow bolts
+
+ItemType
+= Ammu
+
+Unique
+= True
+
+IsAmmu:
+4
+
+Price:
+250
+
+Amount:
+20
+
+WP:
+7
+
+DungeonLvl:
+25
+
+CharLvl:
+1
+
+# BEGIN Horse Meat
+
+NewItem:
+Horse Meat
+
+Description:
+This is meat from horses killed by the Outskirts hunter
+
+ItemType
+= Food
+
+Unique
+= True
+
+Eat
+= True
+
+EffectType
+= DecHunger
+
+EffectRange:
+1000
+
+EffectText:
+You have a strange feeling eating the horse meat, but it's okay
+
+Price:
+100
+
+DungeonLvl:
+22
+
+# BEGIN Ring of Remembering
+
+NewItem:
+Ring of Remembering
+
+Description:
+Many memories come into mind when examing this ring
+
+ItemType
+= Ring
+
+Unique
+= True
+
+Finger
+= True
+
+Price:
+250
+
+EffectType
+= FamiliarTerrain
+
+DungeonLvl:
+19
+
+CharLvl:
+2
+
+# Crown Jewels
+
+NewItem:
+Crown Jewels
+
+Description:
+These are the precious crown jewels of the Forgotten Realm
+
+ItemType
+= Scroll
+
+Unique
+= True
+
+Price:
+700
+
+DungeonLvl:
+25
+
+CharLvl:
+1
+
+# BEGIN Zealot Bow
+
+NewItem:
+Zealot Bow
+
+Description:
+Apostolic Zealots use these bows to kill the Apostolate's enemies
+
+ItemType
+= Gun
+
+Hands
+= True
+
+TwoHands
+= True
+
+DungeonLvl:
+24
+
+CharLvl:
+11
+
+Strength:
+60
+
+WP:
+0
+
+GP:
+20
+
+NeedsAmmu:
+2
+
+AP:
+1
+
+Light:
+0
+
+Price:
+900
+
+###############################
+### ITEM SETS #################
+################### 1.6.4 #####
+###############################
+
+### 1: Leya ##################################################################
+
+# BEGIN Leya's Axe
+ 
+NewItem:
+Leya's Axe
+ 
+ItemType
+= Axe
+ 
+SetItem:
+1
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Hands
+= True
+ 
+WP:
+14
+ 
+GP:
+0
+ 
+AP:
+0
+ 
+DungeonLvl:
+2
+ 
+CharLvl:
+5
+
+Price:
+500
+ 
+# BEGIN Leya's Old Vision
+ 
+NewItem:
+Leya's Old Vision
+ 
+ItemType
+= Armour
+ 
+SetItem:
+1
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Body
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+11
+ 
+DungeonLvl:
+5
+ 
+CharLvl:
+6
+
+Price:
+450
+
+# BEGIN Shield of Leya
+ 
+NewItem:
+Shield of Leya
+ 
+ItemType
+= Shield
+ 
+SetItem:
+1
+ 
+Description:
+-
+
+Rare
+= True
+ 
+Extra
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+7
+
+DungeonLvl:
+5
+ 
+CharLvl:
+6
+
+Price:
+400
+
+### 2: Ynnatar ###############################################################
+
+# BEGIN Ynnatar's Sacrifice
+ 
+NewItem:
+Ynnatar's Sacrifice
+ 
+ItemType
+= Gun
+ 
+TwoHands
+= True
+ 
+NeedsAmmu:
+2
+ 
+SetItem:
+2
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Hands
+= True
+ 
+WP:
+0
+ 
+GP:
+22
+ 
+AP:
+0
+ 
+DungeonLvl:
+8
+ 
+CharLvl:
+11
+
+Price:
+850
+
+# BEGIN Ynnatar's Chainmail
+ 
+NewItem:
+Ynnatar's Chainmail
+ 
+ItemType
+= Armour
+ 
+SetItem:
+2
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Body
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+19
+ 
+EffectType
+= IncHit
+ 
+DungeonLvl:
+10
+ 
+CharLvl:
+12
+
+Price:
+1000
+
+# BEGIN Ring of Ynnatar
+ 
+NewItem:
+Ring of Ynnatar
+ 
+ItemType
+= Ring
+ 
+SetItem:
+2
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Finger
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+0
+ 
+Light:
+2
+ 
+DungeonLvl:
+11
+ 
+CharLvl:
+11
+
+Price:
+400
+
+### 3: Bebebe ################################################################
+
+# BEGIN Sword of Bebebe
+ 
+NewItem:
+Sword of Bebebe
+ 
+ItemType
+= Sword
+ 
+SetItem:
+3
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Hands
+= True
+ 
+WP:
+15
+ 
+GP:
+0
+ 
+AP:
+0
+
+EffectType
+= IncFight
+
+Light:
+1
+ 
+DungeonLvl:
+11
+ 
+CharLvl:
+10
+
+Price:
+550
+
+# BEGIN Bebebe's Clothes
+ 
+NewItem:
+Bebebe's Clothes
+ 
+ItemType
+= Clothes
+ 
+SetItem:
+3
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Body
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+15
+
+Light:
+1
+ 
+EffectType
+= IncMove
+ 
+DungeonLvl:
+13
+ 
+CharLvl:
+10
+
+Price:
+650
+
+# BEGIN Glowshield of Bebebe
+ 
+NewItem:
+Glowshield of Bebebe
+ 
+ItemType
+= Shield
+ 
+SetItem:
+3
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Extra
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+9
+ 
+Light:
+1
+ 
+DungeonLvl:
+14
+ 
+CharLvl:
+8
+
+Price:
+500
+
+# BEGIN Hat of Bebebe
+ 
+NewItem:
+Hat of Bebebe
+ 
+ItemType
+= Helmet
+ 
+SetItem:
+3
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Head
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+5
+
+Light:
+1
+ 
+DungeonLvl:
+16
+ 
+CharLvl:
+9
+
+Price:
+400
+
+### 4: Mineet ################################################################
+
+# BEGIN Mineet's Discovery
+ 
+NewItem:
+Mineet's Discovery
+ 
+ItemType
+= Lance
+ 
+SetItem:
+4
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Hands
+= True
+ 
+WP:
+16
+ 
+GP:
+0
+ 
+AP:
+0
+ 
+EffectType
+= ResistIce
+ 
+DungeonLvl:
+15
+ 
+CharLvl:
+4
+
+Price:
+750
+
+# BEGIN Mineet's Delight
+ 
+NewItem:
+Mineet's Delight
+ 
+ItemType
+= Clothes
+ 
+SetItem:
+4
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Body
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+15
+ 
+EffectType
+= ResistFire
+ 
+DungeonLvl:
+23
+ 
+CharLvl:
+5
+
+Price:
+750
+
+# BEGIN Mineet's Daydream
+ 
+NewItem:
+Mineet's Daydream
+ 
+ItemType
+= Shield
+ 
+SetItem:
+4
+ 
+Description:
+-
+ 
+Unique
+= True
+ 
+Extra
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+11
+
+EffectType
+= ResistWater
+ 
+DungeonLvl:
+24
+ 
+CharLvl:
+8
+
+Price:
+600
+
+### 5: Wyth ##################################################################
+
+# BEGIN Wyth's Power
+ 
+NewItem:
+Wyth's Power
+ 
+ItemType
+= Sword
+ 
+SetItem:
+5
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Hands
+= True
+ 
+WP:
+25
+ 
+GP:
+0
+ 
+AP:
+0
+ 
+EffectType
+= ResistDrainPP
+ 
+DungeonLvl:
+15
+ 
+CharLvl:
+13
+
+Price:
+700
+
+# BEGIN Wyth's Stardust
+ 
+NewItem:
+Wyth's Stardust
+ 
+ItemType
+= Helmet
+ 
+SetItem:
+5
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Head
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+3
+
+EffectType
+= MaxMagic
+ 
+DungeonLvl:
+5
+ 
+CharLvl:
+5
+
+Price:
+550
+ 
+# BEGIN Hidden Shoes of Wyth
+ 
+NewItem:
+Light Shoes of Wyth
+ 
+ItemType
+= Shoes
+ 
+SetItem:
+5
+ 
+Description:
+-
+ 
+Rare
+= True
+ 
+Feet
+= True
+ 
+WP:
+0
+ 
+GP:
+0
+ 
+AP:
+2
+ 
+EffectType
+= ReducedPPCosts
+ 
+DungeonLvl:
+9
+ 
+CharLvl:
+7
+
+Price:
+600
+
+### 6: Adrian Smith, Inc. ####################################################
+
+NewItem:
+Smith's Crossbow
+
+SetItem:
+6
+
+Description:
+This bow is designed by Adrian Smith; uses Smith's bolts
+
+ItemType
+= Gun
+
+ShopOnly
+= True
+
+NeedsAmmu:
+6
+
+Hands
+= True
+
+Shoot
+= True
+
+Price:
+500
+
+GP:
+10
+
+Strength:
+25
+
+DungeonLvl:
+5
+
+CharLvl:
+2
+
+################
+
+# BEGIN Smith's Prototype
+
+NewItem:
+Smith's Prototype
+
+SetItem:
+6
+
+Description:
+This is a secret prototype made by Adrian Smith's forge
+
+ItemType
+= Sword
+
+Unique
+= True
+
+Hands
+= True
+
+Price:
+550
+
+WP:
+12
+
+GP:
+0
+
+AP:
+2
+
+EffectType
+= ExtraGold
+
+DungeonLvl:
+5
+
+CharLvl:
+6
+
+################
+
+NewItem:
+Smith's Bolts
+
+SetItem:
+6
+
+Description:
+These bolts are for bows designed by Adrian Smith
+
+ItemType
+= Ammu
+
+ShopOnly
+= True
+
+IsAmmu:
+6
+
+Amount:
+40
+
+Price:
+80
+
+WP:
+4
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+###############
+
+NewItem:
+Smith's Armour
+
+SetItem:
+6
+
+Description:
+This armour is designed by Adrian Smith
+
+ItemType
+= Armour
+
+ShopOnly
+= True
+
+Body
+= True
+
+Price:
+750
+
+AP:
+9
+
+DungeonLvl:
+5
+
+CharLvl:
+7
+
+#############
+
+NewItem:
+Smith's Cap
+
+SetItem:
+6
+
+Description:
+This cap is designed by Adrian Smith
+
+ItemType
+= Helmet
+
+ShopOnly
+= True
+
+Head
+= True
+
+Price:
+450
+
+GP:
+3
+
+DungeonLvl:
+5
+
+CharLvl:
+1
+
+###############
+
+NewItem:
+Smith's Blade
+
+SetItem:
+6
+
+Description:
+This sword is designed by Adrian Smith
+
+ItemType
+= Sword
+
+ShopOnly
+= True
+
+Hands
+= True
+
+Price:
+550
+
+WP:
+11
+
+Strength:
+25
+
+DungeonLvl:
+5
+
+CharLvl:
+3
+
+### 7: Santa's Gear ##########################################################
+
+NewItem:
+Santa's Coat
+
+SetItem:
+7
+
+Description:
+This is the coat worn by Santa, the messenger of Dionysa
+
+ItemType
+= Clothes
+
+Body
+= True
+
+Rare
+= True
+
+Hands
+= True
+
+Price:
+45
+
+AP:
+10
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+################
+
+NewItem:
+Santa's Boots
+
+SetItem:
+7
+
+Description:
+These are the boots worn by Santa, the messenger of Dionysa
+
+ItemType
+= Shoes
+
+Feet
+= True
+
+Rare
+= True
+
+AP:
+2
+
+Price:
+25
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+################
+
+NewItem:
+Santa's Cap
+
+SetItem:
+7
+
+Description:
+This is the cap worn by Santa, the messenger of Dionysa
+
+ItemType
+= Helmet
+
+Head
+= True
+
+Rare
+= True
+
+AP:
+2
+
+Price:
+25
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+################
+
+NewItem:
+Santa's Bag
+
+SetItem:
+7
+
+Description:
+This is Santa's bag with Dionysa's gifts to the children of Herbstwelt
+
+ItemType
+= Shield
+
+Extra
+= True
+
+Rare
+= True
+
+AP:
+1
+
+Price:
+30
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+################
+
+NewItem:
+Santa's Rod
+
+SetItem:
+7
+
+Description:
+This is the rod used by Santa, the messenger of Dionysa
+
+ItemType
+= Lance
+
+Hands
+= True
+
+Rare
+= True
+
+WP:
+1
+
+AP:
+1
+
+Light:
+1
+
+Price:
+25
+
+DungeonLvl:
+99
+
+CharLvl:
+1
+
+### 8: Ido ################################################################
+
+# BEGIN Ido's Yeheli
+
+NewItem:
+Ido's Yeheli
+
+ItemType
+= Sword
+
+SetItem:
+8
+
+Description:
+-
+
+Unique
+= True
+
+Hands
+= True
+
+WP:
+15
+
+GP:
+0
+
+AP:
+0
+
+DungeonLvl:
+7
+
+CharLvl:
+7
+
+# BEGIN Robe of the Cardinal
+
+NewItem:
+Robe of the Cardinal
+
+ItemType
+= Clothes
+
+SetItem:
+8
+
+Description:
+-
+
+Unique
+= True
+
+Body
+= True
+
+WP:
+0
+
+GP:
+0
+
+AP:
+5
+
+DungeonLvl:
+10
+
+CharLvl:
+10
+
