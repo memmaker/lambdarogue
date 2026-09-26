@@ -27,8 +27,14 @@ function frame(p, n) {
 	const a = new Int32Array(LR.mem.buffer, p, n * 9);
 	for (let i = 0; i < n; i++) {
 		let [src, sx, sy, sw, sh, dst, dx, dy, alpha] = a.subarray(i * 9, i * 9 + 9);
-		let img = LR.surf[src];
 		const out = dst === 1 ? LR.screen : canvasOf(dst);
+		if (src === -1) {  // web_fill: colour in sx, size in sw/sh
+			const g = out.getContext('2d');
+			g.globalAlpha = alpha >= 255 ? 1 : alpha / 255;
+			g.fillStyle = '#' + (sx >>> 0).toString(16).padStart(6, '0');
+			g.fillRect(dx, dy, sw, sh); continue;
+		}
+		let img = LR.surf[src];
 		if (!img || !out) continue;
 		const W = img.naturalWidth || img.width, H = img.naturalHeight || img.height;
 		if (sw < 0) { sx = 0; sy = 0; sw = W; sh = H; }

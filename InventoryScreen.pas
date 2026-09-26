@@ -44,6 +44,9 @@ procedure ListAllItems;
 
 implementation
 
+uses
+  RvipUI;  // RVIP: inventory cursor and item menus (web build)
+
 // randomly selects an enflammable item and burns it
 procedure BurnInventoryItem;
 var
@@ -2628,8 +2631,12 @@ begin
 
       n := -1;
 
+      {$IFDEF WEB}
+      dummy := RvipInventoryKey;  // RVIP: cursor, item menus; '' = redraw
+      {$ELSE}
       dummy := GetKeyInput(
         '[i]nfo  [c]onsume  [s]tudy  [d]rop  |  [e]quip  [r]emove  [g]rease  [D]etails', False);
+      {$ENDIF}
 
     until (dummy = 'c') or (dummy = 'r') or (dummy = 'd') or (dummy = 'D') or
       (dummy = 'e') or (dummy = 'i') or (dummy = 'ESC') or (dummy = 's') or
@@ -2641,6 +2648,9 @@ begin
 
     // evaluate key
     ch := dummy;
+    {$IFDEF WEB}
+    RvipInventoryPreselect(ch);  // RVIP: the action's item prompt gets the cursor item
+    {$ENDIF}
 
     // define quick keys
     if ch = 'F1' then
@@ -2724,6 +2734,9 @@ begin
     if ch = 's' then
       StudyItem;
 
+    {$IFDEF WEB}
+    if RvipInventoryClose then blCloseInventory := True;  // RVIP: monster in view
+    {$ENDIF}
     if blWon = true then blCloseInventory:=true;
 
   until blCloseInventory = True;

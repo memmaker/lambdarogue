@@ -10313,7 +10313,7 @@ end;
     TransTextXY(2, 4, 'Movement keys from config file (N,S,E,W,NE,NW,SE,SW): ' +
       KeyNorth + KeySouth + KeyEast + KeyWest + KeyNorthEast +
       KeyNorthWest + KeySouthEast + KeySouthWest);
-    TransTextXY(2, 6, '[ENTER] or [' + KeyEnter + ']');
+    TransTextXY(2, 6, '[' + KeyEnter + ']                                 ([ENTER]: menu of all commands)');
 
 
     TransTextXY(2, 7, '  open chest                        (in front of a treasure chest)');
@@ -11866,7 +11866,7 @@ begin
           SDLK_ESCAPE:
             k := Ord(KeyQuit);
           13:
-            k := Ord(KeyEnter);
+            k := RvipMenu;  // RVIP: Enter = command menu ([a] stays the general action)
           SDLK_UP:
             k := Ord(KeyNorth);
           SDLK_KP8:

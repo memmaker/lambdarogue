@@ -1,5 +1,6 @@
-{ RVIP additions to LambdaRogue (web build): auto-explore on 'z' and stair
-  walking on '<' / '>' (RVIP.md steps 2 and 3).
+{ RVIP additions to LambdaRogue (web build): auto-explore on 'z', stair
+  walking on '<' / '>' (RVIP.md steps 2 and 3) and the command menu on
+  Enter (step 3b, RvipMenu).
 
   Hook (fprl.pas KEYLOOP): RvipAuto is asked before every key poll at the
   command prompt; while a walk runs it returns the next movement key (or
@@ -19,10 +20,11 @@ interface
 procedure RvipStart(c: char);
 procedure RvipStop;
 function RvipAuto: longint;
+function RvipMenu: longint;
 
 implementation
 
-uses WebBE, SysUtils, Constants, RandomArea, Player, Quests, MessageLog;
+uses WebBE, SysUtils, Constants, RandomArea, Player, Quests, MessageLog, RvipUI, DrawDungeon;
 
 const
   MODE_NONE = 0; MODE_EXPLORE = 1; MODE_DOWN = 2; MODE_UP = 3;
@@ -77,18 +79,6 @@ begin
     if intBuilding > 0 then exit;                                 { shop entrance }
   end;
   Walkable := true;
-end;
-
-function MonstersInView: longint;
-var m, n: longint;
-begin
-  n := 0;
-  for m := 1 to 550 do
-    with Monster[m] do
-      if (intHP > 0) and Inside(intX, intY) and (intInvis = 0) and
-        DngLvl[intX, intY].blLOS and DngLvl[intX, intY].blKnown then
-        inc(n);
-  MonstersInView := n;
 end;
 
 function IsTarget(x, y: integer): boolean;
@@ -252,6 +242,99 @@ begin
   lastx := ThePlayer.intX; lasty := ThePlayer.intY;
   stepped := true;
   RvipAuto := ord(DirKey(d));
+end;
+
+{ ---- Enter: floating command menu, grouped like the game's help screen
+  "Keys used to perform actions"; returns the chosen command's key (0 = none) }
+type
+  TCmd = record k: char; t: string; end;
+  TGroup = record name: string; k: char; first, last: longint; end;
+var
+  cmds: array [0..40] of TCmd;
+  ncmds: longint;
+  groups: array [0..7] of TGroup;
+  ngroups: longint;
+  gcur: longint = 0;
+
+procedure Cmd(k: char; const t: string);
+begin
+  cmds[ncmds].k := k; cmds[ncmds].t := t; inc(ncmds);
+  groups[ngroups - 1].last := ncmds - 1;
+end;
+
+procedure Group(k: char; const name: string);
+begin
+  groups[ngroups].name := name; groups[ngroups].k := k; groups[ngroups].first := ncmds; inc(ngroups);
+end;
+
+procedure BuildMenu;
+begin
+  ncmds := 0; ngroups := 0;
+  Group('m', 'Move and explore');
+  Cmd('z', 'explore (any key stops)');
+  Cmd('>', 'walk to known stairs down, take them');
+  Cmd('<', 'walk to known stairs up, take them');
+  Cmd(KeyEnter, 'act: stairs, chest, altar, well, crypt');
+  Cmd(KeyShortRest, 'rest one turn');
+  Cmd(KeyRest, 'rest a number of turns');
+  Cmd(KeyCloseDoor, 'close door');
+  Cmd(KeyTunnel, 'dig / disarm trap');
+  Group('i', 'Items');
+  Cmd(KeyInventory, 'inventory');
+  Cmd(KeyTake, 'pick up item');
+  Cmd(KeyThrow, 'throw an item');
+  Cmd(KeyShoot, 'fire long-range weapon');
+  Group('g', 'Magic and gods');
+  Cmd(KeyChant, 'songbook (spells)');
+  Cmd(KeyChantLast, 'chant last spell again');
+  Cmd(KeySetQuickKeys, 'show and reset quick keys');
+  Cmd(KeyPray, 'pray to your god');
+  Cmd(KeySpecial, 'use talent');
+  Cmd(KeySpecialDiv, 'divine rage');
+  Group('p', 'People and fighting');
+  Cmd(KeyTrade, 'talk to NPC or trader');
+  Cmd(KeySearchSteal, 'search / steal');
+  Cmd(KeyTactics, 'switch tactics');
+  Group('n', 'Information');
+  Cmd(KeyStatus, 'status screen');
+  Cmd(KeyQuestlog, 'questlog');
+  Cmd(KeyLook, 'identify tile');
+  Cmd(KeyBigMap, 'big minimap');
+  Cmd(KeyHelp, 'help');
+  Group('q', 'Game');
+  Cmd(KeyQuit, 'game menu: options, keys, save and quit');
+end;
+
+function RvipMenu: longint;
+var
+  ge: array [0..7] of TMenuEntry;
+  ce: array [0..40] of TMenuEntry;
+  i, r, c, n: longint;
+begin
+  RvipMenu := 0;
+  BuildMenu;
+  for i := 0 to ngroups - 1 do
+  begin
+    ge[i].key := groups[i].k; ge[i].text := groups[i].name;
+  end;
+  repeat
+    r := UIMenu('Commands', slice(ge, ngroups), gcur);
+    if r < 0 then break;
+    n := 0;
+    for i := groups[r].first to groups[r].last do
+    begin
+      ce[n].key := cmds[i].k; ce[n].text := cmds[i].t; inc(n);
+    end;
+    c := 0;
+    c := UIMenu(groups[r].name, slice(ce, n), c);
+    if c >= 0 then
+    begin
+      RvipMenu := ord(cmds[groups[r].first + c].k);
+      break;
+    end;
+  until c = MENU_CLOSE;
+  ShowDungeon(ThePlayer.intX, ThePlayer.intY, 80, 25, 0);
+  SDL_UpdateRect(screen, 0, 0, 0, 0);
 end;
 
 end.

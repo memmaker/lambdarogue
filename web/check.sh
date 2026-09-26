@@ -13,6 +13,6 @@ cd "$B/run"
 for s in ${1:-1 2 3 4 5}; do
 	rm -f saves/*.lambdarogue
 	echo "seed $s:"
-	LR_SEED=$s LR_MAX=${2:-20000} LR_KEYS="$(printf '2 \r\rtester\r\r\r\r')" timeout 600 "$B/obj/fprl" > out.txt 2>&1 || true
+	LR_SEED=$s LR_MAX=${2:-20000} LR_KEYS="$(printf '2 \r\rtester\r\r\r\r')" timeout 300 "$B/obj/fprl" > out.txt 2>&1 || echo "exit $? (124 = hang: a loop that never polls)"
 	grep -v "^STATUS INFO" out.txt | tail -15
 done

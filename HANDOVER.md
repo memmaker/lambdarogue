@@ -152,3 +152,49 @@ takes from sibling folders is bundled under `rvip/`:
   `KeyEnter` in KEYLOOP (`case k of 13: k := Ord(KeyEnter)`): stage 3 must
   make Enter open the command menu instead (`a` stays the general action)
   and fix the help line "[ENTER] or [a]". Inventory: `InventoryScreen.pas`.
+
+### Stage 3 — Enter menu + inventory (done)
+- **Enter menu**: `RvipMenu` in `port/rvip.pas`, hooked in `fprl.pas`
+  KEYLOOP (`case k of 13: k := RvipMenu`; `a` stays the general action, so
+  Enter does nothing else at the prompt; keypad Enter too). Two levels:
+  groups (m Move and explore, i Items, g Magic and gods, p People and
+  fighting, n Information, q Game) as the help screen "Keys used to perform
+  actions" groups them, then the commands with their *current* keys (the
+  `Key*` variables, so rebinding shows) incl. `z`, `<`, `>`. The chosen
+  key is returned as `k` (runs as if typed). Help line changed to
+  "[a] … ([ENTER]: menu of all commands)".
+- **Pop-up drawing** (`port/rvipui.pas`, unit `RvipUI`): `UIMenu(title,
+  entries, cur)` draws a box sized to its content (longest entry + 1 space
+  each side, one row per entry, title row) with the game's own 10x20 font
+  over a filled rectangle — new backend primitive `web_fill` = blit record
+  with `src = -1`, colour in `sx` (page: `fillRect`). Keys: arrows / 8 2
+  move, Enter / Space / 5 / 6 / Right choose, Esc / 0 close, 4 / Left back,
+  the entry's key (`x` or `[x]`) runs it; mouse hover moves, click chooses,
+  right click closes.
+- **Inventory** (`InventoryScreen.ShowInventory`, `{$IFDEF WEB}`): the
+  prompt `GetKeyInput('[i]nfo …')` is replaced by `RvipInventoryKey`
+  (cursor bar over slot rows 5–20 or the equipment slots; up/down or 8/2
+  move, Tab / Left / Right / 4 / 6 switch inventory ↔ equipment, Enter /
+  Space / 5 / click = item menu of the fitting actions: eat/drink, study,
+  equip, grease, drop or sell, examine; equipment: remove, details; `+` =
+  main action (consume > study > equip > examine), `-` drop, `*` examine,
+  0 / . / Esc close; the game's own letters c s d e i g r D act on the
+  cursor item). **How actions run: key queue** — `RvipInventoryPreselect`
+  queues the cursor slot number + Enter (`web_type`) which the action's own
+  `GetTextInput('Which item …')` prompt reads; `r` on equipment queues the
+  slot letter for `RemoveItem`'s prompt; leftovers are dropped
+  (`web_untype`). After an action the list reopens unless a monster is in
+  view (`RvipInventoryClose`).
+- Tested headless: menu → Items → inventory opens; item menu → `c` eats
+  the Aspirin (x20 → x19); `+` eats the Meat; equipment → `r` removes the
+  Sword into slot 3. Chromium shots `web/shots/stage3-menu.png`,
+  `web/shots/stage3-inventory.png`. Checked native run (3 seeds × 20000
+  random keys, Enter included) found a hang (cursor loop over an empty
+  inventory, fixed) and no range/overflow error; `check.sh` now reports
+  hangs (timeout 300 s).
+- Not done: other item prompts outside the inventory (shops, throw, quick
+  keys) still take the typed slot number (the list is on screen there).
+  Numpad-only in shops untested.
+- Next: stage 4 (tiles). Decided in stage 1: the game's own sheets, 100%
+  coverage; stage 4 = check sprites at cell size and nearest-neighbour
+  scaling in the page.

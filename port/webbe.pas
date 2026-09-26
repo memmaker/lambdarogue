@@ -238,6 +238,9 @@ var
 procedure web_flush;
 procedure web_message(const s: string);   { MessageLog.ShowTransMessage: history line }
 function web_pending: boolean;             { a key/mouse event is waiting }
+procedure web_type(const s: string);       { queue keys the game reads before the player's (RVIP item preselect) }
+procedure web_untype;                      { drop what web_type queued and nobody read }
+procedure web_fill(x, y, w, h: longint; rgb: longword; alpha: longint);  { filled rectangle on the screen }
 
 implementation
 
@@ -428,12 +431,46 @@ begin
   else surface^.alpha := 255;
 end;
 
+var
+  typed: ansistring = '';
+
+procedure web_type(const s: string);
+begin
+  typed := typed + s;
+end;
+
+procedure web_untype;
+begin
+  typed := '';
+end;
+
+procedure web_fill(x, y, w, h: longint; rgb: longword; alpha: longint);
+var b: ^TBlit;
+begin
+  if nlist >= MAXBLITS then web_flush;
+  b := @list[nlist];
+  b^.src := -1; b^.sx := rgb; b^.sy := 0; b^.sw := w; b^.sh := h;
+  b^.dst := 1; b^.dx := x; b^.dy := y; b^.alpha := alpha;
+  inc(nlist);
+end;
+
 { be_poll: 0 = nothing, 1 = key (args: sym, unicode), 2 = mouse down,
-  3 = mouse up, 4 = motion (args: x, y, button) }
+  3 = mouse up, 4 = motion (args: x, y, button). Keys queued by web_type
+  come first. }
 function SDL_PollEvent(event: PSDL_Event): longint;
 var t: longint;
 begin
   web_flush;
+  if typed <> '' then
+  begin
+    fillchar(event^, sizeof(TSDL_Event), 0);
+    event^.key.type_ := SDL_KEYDOWN;
+    event^.key.state := 1;
+    event^.key.keysym.sym := ord(typed[1]);
+    event^.key.keysym.unicode := ord(typed[1]);
+    delete(typed, 1, 1);
+    exit(1);
+  end;
   t := be_poll(ord(web_at_cmd));
   SDL_PollEvent := 0;
   if t = 0 then exit;
