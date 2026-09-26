@@ -144,7 +144,10 @@ begin
 
   // save message in message history
   if length(strMessage) > 1 then
+  begin
     StoreMessageInLog(strMessage);
+    web_message(strMessage);  // RVIP: page history, explore stop
+  end;
 
   //TransTextXY(1,27, strMessage);
   if pressanykey = True then

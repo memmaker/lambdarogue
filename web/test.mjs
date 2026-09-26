@@ -67,8 +67,10 @@ const lr = {
 	be_music_playing() { return 0; },
 	be_title(p) { console.log('title', cstr(p)); },
 	be_screen(w, h) { screenW = w; screenH = h; },
+	be_msg(p, fold) { msgs.push(cstr(p)); if (!quiet || process.argv.includes('-m')) console.log('msg', cstr(p)); },
+	be_pending() { return 0; },  // scripted keys are typed ahead: never a disturbance
 };
-let ev = [0];
+let ev = [0]; const msgs = [];
 const cstr = (p) => { const b = new Uint8Array(mem.buffer, p); let e = 0; while (b[e]) e++; return Buffer.from(b.slice(0, e)).toString('latin1'); };
 const ASYNC = new Set(['be_poll', 'be_sleep', 'be_image']);
 let ex, pending, value, data;
@@ -78,7 +80,7 @@ for (const [n, f] of Object.entries(lr)) imp[n] = (...a) => {
 	if (!ASYNC.has(n)) return f(...a);
 	pending = f(...a); ex.asyncify_start_unwind(data); return 0;
 };
-const w = new WASI(['lambdarogue'], [], [new OpenFile(new File([])), ConsoleStdout.lineBuffered(s => quiet || console.log(s)), ConsoleStdout.lineBuffered(console.log),
+const w = new WASI(['lambdarogue'], process.env.LR_DEBUG ? ['LR_DEBUG=1'] : [], [new OpenFile(new File([])), ConsoleStdout.lineBuffered(s => quiet || console.log(s)), ConsoleStdout.lineBuffered(console.log),
 	new PreopenDirectory('.', root.contents)], { debug: false });
 const { instance } = await WebAssembly.instantiate(fs.readFileSync(dir + 'lr.wasm'), { wasi_snapshot_preview1: w.wasiImport, lr: imp });
 ex = instance.exports; w.inst = instance; mem = ex.memory;

@@ -126,6 +126,8 @@ export async function start(opts = {}) {
 		be_music: (p, loops, v) => LR.onMusic && LR.onMusic(p ? cstr(p) : null, loops, v),
 		be_music_playing: () => LR.musicPlaying ? LR.musicPlaying() : 0,
 		be_title: p => { document.title = cstr(p); },
+		be_msg: (p, fold) => LR.onMsg && LR.onMsg(cstr(p), fold),
+		be_pending: () => LR.events.filter(e => e[0] !== 4).length,
 		be_screen: (w, h) => { LR.screen.width = w; LR.screen.height = h; LR.onScreen && LR.onScreen(w, h); },
 		...(opts.imports || {}),
 	};

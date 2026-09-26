@@ -114,3 +114,41 @@ takes from sibling folders is bundled under `rvip/`:
   rebuilds it only roughly).
 - Next: stage 2 (explore + stairs). Main loop: `fprl.pas` KEYLOOP (`case k
   of`, ~line 11860); movement/`KeyEnter` ('a' = take stairs when on them).
+
+### Stage 2 — Explore + stairs (done)
+- **Explore key `z`** (free in the default keyset; `Q`/Esc = game menu,
+  `a`/Enter = general action). **`<` / `>`**: on the right staircase take it
+  (queues `KeyEnter`), else walk to the nearest *known* one and take it.
+- Code: **`port/rvip.pas`** (unit `Rvip`: `RvipStart`, `RvipAuto`,
+  `RvipStop`). BFS over `DngLvl[x, y].blKnown` tiles ("known grid" test;
+  Lambdarogue never forgets floor except in darkness auras, airtype 5), 8
+  directions, one step per game turn. Walkable = known, `intIntegrity = 0`
+  or a closed door (floor 3: moving into it opens it, the expected "You open
+  a door." does not stop the walk); never lava (20), locked door (24),
+  locked gate (64), auras 1/2/3/5/6, known traps (airtype 8), shop entrances,
+  NPC/monster squares. Stairs: floor 9 = down, 8 = up (none up on DLV 1).
+- **Main-loop hook**: `fprl.pas` KEYLOOP: `k := RvipAuto;` before the poll
+  (a running walk supplies the next movement key instead of reading one),
+  and after the key loop `z` / `<` / `>` call `RvipStart`. `RvipAuto` also
+  sets `web_at_cmd := true` (the command-prompt flag, passed to `be_poll`),
+  cleared after the key loop.
+- Stops: new message (`MessageLog.ShowTransMessage` → `web_message` →
+  `web_msgs` counter, also sent to the page as `be_msg(text, fold)` with
+  "(xN)" folding), hostile monster in view (explore refuses to start with
+  one: "Not with an enemy in view."; a stair walk stops only when more come
+  into view), any key/click (`be_pending`), a step that did not move,
+  level change, death. "Nothing left to explore." / "You know no way down."
+- Help: row 23 of "Keys used to perform actions" (`HelpScreenKeys`).
+- Tested (`node web/test.mjs "2c1\rz>zzz" -q -m`, `LR_DEBUG=1` prints each
+  step to stderr): explore of the start room and DLV 2, doors opened, stops
+  at monsters; `>` walks to the down stairs and descends; `<` walks back up
+  ("Returning to the Temple of Enoa"); Chromium shot
+  `web/shots/stage2-explore.png`; checked native run with `z<>` in the
+  random keys, 3 seeds × 20000: no range/overflow error.
+- Open: explore sometimes stops right after passing a door (the game's
+  move code checks the tile *behind* the door in the same turn, e.g. kicks a
+  barrel there: an unexpected message stops the walk; harmless).
+- Next: stage 3 (Enter menu + inventory). Enter (13) is mapped to
+  `KeyEnter` in KEYLOOP (`case k of 13: k := Ord(KeyEnter)`): stage 3 must
+  make Enter open the command menu instead (`a` stays the general action)
+  and fix the help line "[ENTER] or [a]". Inventory: `InventoryScreen.pas`.

@@ -36,7 +36,7 @@ uses
   Constants, WebBE, VidUtil, SysUtils, StrUtils,
   Player, Items, Quests, Chants, RandomArea, LineOfSight, Dungeon, Plot, Input,
   FileIO, CollectData, BaseOutput, UserInterface, DrawDungeon, MessageLog, GFX,
-  PuzzleMap, ExternMusic, ExternSFX, InventoryScreen, Effects, logger;
+  PuzzleMap, ExternMusic, ExternSFX, InventoryScreen, Effects, logger, Rvip;
 
 
 var
@@ -10343,6 +10343,7 @@ end;
     TransTextXY(2, 21, '[' + KeyThrow + '] throw an item                   [' +
       KeyTactics + '] switch tactics');
     TransTextXY(2, 22, '[' + KeySpecial + '] use talent                      ['+ KeySpecialDiv+'] divine rage');
+    TransTextXY(2, 23, '[z] explore (any key stops)        [<] [>] walk to known stairs, take them');
 
     GetKeyInput('Press any key to return to help menu.', False);
   end;
@@ -11805,6 +11806,8 @@ begin
         end;
 
         // wait for pressed key (KEYLOOP)
+        k := RvipAuto;  // RVIP: next step of an explore / stair walk, 0 = read a key
+        if k = 0 then
         if UseSDL = True then
         begin
 
@@ -11931,6 +11934,15 @@ begin
         end;
         delay(10);
       until ((k > 31) and (k < 127)) or (FunKey <> '-');
+      web_at_cmd := false;
+
+      // RVIP: auto-explore and stair walking
+      if (k = Ord('z')) or (k = Ord('<')) or (k = Ord('>')) then
+      begin
+        RvipStart(chr(k));
+        k := RvipAuto;
+        web_at_cmd := false;
+      end;
 
       //         writeln(chr(k));
 

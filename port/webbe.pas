@@ -234,7 +234,10 @@ type
 { ------------------------------------------------------------ RVIP hooks }
 var
   web_at_cmd: boolean = false;   { game waits for a command (web prompt line) }
+  web_msgs: longint = 0;         { messages so far (RVIP explore stops on a new one) }
 procedure web_flush;
+procedure web_message(const s: string);   { MessageLog.ShowTransMessage: history line }
+function web_pending: boolean;             { a key/mouse event is waiting }
 
 implementation
 
@@ -250,6 +253,8 @@ procedure be_music(path: pchar; loops, vol: longint); external 'lr' name 'be_mus
 function be_music_playing: longint; external 'lr' name 'be_music_playing';
 procedure be_title(s: pchar); external 'lr' name 'be_title';
 procedure be_screen(w, h: longint); external 'lr' name 'be_screen';
+procedure be_msg(s: pchar; fold: longint); external 'lr' name 'be_msg';
+function be_pending: longint; external 'lr' name 'be_pending';
 {$ELSE}
 { headless native backend (web/check.sh): random keys, nothing drawn }
 var
@@ -258,7 +263,7 @@ var
   evargs: array [0..3] of longint;
   blits: int64 = 0;
 const
-  KEYS: string = 'hjklyubn12346789.<>ioegdtwqaszxcvfr,;:?' + #13#13#13#27#32#32;
+  KEYS: string = 'hjklyubn12346789.<>zzioegdtwqaszxcvfr,;:?' + #13#13#13#27#32#32;
 procedure be_frame(list: pointer; n: longint); begin inc(blits, n) end;
 procedure be_image(id: longint; path: pchar); begin end;
 procedure be_free(id: longint); begin end;
@@ -307,6 +312,8 @@ procedure be_music(path: pchar; loops, vol: longint); begin end;
 function be_music_playing: longint; begin be_music_playing := 0 end;
 procedure be_title(s: pchar); begin end;
 procedure be_screen(w, h: longint); begin end;
+procedure be_msg(s: pchar; fold: longint); begin end;
+function be_pending: longint; begin be_pending := 0 end;
 {$ENDIF}
 
 { one blit: surface ids, source rect (w/h -1 = whole surface), target point, alpha }
@@ -325,6 +332,34 @@ procedure web_flush;
 begin
   if nlist > 0 then be_frame(@list[0], nlist);
   nlist := 0;
+end;
+
+{ a repeat of the last message becomes "message (xN)" replacing the page's
+  last line (fold = 1), as BOSS's crt_msg }
+var
+  prev_msg: ansistring = '';
+  reps: longint = 1;
+procedure web_message(const s: string);
+var z: ansistring;
+begin
+  inc(web_msgs);
+  if (prev_msg <> '') and (s = prev_msg) then
+  begin
+    inc(reps);
+    z := s + ' (x' + IntToStr(reps) + ')';
+    be_msg(pchar(z), 1);
+  end
+  else
+  begin
+    prev_msg := s; reps := 1;
+    z := s;
+    be_msg(pchar(z), 0);
+  end;
+end;
+
+function web_pending: boolean;
+begin
+  web_pending := be_pending > 0;
 end;
 
 function SDL_Init(flags: UInt32): longint; begin SDL_Init := 0 end;
