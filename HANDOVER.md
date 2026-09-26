@@ -332,3 +332,29 @@ Next: stage 8 (shrine). Template `~/Games/roguelikes-index/shrine/forays.html`
 - Links to add: Info button on the card, ✦ in the tree entry, game-title link
   on the shrine page to `../lambdarogue/`; shrine page gets its own og block
   (image `roguelikes/lambdarogue.png`).
+
+### Stage 8 — shrine (done)
+- **Shrine**: https://ruzzoli.de/roguelikes/shrine/lambdarogue.html
+  (`~/Games/roguelikes-index/shrine/lambdarogue.html` + `shrine/lambdarogue/`:
+  `manual.html` = the in-game help topics a–o from `data/story/help_*.txt` +
+  the key screen with this build's keys (developer's postal address left
+  out), `changelog.txt` = `docs/ChangeLog.txt`, `license.txt` = GPL v2 +
+  soundtrack credits). og block by hand (image `roguelikes/lambdarogue.png`).
+  Info button on the card, ✦ on the tree entry; the game title already
+  linked here. roguelikes-index commit `12dce46`.
+- **Lineage checked on the web**: 0.1 (alpha 1) 20 July 2006 (change log,
+  first dated entry 14 July 2006; RogueBasin "Jul, 2006 (0.1)"), started as
+  a C++ experiment, moved to Free Pascal (author on Pascal Game Development,
+  21 May 2010); 1.0 on 3 Aug 2008, SourceForge → Google Code 18 Aug 2009
+  (SourceForge news); 1.6.4 patch 10 June 2012, source 17 Nov 2012 (Google
+  Code archive JSON); last version 1.7 on itch.io, 29 Dec 2018 (RogueBasin).
+  Tree entry (2006 · Mario Donick, standalone) confirmed. Tile artist:
+  game credits "Cecilia Favo De Mel", RogueBasin "Cecilia Souza Santos".
+- **Missing**: no manual file (help screens used), no walkthrough or
+  strategy guide found (lambdarogue.net and its forum gone, fandom wiki
+  unreachable), no cheats (debug console `CheatCodes` unreachable: its key
+  is commented out). Changelog exists.
+- Open: itch.io and SourceForge answer 403 to scripts (Cloudflare), Pascal
+  Game Development has an expired TLS certificate; links kept.
+
+Next: stage 9 (graveyard + leaderboard).
