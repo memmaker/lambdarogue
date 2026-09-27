@@ -4,7 +4,8 @@
 
   Hook (fprl.pas KEYLOOP): RvipAuto is asked before every key poll at the
   command prompt; while a walk runs it returns the next movement key (or
-  KeyEnter on the staircase) instead of reading one. The walk is a BFS over
+  KeyEnter when '<' / '>' is pressed on the staircase; a walk stops on
+  arrival) instead of reading one. The walk is a BFS over
   what the player knows (DngLvl[].blKnown), one step per turn. It stops on a
   new message (MessageLog.ShowTransMessage -> web_msgs), a hostile monster
   in view (explore; a stair walk stops when more come into view), any key,
@@ -32,6 +33,7 @@ const
   DY: array [0..7] of integer = (-1, 1, 0, 0, -1, -1, 1, 1);
 var
   mode: integer = MODE_NONE;
+  firstauto: boolean = false;   { the first RvipAuto after RvipStart }
   lastmsgs, expectmsgs, lastx, lasty, lastlevel, startmon: longint;
   stepped: boolean;
 
@@ -155,6 +157,7 @@ begin
   lastmsgs := web_msgs;
   expectmsgs := 0;
   stepped := false;
+  firstauto := true;
   lastlevel := DungeonLevel;
   startmon := MonstersInView;
   if (mode = MODE_EXPLORE) and (startmon > 0) then
@@ -278,13 +281,16 @@ begin
   begin
     RvipStop; exit;
   end;
-  { on the staircase: take it }
+  { on the staircase: stop there; the player presses < / > again (or the
+    action key) to take the stairs (RVIP finetuning: auto-stairs only walks) }
   if ((mode = MODE_DOWN) and (DngLvl[ThePlayer.intX, ThePlayer.intY].intFloorType = 9)) or
     ((mode = MODE_UP) and (DngLvl[ThePlayer.intX, ThePlayer.intY].intFloorType = 8)) then
   begin
     RvipStop;
-    exit(ord(KeyEnter));
+    if firstauto then exit(ord(KeyEnter));   { pressed while on them: take them }
+    exit;
   end;
+  firstauto := false;
   d := NextDir;
   if d < 0 then
   begin
@@ -315,6 +321,8 @@ begin
       DngLvl[ThePlayer.intX + DX[d], ThePlayer.intY + DY[d]].intFloorType, ' msgs ', web_msgs);
   lastx := ThePlayer.intX; lasty := ThePlayer.intY;
   stepped := true;
+  { let the page paint every step (RVIP finetuning: explore moves visibly) }
+  if lastlevel = DungeonLevel then delay(40);
   RvipAuto := ord(DirKey(d));
 end;
 
@@ -346,8 +354,8 @@ begin
   ncmds := 0; ngroups := 0;
   Group('m', 'Move and explore');
   Cmd('z', 'explore (any key stops)');
-  Cmd('>', 'walk to known stairs down, take them');
-  Cmd('<', 'walk to known stairs up, take them');
+  Cmd('>', 'walk to known stairs down (again: take them)');
+  Cmd('<', 'walk to known stairs up (again: take them)');
   Cmd(KeyEnter, 'act: stairs, chest, altar, well, crypt');
   Cmd(KeyShortRest, 'rest one turn');
   Cmd(KeyRest, 'rest a number of turns');
