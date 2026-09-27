@@ -235,7 +235,8 @@ async function ended() {
 	$('overlay-msg').textContent = saveNames().length ? 'Your characters are saved in this browser. Play again to continue.' : 'The game is over.';
 	$('overlay').hidden = false;
 }
-LR.onMsg = (t, fold) => RvipWM.log($('log'), t, fold);
+/* newest message always in view (history fills from the top) */
+LR.onMsg = (t, fold) => { const l = $('log'); RvipWM.log(l, t, fold); l.scrollTop = l.scrollHeight; };
 LR.onPoll = atCmd => RvipWM.prompt.wait(atCmd);
 LR.onScreen = () => fitMap();
 LR.onSfx = (p, v) => sound.sfx(p, v);
