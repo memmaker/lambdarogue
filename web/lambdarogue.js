@@ -145,13 +145,31 @@ function setupWM() {
 }
 
 /* ---------- lists from the game ---------- */
+/* list icon: the sprite the game named (tile = cell of its loaded tile
+   sheet, 1:2 cells as BigCharXY draws them), scaled keeping the aspect */
+function icon(t) {
+	const im = LR.tileSheet;
+	if (!im || !(t >= 0)) return null;
+	const H = im.naturalHeight, W = im.naturalWidth, h = 20, w = 10, k = h / H;
+	const i = document.createElement('i');
+	i.className = 'ic';
+	i.style.cssText = `background:url(${im.src}) -${t * (H / 2) * k}px 0/${W * k}px ${h}px no-repeat`;
+	return i;
+}
+let invCache = '';
 function showInv(s) {
+	if (s === undefined) s = invCache; else invCache = s;
 	const b = $('inv'); b.textContent = '';
 	for (const l of s.split('\n')) {
 		if (!l) continue;
 		const d = document.createElement('div');
 		if (l[0] === '=') { d.className = 'h'; d.textContent = l.slice(1); }
-		else { const [col, t] = l.split('\t'); d.textContent = t; d.style.color = col; }
+		else {
+			const [col, t, tile] = l.split('\t'), ic = icon(+tile);
+			d.className = 'row'; d.style.color = col;
+			if (ic) d.appendChild(ic);
+			d.appendChild(document.createTextNode(t));
+		}
 		b.appendChild(d);
 	}
 }
@@ -219,7 +237,7 @@ LR.onSfx = (p, v) => sound.sfx(p, v);
 LR.onMusic = (p, loops, v) => sound.play(p, loops, v);
 LR.musicPlaying = () => sound.playing();
 const imports = {
-	be_lists: (i, v) => { showInv(cstr(i)); RvipWM.visible($('vis'), cstr(v)); },
+	be_lists: (i, v) => { showInv(cstr(i)); RvipWM.visible($('vis'), cstr(v), icon); },
 	be_prompt: p => RvipWM.prompt.text(cstr(p)),
 	/* autosave: every 2 minutes and when the tab is hidden, at most every 2 s */
 	be_want_save: () => {

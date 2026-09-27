@@ -53,7 +53,7 @@ function frame(p, n) {
 function loadImage(id, path) {
 	return new Promise(res => {
 		const im = new Image();
-		im.onload = () => { LR.surf[id] = im; res(0); };
+		im.onload = () => { LR.surf[id] = im; if (/tileset-2-/.test(path)) LR.tileSheet = im; res(0); };
 		im.onerror = () => { console.warn('image missing', path); res(0); };
 		im.src = path;
 	});

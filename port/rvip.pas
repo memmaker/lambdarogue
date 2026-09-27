@@ -193,6 +193,13 @@ begin
   GlobalFontColor := FONTCOLOR_WHITE;
 end;
 
+{ the sprite the map draws for a letter: cell ord - 32 of the loaded tile
+  sheet (BaseOutput.BigCharXY); the page shows it as the list icon }
+function Tile(c: char): string;
+begin
+  Tile := IntToStr(Ord(c) - 32);
+end;
+
 procedure RvipLists;
 const
   SLOT: array [1..7] of string = ('Weapon', 'Armour', 'Hat', 'Shoes', 'Ring (left)', 'Ring (right)', 'Shield / extra');
@@ -214,27 +221,27 @@ begin
     t := Inventory[i].intType;
     if t > 0 then
       inv := inv + ItemColour(Thing[t].strRealName) + #9 + Format('%2d ', [i]) + Thing[t].strName +
-        ' x' + IntToStr(Inventory[i].longNumber) + #10;
+        ' x' + IntToStr(Inventory[i].longNumber) + #9 + Tile(Thing[t].chLetter) + #10;
   end;
   inv := inv + '=Equipment' + #10;
   for i := 1 to 7 do
   begin
     t := Eq(i);
     if t > 0 then
-      inv := inv + ItemColour(Thing[t].strName) + #9 + SLOT[i] + ': ' + Thing[t].strName + #10;
+      inv := inv + ItemColour(Thing[t].strName) + #9 + SLOT[i] + ': ' + Thing[t].strName + #9 + Tile(Thing[t].chLetter) + #10;
   end;
   vis := '';
   for m := 1 to 550 do
     with Monster[m] do
       if (intHP > 0) and (intX >= 1) and (intY >= 1) and (intX <= DngMaxWidth) and (intY <= DngMaxHeight) and
         (intInvis = 0) and DngLvl[intX, intY].blLOS and DngLvl[intX, intY].blKnown then
-        vis := vis + 'M' + chLetter + strName + #10;
+        vis := vis + 'M' + chLetter + strName + #9#9 + Tile(chLetter) + #10;
   for x := 1 to DngMaxWidth do
     for y := 1 to DngMaxHeight do
       if (DngLvl[x, y].intItem > 0) and DngLvl[x, y].blLOS and DngLvl[x, y].blKnown then
       begin
         t := DngLvl[x, y].intItem;
-        vis := vis + 'I*' + Thing[t].strName + #9 + ItemColour(Thing[t].strRealName) + #10;
+        vis := vis + 'I' + Thing[t].chLetter + Thing[t].strName + #9 + ItemColour(Thing[t].strRealName) + #9 + Tile(Thing[t].chLetter) + #10;
       end;
   web_lists(inv, vis);
   { the player's screen pixel (DrawDungeon draws the hero at intBX, intBY + 1 in 20x40 cells) }

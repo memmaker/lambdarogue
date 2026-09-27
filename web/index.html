@@ -46,6 +46,9 @@
 	.list { overflow-y: auto !important; padding: 4px 8px; font: 13px/1.45 ui-monospace, Menlo, monospace; white-space: pre-wrap; }
 	.list .h { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
 	#log div + div { border-top: 1px solid #1b1b20; }
+	/* list icons: the game's own sprite (1:2 cell, aspect kept), then the name */
+	#inv .row, #vis > div:not(.wm-vh) { display: flex; align-items: center; gap: 4px; }
+	.ic { flex: none; display: inline-block; width: 10px; height: 20px; image-rendering: pixelated; }
 	#overlay, #help { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: flex;
 		align-items: center; justify-content: center; z-index: 10; }
 	#overlay[hidden], #help[hidden], #status[hidden], #game[hidden] { display: none; }
