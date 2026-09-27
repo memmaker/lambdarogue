@@ -33,7 +33,6 @@ json.dump(fs, open('web/dist/fs.json', 'w'))
 PY
 cp -r graphics sound music "$OUT/"
 cp web/index.html web/lr.js web/lambdarogue.js "$OUT/"
-cp "$HOME/Games/rvip-tools/web/rvip-wm.js" "$HOME/Games/rvip-tools/web/rvip-sound.js" "$OUT/"
 cp -r web/vendor "$OUT/vendor"
 python3 web/make-help.py > "$OUT/help.html"
 rm -rf web/build
