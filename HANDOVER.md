@@ -5,7 +5,7 @@
 The RVIP import ran in a Claude Code **cloud** session (stages 1–6), not on
 the maintainer's Mac. The procedure bundle it worked from (`rvip/`: a
 snapshot of RVIP.md, the shared page code, the BOSS/Prospector templates,
-`rvip/LESSONS.md`) lived in the private repo **memmaker/lambdarogue-cloud**
+`rvip/LESSONS.md`) lived in the private repo **memmaker/lambdarogue-cloud** (deleted 2026-09-27)
 (GitHub only); this public repo has the same history without
 `rvip/` (`git filter-repo`). The lessons are merged into
 `~/Games/rvip-tools/RVIP.md` (O-LambdaRogue). `web/build.sh` takes the shared
@@ -306,7 +306,7 @@ snapshot of RVIP.md, the shared page code, the BOSS/Prospector templates,
   writes `docs/web/lambdarogue-docs.html` with `--page`.
 - **Repos**: this folder = public **memmaker/lambdarogue** (remote
   `memmaker`, branch `main`), history without `rvip/`; the cloud history is
-  private **memmaker/lambdarogue-cloud**.
+  private **memmaker/lambdarogue-cloud** (deleted 2026-09-27).
   Upstream commit `798c8e6`; README with the compare view.
 - **Live**: https://ruzzoli.de/roguelikes/lambdarogue/ (`sh web/build.sh && sh
   web/deploy.sh`). Card on https://ruzzoli.de/roguelikes/ (`lambdarogue.png`:
