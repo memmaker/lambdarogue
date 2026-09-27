@@ -33,6 +33,9 @@ json.dump(fs, open('web/dist/fs.json', 'w'))
 PY
 cp -r graphics sound music "$OUT/"
 cp web/index.html web/lr.js web/lambdarogue.js "$OUT/"
+# text fonts: the index page's fonts/ (served at ../fonts/ next to the games)
+IDX=${IDX:-$HOME/Games/roguelikes-index}
+if [ -d "$IDX/fonts" ]; then (cd "$IDX/fonts" && ls *.woff | sed 's/\.woff$//') | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read().split()))' > "$OUT/fonts.json"; else echo "[]" > "$OUT/fonts.json"; fi
 cp -r web/vendor "$OUT/vendor"
 python3 web/make-help.py > "$OUT/help.html"
 rm -rf web/build

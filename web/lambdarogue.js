@@ -9,7 +9,7 @@ import { File, Directory } from './vendor/wasi/index.js';
 
 const $ = id => document.getElementById(id);
 const hero = { x: 400, y: 300 };
-let wm = null, savedLayout = null, zoomAdj = 0, fonts = {}, lastSave = 0, wantSave = false;
+let wm = null, savedLayout = null, zoomAdj = 0, fonts = {}, face = '', lastSave = 0, wantSave = false;
 
 /* ---------- files: memory FS <-> IndexedDB (saves/, lambdarogue.cfg, web-layout.json) ---------- */
 const DB = 'lambdarogue', STORE = 'files';
@@ -46,7 +46,7 @@ function files() {
 	if (s) for (const [n, f] of s.contents) if (f instanceof File && n !== 'delete.me') out.set('saves/' + n, f.data);
 	const cfg = LR.root && LR.root.contents.get('lambdarogue.cfg');
 	if (cfg) out.set('lambdarogue.cfg', cfg.data);
-	if (wm) out.set('web-layout.json', new TextEncoder().encode(JSON.stringify({ wm: wm.state(), fonts, zoomAdj, sound: sound.on, music: sound.musicOn })));
+	if (wm) out.set('web-layout.json', new TextEncoder().encode(JSON.stringify({ wm: wm.state(), fonts, face, zoomAdj, sound: sound.on, music: sound.musicOn })));
 	return out;
 }
 let persisting = null;
@@ -76,7 +76,7 @@ async function prepare(root) {
 		status('Could not read saved games from IndexedDB (' + err + '). Saving may not work in this browser mode.', true);
 	}
 	if (!root.contents.has('saves')) root.contents.set('saves', new Directory([]));
-	if (savedLayout) { fonts = savedLayout.fonts || {}; zoomAdj = savedLayout.zoomAdj || 0; sound.set(savedLayout.sound, savedLayout.music); }
+	if (savedLayout) { fonts = savedLayout.fonts || {}; face = savedLayout.face || ''; $('sel-font').value = face; loadFace(face); zoomAdj = savedLayout.zoomAdj || 0; sound.set(savedLayout.sound, savedLayout.music); }
 	setupWM();
 }
 function saveNames() { const s = savesDir(); return s ? [...s.contents.keys()].filter(n => /\.lambdarogue$/.test(n)) : []; }
@@ -126,7 +126,12 @@ function fitMap() {
 		RvipWM.center(c, hero.x * z, hero.y * z, w, h, b.clientWidth, b.clientHeight);
 	} else { b.style.alignItems = b.style.justifyContent = ''; c.style.marginLeft = c.style.marginTop = ''; }
 }
-function applyFonts() { for (const id of ['log', 'inv', 'vis']) $(id).style.fontSize = (fonts[id] || 13) + 'px'; }
+function applyFonts() { for (const id of ['log', 'inv', 'vis']) { $(id).style.fontSize = (fonts[id] || 13) + 'px'; $(id).style.fontFamily = face ? '"' + face + '", ui-monospace, monospace' : ''; } }
+function loadFace(n) {
+	if (!n) { applyFonts(); return; }
+	const ff = new FontFace(n, 'url(../fonts/' + n + '.woff)');
+	ff.load().then(() => { document.fonts.add(ff); applyFonts(); }).catch(() => status('Could not load the font ' + n + '.', true));
+}
 function setupWM() {
 	wm = RvipWM({
 		area: $('game'), menu: $('btn-layout'), wins: WINS, multi: MULTI, single: 'map',
@@ -178,7 +183,7 @@ function showInv(s) {
 const sound = {
 	on: false, musicOn: false, music: null, musicName: null,
 	set(s, m) { this.on = !!s; this.musicOn = !!m; this.buttons(); },
-	buttons() { $('btn-sound').classList.toggle('on', this.on); $('btn-music').classList.toggle('on', this.musicOn); },
+	buttons() { $('chk-sound').checked = this.on; $('chk-music').checked = this.musicOn; },
 	sfx(path, vol) {
 		LR.lastSfx = path;
 		if (!this.on) return;
@@ -271,8 +276,16 @@ $('btn-new').onclick = newGame;
 $('btn-help').onclick = toggleHelp;
 $('help-close').onclick = toggleHelp;
 $('btn-restart').onclick = () => location.reload();
-$('btn-sound').onclick = () => { sound.on = !sound.on; sound.buttons(); persist(); };
-$('btn-music').onclick = () => { sound.musicOn = !sound.musicOn; sound.buttons(); sound.play(); persist(); };
+$('chk-sound').onchange = function () { sound.on = this.checked; persist(); };
+$('chk-music').onchange = function () { sound.musicOn = this.checked; sound.play(); persist(); };
+RvipWM.dropdown($('btn-audio'), $('menu-audio'));
+RvipWM.dropdown($('btn-file'), $('menu-file'));
+/* text font: a face from the index page's fonts/ (web/build.sh lists them in fonts.json) */
+fetch('fonts.json').then(r => r.json()).then(list => {
+	for (const n of list) { const o = document.createElement('option'); o.value = n; o.textContent = n.replace(/^Web(Plus|437)_/, '').replace(/_/g, ' '); $('sel-font').appendChild(o); }
+	$('sel-font').value = face;
+}).catch(() => {});
+$('sel-font').onchange = function () { face = this.value; loadFace(face); persist(); this.blur(); };
 document.querySelectorAll('button').forEach(b => b.addEventListener('mousedown', e => e.preventDefault()));
 window.LR = LR; LR.sound = sound;
 start({ prepare, imports, onExit: ended, onCrash: crashed }).catch(crashed);

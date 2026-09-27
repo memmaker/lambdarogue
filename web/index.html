@@ -45,9 +45,12 @@
 	#screen { display: block; flex: none; image-rendering: pixelated; }
 	.list { overflow-y: auto !important; padding: 4px 8px; font: 13px/1.45 ui-monospace, Menlo, monospace; white-space: pre-wrap; }
 	.list .h { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
+	#bar .hint { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+	#bar .hint kbd { font-size: 11px; line-height: 1.3; min-width: 0; }
+	#bar select { background: #22222a; color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; font: inherit; }
 	#log div + div { border-top: 1px solid #1b1b20; }
 	/* list icons: the game's own sprite (1:2 cell, aspect kept), then the name */
-	#inv .row, #vis > div:not(.wm-vh) { display: flex; align-items: center; gap: 4px; }
+	#inv .row { display: flex; align-items: center; gap: 4px; }
 	.ic { flex: none; display: inline-block; width: 10px; height: 20px; image-rendering: pixelated; }
 	#overlay, #help { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: flex;
 		align-items: center; justify-content: center; z-index: 10; }
@@ -86,18 +89,24 @@
 <div id="bar">
 	<h1><a href="../shrine/lambdarogue.html">LambdaRogue</a></h1>
 	<button id="btn-help" title="Game guide, controls and saving">Help</button>
+	<button id="btn-file" title="Save files and new game">File ▾</button>
 	<span class="sep"></span>
 	<button id="btn-layout" title="Windows: layout, show and hide">Windows ▾</button>
-	<span class="sep"></span>
-	<button id="btn-sound" title="Sound effects on/off">Sound</button>
-	<button id="btn-music" title="Music on/off">Music</button>
-	<span class="sep"></span>
-	<button id="btn-export" title="Download your saved characters">Export save</button>
-	<button id="btn-import" title="Load a saved character from disk">Import save</button>
-	<button id="btn-new" title="Delete the saved characters in this browser">New game</button>
+	<select id="sel-font" title="Font for the text windows (the map is the game's own screen)"><option value="">Font: default</option></select>
+	<button id="btn-audio" title="Sound effects and music">Audio ▾</button>
+	<div id="menu-audio">
+		<label title="Sound effects on or off"><input type="checkbox" id="chk-sound"> Sound effects</label>
+		<label title="Music on or off"><input type="checkbox" id="chk-music"> Music</label>
+	</div>
+	<div id="menu-file">
+		<button id="btn-export" title="Download your saved characters">Export save</button>
+		<button id="btn-import" title="Load a saved character from disk">Import save</button>
+		<hr>
+		<button id="btn-new" title="Delete the saved characters in this browser">New game</button>
+	</div>
 	<input type="file" id="import-file" hidden>
 	<span class="sp"></span>
-	<span class="hint">Enter: all commands · z: explore · &lt; &gt;: walk to stairs · i: inventory · ?: help</span>
+	<span class="hint"><kbd>z</kbd> explore · <kbd>i</kbd> inventory · <kbd>Enter</kbd> command menu · <kbd>?</kbd> command help</span>
 </div>
 
 <div id="status">Loading LambdaRogue…</div>
