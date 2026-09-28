@@ -9,7 +9,7 @@ import { File, Directory } from './vendor/wasi/index.js';
 
 const $ = id => document.getElementById(id);
 const hero = { x: 400, y: 300 };
-let wm = null, savedLayout = null, zoomAdj = 0, fonts = {}, face = '', lastSave = 0, wantSave = false;
+let wm = null, savedLayout = null, zoomAdj = 0, face = '', lastSave = 0, wantSave = false;
 
 /* ---------- files: memory FS <-> IndexedDB (saves/, lambdarogue.cfg, web-layout.json) ---------- */
 const DB = 'lambdarogue', STORE = 'files';
@@ -46,7 +46,7 @@ function files() {
 	if (s) for (const [n, f] of s.contents) if (f instanceof File && n !== 'delete.me') out.set('saves/' + n, f.data);
 	const cfg = LR.root && LR.root.contents.get('lambdarogue.cfg');
 	if (cfg) out.set('lambdarogue.cfg', cfg.data);
-	if (wm) out.set('web-layout.json', new TextEncoder().encode(JSON.stringify({ wm: wm.state(), fonts, face, zoomAdj, sound: sound.on, music: sound.musicOn })));
+	if (wm) out.set('web-layout.json', new TextEncoder().encode(JSON.stringify({ wm: wm.state(), face, zoomAdj, sound: sound.on, music: sound.musicOn })));
 	return out;
 }
 let persisting = null;
@@ -76,7 +76,8 @@ async function prepare(root) {
 		status('Could not read saved games from IndexedDB (' + err + '). Saving may not work in this browser mode.', true);
 	}
 	if (!root.contents.has('saves')) root.contents.set('saves', new Directory([]));
-	if (savedLayout) { fonts = savedLayout.fonts || {}; face = savedLayout.face || ''; $('sel-font').value = face; loadFace(face); zoomAdj = savedLayout.zoomAdj || 0; sound.set(savedLayout.sound, savedLayout.music); }
+	if (savedLayout) { if (savedLayout.fonts && savedLayout.wm && !savedLayout.wm.fs) savedLayout.wm.fs = savedLayout.fonts;   /* old layout: sizes were ours */
+		face = savedLayout.face || ''; $('sel-font').value = face; loadFace(face); zoomAdj = savedLayout.zoomAdj || 0; sound.set(savedLayout.sound, savedLayout.music); }
 	setupWM();
 }
 function saveNames() { const s = savesDir(); return s ? [...s.contents.keys()].filter(n => /\.lambdarogue$/.test(n)) : []; }
@@ -126,7 +127,7 @@ function fitMap() {
 		RvipWM.center(c, hero.x * z, hero.y * z, w, h, b.clientWidth, b.clientHeight);
 	} else { b.style.alignItems = b.style.justifyContent = ''; c.style.marginLeft = c.style.marginTop = ''; }
 }
-function applyFonts() { for (const id of ['log', 'inv', 'vis']) { $(id).style.fontSize = (fonts[id] || 13) + 'px'; $(id).style.fontFamily = face ? '"' + face + '", ui-monospace, monospace' : ''; } }
+function applyFonts() { for (const id of ['log', 'inv', 'vis']) { $(id).style.fontFamily = face ? '"' + face + '", ui-monospace, monospace' : ''; } }
 function loadFace(n) {
 	if (!n) { applyFonts(); return; }
 	const ff = new FontFace(n, 'url(../fonts/' + n + '.woff)');
@@ -138,12 +139,8 @@ function setupWM() {
 		state: savedLayout && savedLayout.wm || null,
 		save: () => persist(),
 		layout: () => fitMap(),
-		font: (id, d) => {
-			if (id === 'map') zoomAdj = Math.max(-4, Math.min(4, zoomAdj + d));
-			else fonts[id] = Math.max(9, Math.min(24, (fonts[id] || 13) + d));
-			applyFonts(); fitMap(); persist();
-		},
-		onReset: () => { fonts = {}; zoomAdj = 0; applyFonts(); fitMap(); persist(); },
+		zoom: { map: (px, d) => { zoomAdj = Math.max(-4, Math.min(4, zoomAdj + d)); fitMap(); persist(); } },   /* text windows: WM-owned sizes */
+		onReset: () => { zoomAdj = 0; applyFonts(); fitMap(); persist(); },
 	});
 	applyFonts();
 	wm.apply();
@@ -203,23 +200,13 @@ const sound = {
 	playing() { return this.music && !this.music.paused && !this.music.ended ? 1 : 0; },
 };
 
-/* ---------- help ---------- */
-let helpLoaded = false;
-function toggleHelp() {
-	const h = $('help');
-	h.hidden = !h.hidden;
-	if (!h.hidden && !helpLoaded) {
-		helpLoaded = true;
-		fetch('help.html').then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-			.then(t => { $('help-body').innerHTML = t; })
-			.catch(err => { helpLoaded = false; $('help-body').textContent = 'Could not load the guide (' + err + '). Press ? in the game for its own help.'; });
-	}
-	if (!h.hidden) $('help-body').focus();
-}
+/* ---------- shared page code (rvip-app.js): help and the status line. Saves live in the
+ * page's own IndexedDB store (WASI memory FS, no Module.FS) and export every character,
+ * so File stays here; LR.running (lr.js) stays the running flag, so crashes too. ---------- */
+const app = RvipApp({ name: 'lambdarogue', save: () => null, clear: () => {}, put: () => 'unused' });
 
 /* ---------- startup ---------- */
 function onKey(e) {
-	if (!$('help').hidden) { if (e.key === 'Escape') { toggleHelp(); e.preventDefault(); } return; }
 	if (!LR.running) return;
 	wantSave = true;
 	keyEvent(e);
@@ -274,8 +261,6 @@ $('btn-export').onclick = exportSave;
 $('btn-import').onclick = () => $('import-file').click();
 $('import-file').onchange = function () { if (this.files[0]) importSave(this.files[0]); this.value = ''; };
 $('btn-new').onclick = newGame;
-$('btn-help').onclick = toggleHelp;
-$('help-close').onclick = toggleHelp;
 $('btn-restart').onclick = () => location.reload();
 $('chk-sound').onchange = function () { sound.on = this.checked; persist(); };
 $('chk-music').onchange = function () { sound.musicOn = this.checked; sound.play(); persist(); };
