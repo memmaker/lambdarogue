@@ -81,35 +81,6 @@ async function prepare(root) {
 	setupWM();
 }
 function saveNames() { const s = savesDir(); return s ? [...s.contents.keys()].filter(n => /\.lambdarogue$/.test(n)) : []; }
-function download(name, data) {
-	const a = document.createElement('a');
-	a.href = URL.createObjectURL(new Blob([data], { type: 'application/octet-stream' }));
-	a.download = name; document.body.appendChild(a); a.click();
-	setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
-}
-function exportSave() {
-	const n = saveNames();
-	if (!n.length) { status('There is no saved character yet.', true); setTimeout(() => status(''), 2000); return; }
-	n.forEach((name, i) => setTimeout(() => download(name, savesDir().contents.get(name).data), i * 400));
-}
-function importSave(file) {
-	const r = new FileReader();
-	r.onload = async () => {
-		const name = /\.lambdarogue$/.test(file.name) ? file.name : file.name + '.lambdarogue';
-		if (!confirm('Add "' + name + '" to the saved characters in this browser and restart?')) return;
-		LR.running = false;
-		savesDir().contents.set(name, new File(new Uint8Array(r.result)));
-		await persist(); location.reload();
-	};
-	r.readAsArrayBuffer(file);
-}
-async function newGame() {
-	if (!confirm('Delete every saved character in this browser and start over?')) return;
-	LR.running = false;
-	for (const n of saveNames()) savesDir().contents.delete(n);
-	await persist(); location.reload();
-}
-
 /* ---------- windows ---------- */
 const WINS = [{ id: 'map', title: 'Map' }, { id: 'log', title: 'Log messages' }, { id: 'inv', title: 'Inventory' }, { id: 'vis', title: 'Visible' }];
 const MULTI = { d: 'v', r: 0.83, a: { d: 'h', r: 0.74, a: 'map', b: { d: 'v', r: 0.55, a: 'inv', b: 'vis' } }, b: 'log' };
@@ -200,10 +171,21 @@ const sound = {
 	playing() { return this.music && !this.music.paused && !this.music.ended ? 1 : 0; },
 };
 
-/* ---------- shared page code (rvip-app.js): help and the status line. Saves live in the
- * page's own IndexedDB store (WASI memory FS, no Module.FS) and export every character,
- * so File stays here; LR.running (lr.js) stays the running flag, so crashes too. ---------- */
-const app = RvipApp({ name: 'lambdarogue', save: () => null, clear: () => {}, put: () => 'unused' });
+/* ---------- shared page code (rvip-app.js): help, status line, export/import/new game.
+ * Saves live in the WASI memory FS mirrored to our own IndexedDB store (read/sync hooks);
+ * several characters export as one bundle. LR.running (lr.js) stays the running flag, so crashes too. ---------- */
+const app = RvipApp({
+	name: 'lambdarogue',
+	save: () => { const n = saveNames().map(n => 'saves/' + n); return n.length === 1 ? n[0] : n; },
+	read: p => savesDir().contents.get(p.slice(6)).data,
+	clear: () => { LR.running = false; for (const n of saveNames()) savesDir().contents.delete(n); },
+	put: (file, data) => {
+		const name = file.name.replace(/^.*\//, '');
+		savesDir().contents.set(/\.lambdarogue$/.test(name) ? name : name + '.lambdarogue', new File(data));
+	},
+	sync: cb => { persist().then(() => cb(), cb); },
+	noSave: 'There is no saved character yet.'
+});
 
 /* ---------- startup ---------- */
 function onKey(e) {
@@ -257,10 +239,6 @@ addEventListener('unhandledrejection', e => crashed(e.reason));
 addEventListener('error', e => crashed(e.error || e.message));
 setInterval(() => { if (LR.running) persist(); }, 15000);
 document.addEventListener('keydown', onKey);
-$('btn-export').onclick = exportSave;
-$('btn-import').onclick = () => $('import-file').click();
-$('import-file').onchange = function () { if (this.files[0]) importSave(this.files[0]); this.value = ''; };
-$('btn-new').onclick = newGame;
 $('btn-restart').onclick = () => location.reload();
 $('chk-sound').onchange = function () { sound.on = this.checked; persist(); };
 $('chk-music').onchange = function () { sound.musicOn = this.checked; sound.play(); persist(); };
