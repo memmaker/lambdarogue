@@ -245,8 +245,8 @@ $('chk-music').onchange = function () { sound.musicOn = this.checked; sound.play
 RvipWM.dropdown($('btn-audio'), $('menu-audio'));
 RvipWM.dropdown($('btn-file'), $('menu-file'));
 /* text font: a face from the index page's fonts/ (web/build.sh lists them in fonts.json) */
-fetch('fonts.json').then(r => r.json()).then(list => {
-	for (const n of list) { const o = document.createElement('option'); o.value = n; o.textContent = n.replace(/^Web(Plus|437)_/, '').replace(/_/g, ' '); $('sel-font').appendChild(o); }
+RvipWM.fonts.then(list => {
+	RvipWM.fontOptions($('sel-font'));
 	$('sel-font').value = face;
 }).catch(() => {});
 $('sel-font').onchange = function () { face = this.value; loadFace(face); persist(); this.blur(); };
